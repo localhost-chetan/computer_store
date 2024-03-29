@@ -14,7 +14,6 @@ import { FaStar } from "react-icons/fa6";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 
 const NavDropdown = () => {
   const { signOut } = useClerk();

@@ -8,7 +8,6 @@ import {
 
 const userSchema = new Schema<UserType>(
   {
-    // _id: { type: Types.ObjectId, required: true, unique: true },
     clerkId: { type: String, required: true, unique: true },
     userName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true }, // Ensure unique email
@@ -17,8 +16,8 @@ const userSchema = new Schema<UserType>(
     orders: { type: [orderSchema], default: [] }, // Array of orders (embedded documents)
     cancellations: { type: [cancellationSchema], default: [] }, // Array of cancellations (embedded documents)
     reviews: { type: [reviewSchema], default: [] }, // Array of reviews (embedded documents)
-    password: { type: String}, // Hashed password for security
-    phoneNumber: { type: String, required: true, unique: true },
+    password: { type: String, default: null }, // Hashed password for security
+    phoneNumber: { type: String, required: true },
   },
   { timestamps: true }
 );

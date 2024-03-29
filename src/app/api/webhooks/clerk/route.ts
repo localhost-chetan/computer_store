@@ -75,7 +75,6 @@ const POST = async (request: NextRequest) => {
       fullName: `${first_name} ${last_name}`,
       phoneNumber: phone_numbers[0].phone_number,
       avatar: image_url,
-      password: "",
     };
 
     const newUser = await createUser(user);
