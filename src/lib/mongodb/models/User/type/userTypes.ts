@@ -42,7 +42,7 @@ type Review = {
   reviewDate: Date;
 };
 type UserType = {
-  _id?: Types.ObjectId; // Optional for new documents
+  // _id?: Types.ObjectId; // Optional for new documents
   clerkId: string;
   userName: string;
   email: string;

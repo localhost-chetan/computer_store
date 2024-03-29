@@ -8,7 +8,7 @@ import {
 
 const userSchema = new Schema<UserType>(
   {
-    _id: { type: Types.ObjectId, required: true, unique: true },
+    // _id: { type: Types.ObjectId, required: true, unique: true },
     clerkId: { type: String, required: true, unique: true },
     userName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true }, // Ensure unique email
