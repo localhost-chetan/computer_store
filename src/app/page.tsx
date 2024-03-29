@@ -21,7 +21,9 @@ export default function Home() {
         Add to cart
       </Button>
 
-      <MagicBorder />
+      <MagicBorder href={`/products`} size={`sm`} className={`text-[.8rem]`}>
+        Shop 🎁
+      </MagicBorder>
 
       <div>
         <h2>{count}</h2>

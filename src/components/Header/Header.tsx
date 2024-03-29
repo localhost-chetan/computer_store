@@ -34,7 +34,9 @@ const Header = () => {
           Free delivery for orders above{" "}
           <span className={`text-green-400 font-bold`}>₹10,000</span>
         </p>
-        <MagicBorder />
+        <MagicBorder href={`/products`} size={`sm`} className={`text-[.75rem]`}>
+          Shop 🎁
+        </MagicBorder>
       </div>
 
       {/* Navbar */}
@@ -49,7 +51,7 @@ const Header = () => {
                 height={40}
                 alt={`Brand Logo`}
               ></Image>
-              <h2 className={`text-xl font-bold hidden sm:block`}>ElitePC</h2>
+              <h2 className={`text-xl font-bold hidden sm:block`}>Flashbyte</h2>
             </Link>
           </li>
 

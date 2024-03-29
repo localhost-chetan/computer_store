@@ -4,13 +4,14 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ElitePC - The Perfect Computer Store",
+  title: "Flashbyte - The Perfect Computer Store",
   description:
-    "ElitePC is a company that builds gaming and productivity PCs. They have a great deal of experience in building computers, and they work with their customers to ensure that they get the best possible PC for their needs.",
+    "Flashbyte is a company that builds gaming and productivity PCs. They have a great deal of experience in building computers, and they work with their customers to ensure that they get the best possible PC for their needs.",
   creator: "Chetan Seervi",
 };
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Providers>
             <Header />
             <main className={`sm:px-[5vw] py-5 `}>{children}</main>
+            <Footer />
           </Providers>
         </body>
       </html>
