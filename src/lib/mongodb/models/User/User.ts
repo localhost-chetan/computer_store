@@ -17,7 +17,7 @@ const userSchema = new Schema<UserType>(
     orders: { type: [orderSchema], default: [] }, // Array of orders (embedded documents)
     cancellations: { type: [cancellationSchema], default: [] }, // Array of cancellations (embedded documents)
     reviews: { type: [reviewSchema], default: [] }, // Array of reviews (embedded documents)
-    password: { type: String, required: true }, // Hashed password for security
+    password: { type: String}, // Hashed password for security
     phoneNumber: { type: String, required: true, unique: true },
   },
   { timestamps: true }

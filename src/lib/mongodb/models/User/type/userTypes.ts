@@ -51,7 +51,7 @@ type UserType = {
   orders?: Order[]; //Option orders array
   cancellations?: Cancellation[]; //Optional cancellations array
   reviews?: Review[]; //Optional reviews array
-  password: string; // Hashed password (security best practice)
+  password?: string; // Hashed password (security best practice)
   phoneNumber: string; // Optional phone number
 };
 
