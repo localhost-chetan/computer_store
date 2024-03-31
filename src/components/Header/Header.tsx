@@ -40,7 +40,7 @@ const Header = () => {
       </div>
 
       {/* Navbar */}
-      <nav className={`sm:px-[5vw] py-2 px-1`}>
+      <nav className={`sm:px-[5vw] py-2 px-1 select-none`}>
         <ul role="navigation" className={`flex justify-between items-center`}>
           {/* Branding */}
           <li key={`branding `}>
@@ -50,6 +50,7 @@ const Header = () => {
                 width={40}
                 height={40}
                 alt={`Brand Logo`}
+                priority
               ></Image>
               <h2 className={`text-xl font-bold hidden sm:block`}>Flashbyte</h2>
             </Link>

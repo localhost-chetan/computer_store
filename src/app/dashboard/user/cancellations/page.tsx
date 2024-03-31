@@ -1,5 +1,5 @@
 const CancellationsPage = () => {
-  return <div>CancellationsPage</div>;
+  return <h2 className={`text-xl font-bold`}>CancellationsPage</h2>;
 };
 
 export default CancellationsPage;

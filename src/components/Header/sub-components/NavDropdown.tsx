@@ -7,11 +7,10 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
-import { FaUser, FaHeart } from "react-icons/fa";
+import { FaUser, FaHeart, FaPowerOff } from "react-icons/fa";
 import { BsBagCheckFill } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
-import { RiLogoutBoxRFill } from "react-icons/ri";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
@@ -45,7 +44,7 @@ const NavDropdown = () => {
 
   return (
     <>
-      <Dropdown backdrop={window.innerWidth > 800 ? `blur` : `transparent`}>
+      <Dropdown>
         <DropdownTrigger>
           <Avatar
             isBordered
@@ -71,7 +70,7 @@ const NavDropdown = () => {
           <DropdownItem
             key={`logout`}
             color={`danger`}
-            startContent={<RiLogoutBoxRFill />}
+            startContent={<FaPowerOff />}
             onClick={() =>
               signOut(() =>
                 router.push(

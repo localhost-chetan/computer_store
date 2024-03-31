@@ -11,59 +11,59 @@ export default function Category({ className }: { className: string }) {
   const categories: CategoryType[] = [
     {
       category: "Processors",
-      href: "/products",
+      href: "/products/processors",
     },
     {
       category: "RAM",
-      href: "/products",
+      href: "/products/ram_modules",
     },
     {
       category: "Motherboards",
-      href: "/products",
+      href: "/products/motherboards",
     },
     {
       category: "Graphics Cards",
-      href: "/products",
+      href: "/products/graphics_cards",
     },
     {
       category: "Monitors",
-      href: "/products",
+      href: "/products/monitors",
     },
     {
       category: "Mouse",
-      href: "/products",
+      href: "/products/mouse",
     },
     {
       category: "Keyboard",
-      href: "/products",
+      href: "/products/keyboards",
     },
     {
       category: "Power Supply",
-      href: "/products",
+      href: "/products/power_supplies",
     },
     {
       category: "Storage",
-      href: "/products",
+      href: "/products/storage",
     },
     {
       category: "Cabinets",
-      href: "/products",
+      href: "/products/cabinets",
     },
     {
       category: "Case Fans",
-      href: "/products",
+      href: "/products/case_fans",
     },
     {
       category: "Air Coolers",
-      href: "/products",
+      href: "/products/air_coolers",
     },
     {
       category: "AIO Liquid Coolers",
-      href: "/products",
+      href: "/products/aio_liquid_coolers",
     },
     {
       category: "Headsets",
-      href: "/products",
+      href: "/products/headsets",
     },
   ];
 

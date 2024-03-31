@@ -8,7 +8,7 @@ export default authMiddleware({
     "/sign-in",
     "/sign-up",
     "/api/webhooks(.*)",
-    "/products",
+    "/api/products(.*)",
     "/products/:path*",
     "/cart",
   ],

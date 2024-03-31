@@ -1,5 +1,5 @@
 const OrdersPage = () => {
-  return <div>OrdersPage</div>;
+  return <h2 className={`text-xl font-bold`}>OrdersPage</h2>;
 };
 
 export default OrdersPage;

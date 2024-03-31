@@ -1,5 +1,5 @@
 const WishlistPage = () => {
-  return <div>WishlistPage</div>;
+  return <h2 className={`text-xl font-bold`}>WishlistPage</h2>;
 };
 
 export default WishlistPage;

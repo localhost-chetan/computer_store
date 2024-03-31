@@ -52,6 +52,7 @@ const SearchComponent = ({
     >
       <div className={divClasses}>
         <Input
+          defaultValue={``}
           name={`product`}
           size={`lg`}
           autoFocus={inputAutofucs}

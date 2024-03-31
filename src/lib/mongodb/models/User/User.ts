@@ -1,4 +1,4 @@
-import { Schema, model, Types } from "mongoose";
+import { Schema, model, models } from "mongoose";
 import { type UserType } from "./type/userTypes";
 import {
   orderSchema,
@@ -25,6 +25,6 @@ const userSchema = new Schema<UserType>(
 // Consider using mongoose.Schema.Types.ObjectId for order, product, cancellation, and review IDs
 // userSchema.add({ orderId: { type: mongoose.Schema.Types.ObjectId, required: true } });
 
-const User = model<UserType>("User", userSchema);
+const User = models.User || model<UserType>("User", userSchema);
 
 export default User;
