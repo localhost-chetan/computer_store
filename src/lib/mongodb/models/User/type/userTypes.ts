@@ -36,7 +36,8 @@ type Cancellation = {
 
 type Review = {
   reviewId: Types.ObjectId; // Consider using mongoose.Schema.Types.ObjectId here
-  productId: Types.ObjectId; // Consider using mongoose.Schema.Types.ObjectId here (reference reviewed item)
+  productId: Types.ObjectId;
+  reviewer: string; // Consider using mongoose.Schema.Types.ObjectId here (reference reviewed item)
   rating: number;
   comment: string;
   reviewDate: Date;

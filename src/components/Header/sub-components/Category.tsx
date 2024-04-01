@@ -11,59 +11,59 @@ export default function Category({ className }: { className: string }) {
   const categories: CategoryType[] = [
     {
       category: "Processors",
-      href: "/products/processors",
+      href: `/products/processors`,
     },
     {
       category: "RAM",
-      href: "/products/ram_modules",
+      href: `/products/ram_modules`,
     },
     {
       category: "Motherboards",
-      href: "/products/motherboards",
+      href: `/products/motherboards`,
     },
     {
       category: "Graphics Cards",
-      href: "/products/graphics_cards",
+      href: `/products/graphics_cards`,
     },
     {
       category: "Monitors",
-      href: "/products/monitors",
+      href: `/products/monitors`,
     },
     {
       category: "Mouse",
-      href: "/products/mouse",
+      href: `/products/mouse`,
     },
     {
       category: "Keyboard",
-      href: "/products/keyboards",
+      href: `/products/keyboards`,
     },
     {
       category: "Power Supply",
-      href: "/products/power_supplies",
+      href: `/products/power_supplies`,
     },
     {
       category: "Storage",
-      href: "/products/storage",
+      href: `/products/storage`,
     },
     {
       category: "Cabinets",
-      href: "/products/cabinets",
+      href: `/products/cabinets`,
     },
     {
       category: "Case Fans",
-      href: "/products/case_fans",
+      href: `/products/case_fans`,
     },
     {
       category: "Air Coolers",
-      href: "/products/air_coolers",
+      href: `/products/air_coolers`,
     },
     {
       category: "AIO Liquid Coolers",
-      href: "/products/aio_liquid_coolers",
+      href: `/products/aio_liquid_coolers`,
     },
     {
       category: "Headsets",
-      href: "/products/headsets",
+      href: `/products/headsets`,
     },
   ];
 
