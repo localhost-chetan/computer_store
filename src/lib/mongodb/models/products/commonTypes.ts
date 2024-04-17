@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, Types } from "mongoose";
 import { type Review } from "../User/type/userTypes";
 
 export type Discount = {
@@ -24,9 +24,11 @@ export const discountSchema = new Schema<Discount>({
 });
 
 export type CommonFields = {
+  _id?: Types.ObjectId;
   name: string;
   description: string;
   price: number;
+  ratings: number;
   category: string;
   imageURLs?: string[];
   reviews?: Review[];

@@ -23,7 +23,7 @@ const SearchIconModal = () => {
         onClick={onOpen}
         size={`sm`}
         radius={`full`}
-        className={`md:hidden`}
+        className={`lg:hidden`}
       >
         <IoIosSearch className={`font-bold text-xl`} />
       </Button>
@@ -35,7 +35,7 @@ const SearchIconModal = () => {
         className={`p-4`}
       >
         <ModalContent>
-          {(onClose) => (
+          {(_onClose) => (
             <>
               <ModalHeader className={`text-center p-2`}>
                 What are you looking for?

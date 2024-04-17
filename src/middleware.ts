@@ -8,9 +8,16 @@ export default authMiddleware({
     "/sign-in",
     "/sign-up",
     "/api/webhooks(.*)",
-    "/products/:path*",
-    "/api/products/:path*",
+    "/products(.*)",
+    "/api/products/(.*)",
     "/cart",
+    "/custom-pc",
+    "/about-us",
+    "/contact-us",
+    "/shipping-policy",
+    "/refund-policy",
+    "/terms-conditions",
+    "/privacy-policy",
   ],
   // Prevent the specified routes from accessing
   // authentication information:

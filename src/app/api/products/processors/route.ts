@@ -1,14 +1,20 @@
-import AMDProcessor from "@/lib/mongodb/models/products/processors/amd_processors/AMDProcessor";
-import IntelProcessor from "@/lib/mongodb/models/products/processors/intel_processors/IntelProcessor";
+import Processor from "@/lib/mongodb/models/products/processors/Processor";
 import dbConnect from "@/lib/mongodb/utils/dbConnect";
+import { NextResponse } from "next/server";
 
 const GET = async () => {
-  await dbConnect();
+  try {
+    await dbConnect();
 
-  const intel_processors = await IntelProcessor.find();
-  const amd_rocessors = await AMDProcessor.find();
+    const processors = await Processor.find();
 
-  return Response.json([...intel_processors, ...amd_rocessors]);
+    return Response.json(processors);
+  } catch (error) {
+    return NextResponse.json(
+      { error: `Error fetching data ${error}` },
+      { status: 500 }
+    );
+  }
 };
 
 export { GET };

@@ -10,7 +10,7 @@ const airCoolerSchema = new Schema<AirCoolerType>(
     price: String,
     category: String,
     imageURLs: [String],
-    discount: [discountSchema],
+    discount: discountSchema,
     reviews: [reviewSchema],
   },
   { collection: "air_coolers" }

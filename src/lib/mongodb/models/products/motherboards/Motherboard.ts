@@ -28,7 +28,7 @@ const motherboardSchema = new Schema<MotherboardTypes>(
     category: { type: String, requierd: true },
     imageURLs: { type: [String], default: [] },
     reviews: { type: [reviewSchema], default: [] },
-    discount: { type: [discountSchema], default: {} },
+    discount: { type: discountSchema, default: {} },
     socketType: { type: String, required: true },
     formFactor: { type: String, required: true },
     chipset: { type: String, required: true },

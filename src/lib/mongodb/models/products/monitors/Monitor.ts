@@ -26,7 +26,7 @@ const monitorSchema = new Schema<MonitorTypes>(
     category: { type: String, requierd: true },
     imageURLs: { type: [String], default: [] },
     reviews: { type: [reviewSchema], default: [] },
-    discount: { type: [discountSchema], default: {} },
+    discount: { type: discountSchema, default: {} },
     resolution: { type: String, required: true },
     panelType: { type: String, required: true },
     refreshRate: { type: Number, required: true },

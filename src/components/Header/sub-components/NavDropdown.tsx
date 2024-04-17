@@ -15,7 +15,7 @@ import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 const NavDropdown = () => {
-  const { signOut } = useClerk();
+  const { signOut, user } = useClerk();
   const router = useRouter();
 
   const userProfileOptions:
@@ -49,7 +49,7 @@ const NavDropdown = () => {
           <Avatar
             isBordered
             color={`success`}
-            src={``}
+            src={user?.imageUrl}
             showFallback
             className={`cursor-pointer`}
           />

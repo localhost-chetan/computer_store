@@ -6,13 +6,14 @@ import { BsTwitterX } from "react-icons/bs"; //image import (automatic width/hei
 const Footer = () => {
   return (
     <footer className={`lg:grid lg:grid-cols-5 bg-gray-900 select-none`}>
-      <div className="relative block h-32 lg:col-span-2 lg:h-full">
+      <div className="relative block h-40 lg:col-span-2 lg:h-full">
         <Image
           src={FooterImage}
           alt={`Gaming PC Setup RGB Lighting`}
           className="absolute inset-0 h-full w-full object-cover"
           placeholder={`blur`}
           loading={`lazy`}
+          quality={30}
         />
       </div>
 
@@ -26,7 +27,7 @@ const Footer = () => {
 
               <Link
                 href="tel:917728022160"
-                className="block text-2xl font-medium hover:opacity-75 sm:text-3xl text-white"
+                className="block text-2xl font-medium hover:text-yellow-400  sm:text-3xl text-white"
               >
                 +91 9509129835
               </Link>
@@ -44,7 +45,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:opacity-75 text-gray-200"
+                  className="transition hover:text-yellow-400  text-gray-200"
                 >
                   <span className="sr-only">Facebook</span>
 
@@ -69,7 +70,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:opacity-75 text-gray-200"
+                  className="transition hover:text-yellow-400  text-gray-200"
                 >
                   <span className="sr-only">Instagram</span>
 
@@ -94,7 +95,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:opacity-75 text-gray-200"
+                  className="transition hover:text-yellow-400  text-gray-200"
                 >
                   <span className="sr-only">Twitter</span>
 
@@ -108,7 +109,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:opacity-75 text-gray-200"
+                  className="transition hover:text-yellow-400  text-gray-200"
                 >
                   <span className="sr-only">GitHub</span>
 
@@ -131,84 +132,75 @@ const Footer = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="font-medium text-white">Services</p>
+              <p className="font-medium text-white">Shop Categories</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
+                    href={`/custom-pc`}
+                    className="transition hover:text-yellow-400  text-gray-200"
                   >
-                    1on1 Coaching
+                    Custom PC
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
+                    href={`/products`}
+                    className="transition hover:text-yellow-400  text-gray-200"
                   >
-                    Company Review
+                    All Products
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 :text-gray-200"
+                    href={`/preBuilt-pc`}
+                    className="transition hover:text-yellow-400  :text-gray-200"
                   >
-                    Accounts Review
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
-                  >
-                    HR Consulting
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
-                  >
-                    SEO Optimisation
+                    Pre-built PCs
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-white">Company</p>
+              <p className="font-medium text-white">Information</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
+                    href={`/about-us`}
+                    className="transition hover:text-yellow-400  text-gray-200"
                   >
-                    About
+                    About Us
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
+                    href={`/contact-us`}
+                    className="transition hover:text-yellow-400  text-gray-200"
                   >
-                    Meet the Team
+                    Contact Us
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#"
-                    className="transition hover:opacity-75 text-gray-200"
+                    href={`/shipping-policy`}
+                    className="transition hover:text-yellow-400  text-gray-200"
                   >
-                    Accounts Review
+                    Shipping Policy
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href={`/refund-policy`}
+                    className="transition hover:text-yellow-400  text-gray-200"
+                  >
+                    Refund & Cancellation Policy
                   </Link>
                 </li>
               </ul>
@@ -221,8 +213,8 @@ const Footer = () => {
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
-                  href="#"
-                  className="transition hover:opacity-75 text-gray-400"
+                  href={`/terms-conditions`}
+                  className="transition hover:text-yellow-400  text-gray-400"
                 >
                   Terms & Conditions
                 </Link>
@@ -230,8 +222,8 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="#"
-                  className="transition hover:opacity-75 text-gray-400"
+                  href={`/privacy-policy`}
+                  className="transition hover:text-yellow-400  text-gray-400"
                 >
                   Privacy Policy
                 </Link>
@@ -240,7 +232,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="transition hover:opacity-75 text-gray-400"
+                  className="transition hover:text-yellow-400  text-gray-400 hidden"
                 >
                   Cookies
                 </Link>

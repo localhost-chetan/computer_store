@@ -19,6 +19,10 @@
   .border {
     @apply border-3 border-solid border-black dark:border-white;
   }
+
+  .details {
+    @apply flex justify-between items-center odd:bg-blue-200 rounded-md odd:dark:bg-blue-950 px-3 py-2;
+  }
 }
 /* @layer base {
   :root {

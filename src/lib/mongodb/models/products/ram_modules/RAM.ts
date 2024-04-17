@@ -10,7 +10,7 @@ const RAMSchema = new Schema<RAMType>(
     price: String,
     category: String,
     imageURLs: [String],
-    discount: [discountSchema],
+    discount: discountSchema,
     reviews: [reviewSchema],
   },
   { collection: "ram_modules" }

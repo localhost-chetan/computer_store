@@ -60,8 +60,7 @@ const POST = async (request: NextRequest) => {
   if (eventType === "user.created") {
     const {
       id,
-      email_addresses,
-      phone_numbers,
+      email_addresses = [],
       username,
       first_name,
       last_name,
@@ -70,10 +69,10 @@ const POST = async (request: NextRequest) => {
 
     const user: UserType = {
       clerkId: id,
-      email: email_addresses[0].email_address,
+      email: email_addresses[0]?.email_address,
       userName: username as string,
       fullName: `${first_name} ${last_name}`,
-      phoneNumber: phone_numbers[0].phone_number,
+      // phoneNumber: phone_numbers[0]?.phone_number || null,
       avatar: image_url,
     };
 

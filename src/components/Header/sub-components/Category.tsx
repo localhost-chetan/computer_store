@@ -10,6 +10,10 @@ export default function Category({ className }: { className: string }) {
 
   const categories: CategoryType[] = [
     {
+      category: "Headsets",
+      href: `/products/headsets`,
+    },
+    {
       category: "Processors",
       href: `/products/processors`,
     },
@@ -31,7 +35,7 @@ export default function Category({ className }: { className: string }) {
     },
     {
       category: "Mouse",
-      href: `/products/mouse`,
+      href: `/products/mouses`,
     },
     {
       category: "Keyboard",
@@ -43,7 +47,7 @@ export default function Category({ className }: { className: string }) {
     },
     {
       category: "Storage",
-      href: `/products/storage`,
+      href: `/products/storage_devices`,
     },
     {
       category: "Cabinets",
@@ -61,10 +65,6 @@ export default function Category({ className }: { className: string }) {
       category: "AIO Liquid Coolers",
       href: `/products/aio_liquid_coolers`,
     },
-    {
-      category: "Headsets",
-      href: `/products/headsets`,
-    },
   ];
 
   console.log(`Category`);
@@ -77,7 +77,7 @@ export default function Category({ className }: { className: string }) {
       label={`All Categories`}
       aria-label={`Categories`}
       placeholder={`Choose category`}
-      className={className}
+      className={`${className} select-none`}
       radius={`none`}
       size={`sm`}
     >

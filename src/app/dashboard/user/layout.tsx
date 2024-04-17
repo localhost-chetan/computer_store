@@ -2,6 +2,7 @@
 
 import {
   Avatar,
+  Badge,
   Button,
   Dropdown,
   DropdownItem,
@@ -17,13 +18,15 @@ import { MdManageAccounts } from "react-icons/md";
 import { BsBagCheckFill } from "react-icons/bs";
 
 const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-  const { signOut } = useClerk();
+  const { signOut, user } = useClerk();
   const router = useRouter();
   const pathname = usePathname();
 
+  console.log(user);
+
   return (
     <section
-      className={`w-full flex flex-col lg:flex-row justify-between lg:justify-start`}
+      className={`sm:px-[5vw] py-5 px-2 w-full flex flex-col lg:flex-row justify-between lg:justify-start`}
     >
       <div
         className={`flex justify-between items-center h-full p-5 lg:flex-col lg:shadow-gray-300 dark:lg:shadow-[#282828] lg:shadow-lg rounded-xl dark:lg:bg-[#1a1919] select-none`}
@@ -33,15 +36,19 @@ const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         >
           <Avatar
             size={`md`}
-            src={``}
+            src={user?.imageUrl}
             showFallback
             isBordered
             color={`success`}
           />
 
-          <div className={``}>
+          <div className={`leading-none`}>
             <p className={`text-slate-500 dark:text-slate-400`}>Hello,</p>
-            <p className={`text-xl font-bold`}>User</p>
+            <p
+              className={`text-xl font-semibold text-green-800 dark:text-green-400`}
+            >
+              {user?.username}
+            </p>
           </div>
         </div>
 
@@ -148,14 +155,16 @@ const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
                   showDivider
                   textValue={`My Wishlist`}
                 >
-                  <div className={`flex items-center gap-2`}>
-                    <FaHeart
-                      size={30}
-                      className={`basis-1/8 ${
-                        pathname === "/dashboard/user/wishlist" &&
-                        "text-rose-400"
-                      }`}
-                    />
+                  <div className={`flex items-center gap-2 py-2`}>
+                    <Badge content={0} color={`danger`} showOutline={false}>
+                      <FaHeart
+                        size={30}
+                        className={`basis-1/8 ${
+                          pathname === "/dashboard/user/wishlist" &&
+                          "text-rose-400"
+                        }`}
+                      />
+                    </Badge>
                     <h2 className={`text-xl font-bold`}>
                       <Link
                         href={`/dashboard/user/wishlist`}
@@ -191,7 +200,7 @@ const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
           </div>
 
           {/* Laptop design */}
-          <div className={`hidden lg:block mt-4 space-y-4`}>
+          <div className={`hidden lg:block mt-8 space-y-6`}>
             <div className={`flex gap-2 items-center`}>
               <MdManageAccounts
                 size={30}
@@ -211,56 +220,60 @@ const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
               </h2>
             </div>
 
-            <div
-              className={`flex items-center gap-2 ${
-                (pathname === "/dashboard/user/orders" && "text-rose-400") ||
-                (pathname === "/dashboard/user/cancellations" &&
-                  "text-rose-400") ||
-                (pathname === "/dashboard/user/reviews" && "text-rose-400")
-              }`}
-            >
-              <BsBagCheckFill size={30} className={`basis-1/8`} />
-              <h2 className={`text-xl font-bold grow`}>Manage Orders</h2>
-            </div>
-
-            <div className="md:flex md:flex-col space-y-1">
-              <Link
-                href={`/dashboard/user/orders`}
-                className={`${
-                  pathname === "/dashboard/user/orders" &&
-                  "text-rose-400 font-bold"
-                } ml-11 font-semibold`}
+            <div>
+              <div
+                className={`flex items-center gap-2 ${
+                  (pathname === "/dashboard/user/orders" && "text-rose-400") ||
+                  (pathname === "/dashboard/user/cancellations" &&
+                    "text-rose-400") ||
+                  (pathname === "/dashboard/user/reviews" && "text-rose-400")
+                }`}
               >
-                My Orders
-              </Link>
+                <BsBagCheckFill size={30} className={`basis-1/8`} />
+                <h2 className={`text-xl font-bold grow`}>Manage Orders</h2>
+              </div>
 
-              <Link
-                href={`/dashboard/user/cancellations`}
-                className={`${
-                  pathname === "/dashboard/user/cancellations" &&
-                  "text-rose-400"
-                } ml-11`}
-              >
-                My Cancellations
-              </Link>
+              <div className="md:flex md:flex-col mt-2 space-y-2">
+                <Link
+                  href={`/dashboard/user/orders`}
+                  className={`${
+                    pathname === "/dashboard/user/orders" &&
+                    "text-rose-400 font-bold"
+                  } ml-11 font-semibold`}
+                >
+                  My Orders
+                </Link>
 
-              <Link
-                href={`/dashboard/user/reviews`}
-                className={`${
-                  pathname === "/dashboard/user/reviews" && "text-rose-400"
-                } ml-11`}
-              >
-                My Reviews
-              </Link>
+                <Link
+                  href={`/dashboard/user/cancellations`}
+                  className={`${
+                    pathname === "/dashboard/user/cancellations" &&
+                    "text-rose-400"
+                  } ml-11`}
+                >
+                  My Cancellations
+                </Link>
+
+                <Link
+                  href={`/dashboard/user/reviews`}
+                  className={`${
+                    pathname === "/dashboard/user/reviews" && "text-rose-400"
+                  } ml-11`}
+                >
+                  My Reviews
+                </Link>
+              </div>
             </div>
 
             <div className={`flex items-center gap-2`}>
-              <FaHeart
-                size={30}
-                className={`basis-1/8 ${
-                  pathname === "/dashboard/user/wishlist" && "text-rose-400"
-                }`}
-              />
+              <Badge content={0} color={`danger`} showOutline={false}>
+                <FaHeart
+                  size={30}
+                  className={`basis-1/8 ${
+                    pathname === "/dashboard/user/wishlist" && "text-rose-400"
+                  }`}
+                />
+              </Badge>
               <h2 className={`text-xl font-bold`}>
                 <Link
                   href={`/dashboard/user/wishlist`}

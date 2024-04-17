@@ -29,7 +29,7 @@ const cabinetSchema = new Schema<CabinetTypes>(
     weight: { type: String, required: true },
     imageURLs: { type: [String], default: [] },
     reviews: { type: [reviewSchema], default: [] },
-    discount: { type: [discountSchema], default: {} },
+    discount: { type: discountSchema, default: {} },
   },
   { collection: "cabinets" }
 );

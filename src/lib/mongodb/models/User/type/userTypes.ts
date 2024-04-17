@@ -52,7 +52,7 @@ type UserType = {
   cancellations?: Cancellation[]; //Optional cancellations array
   reviews?: Review[]; //Optional reviews array
   password?: string; // Hashed password (security best practice)
-  phoneNumber: string; // Optional phone number
+  phoneNumber?: string | null; // Optional phone number
 };
 
 export type { Product, Address, Order, Cancellation, Review, UserType };

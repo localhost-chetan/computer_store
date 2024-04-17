@@ -10,7 +10,7 @@ const powerSupplySchema = new Schema<PowerSupplyType>(
     price: String,
     category: String,
     imageURLs: [String],
-    discount: [discountSchema],
+    discount: discountSchema,
     reviews: [reviewSchema],
   },
   { collection: "power_supplies" }

@@ -57,7 +57,7 @@ const SearchComponent = ({
           size={`lg`}
           autoFocus={inputAutofucs}
           ref={inputRef}
-          className={`sm:w-full md:w-[35vw] grow outline-none`}
+          className={`w-full grow outline-none`}
           type="search"
           radius={`none`}
           placeholder={`Search`}
@@ -75,7 +75,9 @@ const SearchComponent = ({
           } // Remove pointer-events-none
         />
 
-        <Category className={categoryClasses} />
+        <div>
+          <Category className={categoryClasses} />
+        </div>
 
         <Button
           type={`submit`}

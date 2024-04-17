@@ -32,7 +32,7 @@ const headsetSchema = new Schema<HeadsetType>(
     rating: { type: Number },
     imageURLs: { type: [String], default: [] },
     reviews: { type: [reviewSchema], default: [] },
-    discount: { type: [discountSchema], default: {} },
+    discount: { type: discountSchema, default: {} },
   },
   { collection: "headsets" }
 );

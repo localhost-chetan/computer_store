@@ -10,7 +10,7 @@ const caseFanSchema = new Schema<CaseFanType>(
     price: String,
     category: String,
     imageURLs: [String],
-    discount: [discountSchema],
+    discount: discountSchema,
     reviews: [reviewSchema],
   },
   { collection: "case_fans" }

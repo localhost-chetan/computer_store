@@ -16,12 +16,9 @@ import Image from "next/image";
 
 const Header = () => {
   const { userId }: { userId: string | null } = auth();
-  console.log(userId);
 
   // const user = await currentUser();
   // console.log(user);
-
-  console.log(`Server comp`);
 
   return (
     <header
@@ -34,7 +31,11 @@ const Header = () => {
           Free delivery for orders above{" "}
           <span className={`text-green-400 font-bold`}>₹10,000</span>
         </p>
-        <MagicBorder href={`/products`} size={`sm`} className={`text-[.75rem]`}>
+        <MagicBorder
+          href={`/products/headsets`}
+          size={`sm`}
+          className={`text-[.75rem]`}
+        >
           Shop 🎁
         </MagicBorder>
       </div>
@@ -52,13 +53,13 @@ const Header = () => {
                 alt={`Brand Logo`}
                 priority
               ></Image>
-              <h2 className={`text-xl font-bold hidden sm:block`}>Flashbyte</h2>
+              <h2 className={`text-xl font-bold hidden sm:block`}>FlashByte</h2>
             </Link>
           </li>
 
           {/* Search Box */}
           <li
-            className={`hidden md:block rounded-xl overflow-hidden focus-within:ring-4 focus-within:ring-offset-3  focus-within:ring-offset-white dark:focus-within:ring-offset-black focus-within:ring-blue-400 shadow-md shadow-blue-500/100 dark:shadow-blue-500/50`}
+            className={`hidden lg:block rounded-xl overflow-hidden focus-within:ring-4 focus-within:ring-offset-3  focus-within:ring-offset-white dark:focus-within:ring-offset-black focus-within:ring-blue-400 shadow-md shadow-blue-500/100 dark:shadow-blue-500/50`}
             key={`search`}
           >
             {/* Search Component */}

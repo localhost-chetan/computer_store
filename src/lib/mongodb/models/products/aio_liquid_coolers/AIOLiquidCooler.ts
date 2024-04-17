@@ -10,7 +10,7 @@ const aioLiquidCoolerSchema = new Schema<AIOLiquidCoolerType>(
     price: String,
     category: String,
     imageURLs: [String],
-    discount: [discountSchema],
+    discount: discountSchema,
     reviews: [reviewSchema],
   },
   { collection: "aio_liquid_coolers" }
