@@ -14,6 +14,7 @@ import Monitor from "@/../public/Home Page/Category Section/Monitor.webp";
 import Motherboard from "@/../public/Home Page/Category Section/Motherboard.webp";
 import Mouse from "@/../public/Home Page/Category Section/Mouse.webp";
 import SMPS from "@/../public/Home Page/Category Section/Power Supply.webp";
+import RAMModule from "@/../public/Home Page/Category Section/RAM.webp";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Tooltip } from "@nextui-org/react";
@@ -108,6 +109,13 @@ const HomeCategories = () => {
       imageURL: SMPS,
       href: "/products/power_supplies",
       product: `Power Supplies`,
+    },
+
+    {
+      id: 13,
+      imageURL: RAMModule,
+      href: "/products/ram_modules",
+      product: `RAM Module`,
     },
   ];
 
