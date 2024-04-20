@@ -435,6 +435,225 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
                 )}
               </tbody>
             )}
+
+            {productData.category === "Motherboard" && (
+              <tbody>
+                {productData?.socketType && (
+                  <tr className={`details`}>
+                    <td className={``}>Socket Type</td>
+                    <td className={``}>{productData?.socketType}</td>
+                  </tr>
+                )}
+
+                {productData?.formFactor && (
+                  <tr className={`details`}>
+                    <td className={``}>Form Factor</td>
+                    <td className={``}>{productData?.formFactor}</td>
+                  </tr>
+                )}
+
+                {productData?.chipset && (
+                  <tr className={`details`}>
+                    <td className={``}>Chipset</td>
+                    <td className={``}>{productData?.chipset}</td>
+                  </tr>
+                )}
+
+                {productData?.itemWeightKg && (
+                  <tr className={`details`}>
+                    <td className={``}>Weight</td>
+                    <td className={``}>{productData?.itemWeightKg}</td>
+                  </tr>
+                )}
+
+                {productData?.memoryClockSpeedMHz && (
+                  <tr className={`details`}>
+                    <td className={``}>Clock Speed (MHz)</td>
+                    <td className={``}>{productData?.memoryClockSpeedMHz}</td>
+                  </tr>
+                )}
+
+                {productData?.memoryTechnology && (
+                  <tr className={`details`}>
+                    <td className={``}>Memory Technology</td>
+                    <td className={``}>{productData?.memoryTechnology}</td>
+                  </tr>
+                )}
+
+                {productData?.numberOfUSB2Ports && (
+                  <tr className={`details`}>
+                    <td className={``}>USB 2 Ports</td>
+                    <td className={``}>{productData?.numberOfUSB2Ports}</td>
+                  </tr>
+                )}
+
+                {productData?.numberOfUSB3Ports && (
+                  <tr className={`details`}>
+                    <td className={``}>USB 3 Ports</td>
+                    <td className={``}>{productData?.numberOfUSB3Ports}</td>
+                  </tr>
+                )}
+              </tbody>
+            )}
+
+            {productData.category === "Storage Device" && (
+              <tbody>
+                {productData?.capacity && (
+                  <tr className={`details`}>
+                    <td className={``}>Capacity</td>
+                    <td className={``}>{productData?.capacity}</td>
+                  </tr>
+                )}
+
+                {productData?.interface && (
+                  <tr className={`details`}>
+                    <td className={``}>Interface</td>
+                    <td className={``}>{productData?.interface}</td>
+                  </tr>
+                )}
+
+                {productData?.formFactor && (
+                  <tr className={`details`}>
+                    <td className={``}>Form Factor</td>
+                    <td className={``}>{productData?.formFactor}</td>
+                  </tr>
+                )}
+
+                {productData?.type && (
+                  <tr className={`details`}>
+                    <td className={``}>Type</td>
+                    <td className={``}>{productData?.type}</td>
+                  </tr>
+                )}
+
+                {productData?.brand && (
+                  <tr className={`details`}>
+                    <td className={``}>Brand</td>
+                    <td className={``}>{productData?.brand}</td>
+                  </tr>
+                )}
+
+                {productData?.warranty && (
+                  <tr className={`details`}>
+                    <td className={``}>Warranty</td>
+                    <td className={``}>{productData?.warranty}</td>
+                  </tr>
+                )}
+
+                {productData?.powerConsumption && (
+                  <tr className={`details`}>
+                    <td className={``}>Power Consumption</td>
+                    <td className={``}>{productData?.powerConsumption}</td>
+                  </tr>
+                )}
+              </tbody>
+            )}
+
+            {productData.category === "Mouse" && (
+              <tbody>
+                {productData?.type && (
+                  <tr className={`details`}>
+                    <td className={``}>Type</td>
+                    <td className={``}>{productData?.type}</td>
+                  </tr>
+                )}
+
+                {productData?.connectivity && (
+                  <tr className={`details`}>
+                    <td className={``}>Connectivity</td>
+                    <td className={``}>{productData?.connectivity}</td>
+                  </tr>
+                )}
+
+                {productData?.dpi && (
+                  <tr className={`details`}>
+                    <td className={``}>DPI</td>
+                    <td className={``}>{productData?.dpi}</td>
+                  </tr>
+                )}
+
+                {productData?.buttons && (
+                  <tr className={`details`}>
+                    <td className={``}>Buttons</td>
+                    <td className={``}>{productData?.buttons}</td>
+                  </tr>
+                )}
+
+                {productData?.handOrientation && (
+                  <tr className={`details`}>
+                    <td className={``}>Hand Orientation</td>
+                    <td className={``}>{productData?.handOrientation}</td>
+                  </tr>
+                )}
+
+                {productData?.sensorType && (
+                  <tr className={`details`}>
+                    <td className={``}>Sensor Type</td>
+                    <td className={``}>{productData?.sensorType}</td>
+                  </tr>
+                )}
+
+                {productData?.brand && (
+                  <tr className={`details`}>
+                    <td className={``}>Brand</td>
+                    <td className={``}>{productData?.brand}</td>
+                  </tr>
+                )}
+              </tbody>
+            )}
+
+            {productData.category === "Monitor" && (
+              <tbody>
+                {productData?.resolution && (
+                  <tr className={`details`}>
+                    <td className={``}>Resolution</td>
+                    <td className={``}>{productData?.resolution}</td>
+                  </tr>
+                )}
+
+                {productData?.panelType && (
+                  <tr className={`details`}>
+                    <td className={``}>Panel Type</td>
+                    <td className={``}>{productData?.panelType}</td>
+                  </tr>
+                )}
+
+                {productData?.refreshRate && (
+                  <tr className={`details`}>
+                    <td className={``}>Refresh Rate</td>
+                    <td className={``}>{productData?.refreshRate}</td>
+                  </tr>
+                )}
+
+                {productData?.responseTime && (
+                  <tr className={`details`}>
+                    <td className={``}>Response Time(ms)</td>
+                    <td className={``}>{productData?.responseTime}</td>
+                  </tr>
+                )}
+
+                {productData?.aspectRatio && (
+                  <tr className={`details`}>
+                    <td className={``}>Aspect Ratio</td>
+                    <td className={``}>{productData?.aspectRatio}</td>
+                  </tr>
+                )}
+
+                {productData?.curvature && (
+                  <tr className={`details`}>
+                    <td className={``}>Curvature</td>
+                    <td className={``}>{productData?.curvature}</td>
+                  </tr>
+                )}
+
+                {productData?.brand && (
+                  <tr className={`details`}>
+                    <td className={``}>Brand</td>
+                    <td className={``}>{productData?.brand}</td>
+                  </tr>
+                )}
+              </tbody>
+            )}
           </table>
         </div>
       </section>
@@ -443,6 +662,3 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
 };
 
 export default ProductDetails;
-function async() {
-  throw new Error("Function not implemented.");
-}

@@ -22,11 +22,11 @@ const ProductCategory = async ({ params }: PropTypes) => {
     <>
       <section className={`sm:px-[5vw] py-5 px-2 flex gap-2 mt-5 mb-10`}>
         <section className={`w-full`}>
-          <Breadcrumb>{data.at(0).category as string}</Breadcrumb>
+          <Breadcrumb>{data.at(0)?.category as string}</Breadcrumb>
 
           <section className={`flex flex-col gap-y-10 w-full`}>
             <h1 className={`text-2xl font-extrabold capitalize`}>
-              {data?.at(0).category} Page
+              {data.at(0)?.category} Page
             </h1>
 
             <GridView data={data} params={params.category} />

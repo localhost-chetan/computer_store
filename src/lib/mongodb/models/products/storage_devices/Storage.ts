@@ -13,7 +13,7 @@ const storageSchema = new Schema<StorageType>(
     discount: discountSchema,
     reviews: [reviewSchema],
   },
-  { collection: "storage" }
+  { collection: "storage_devices" }
 );
 
 const Storage = models.Storage || model("Storage", storageSchema);

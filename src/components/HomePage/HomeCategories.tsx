@@ -188,6 +188,7 @@ const HomeCategories = () => {
                         alt={`Product Category`}
                         className={`hover:scale-110 transition-transform aspect-square object-cover min-w-28 select-none`}
                         priority
+                        quality={100}
                       ></Image>
                     </Link>
                   </Tooltip>
