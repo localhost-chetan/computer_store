@@ -122,10 +122,8 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
                 color={`primary`}
                 variant={`shadow`}
                 radius={`sm`}
-                showIcon={true}
-              >
-                Add to Cart
-              </AddToCart>
+                // showIcon={true}
+              ></AddToCart>
             </Tooltip>
 
             <span className="sr-only">Buy Now button</span>
@@ -138,7 +136,6 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
                 color={`success`}
                 variant={`shadow`}
                 radius={`sm`}
-                showIcon={false}
               ></BuyNow>
             </Tooltip>
           </div>

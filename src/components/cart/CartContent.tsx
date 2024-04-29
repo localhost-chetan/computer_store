@@ -17,7 +17,15 @@ const CartContent = () => {
   return (
     <>
       <div className={`overflow-hidden`}>
-        <div className={`space-y-3 border`}>
+        <div className={`space-y-3`}>
+          <div
+            className={`grid w-full grid-cols-6 p-3 *:text-center dark:bg-gray-800`}
+          >
+            <span className={`col-span-3`}>PRODUCT</span>
+            <span className={``}>PRICE</span>
+            <span className={``}>QUANTITY</span>
+            <span className={`ml-auto`}>SUBTOTAL</span>
+          </div>
           {cartProducts.map(
             ({
               productId,
@@ -30,7 +38,7 @@ const CartContent = () => {
               <>
                 <div
                   key={productId}
-                  className={`grid grid-cols-6 items-center justify-between gap-x-2 align-middle`}
+                  className={`grid w-full grid-cols-6 items-center justify-between gap-x-2 align-middle`}
                 >
                   <div className={`col-span-3 flex items-center gap-x-4`}>
                     <Image
@@ -49,22 +57,30 @@ const CartContent = () => {
                     </h4>
                   </div>
 
-                  <div>
+                  <div className={`text-center`}>
                     <PriceConvertor
                       percentage={discountPercent}
                       price={price}
+                      md={`text-xl`}
+                      lg={`text-2xl`}
                     ></PriceConvertor>
                   </div>
 
-                  <div className={``}>
-                    <QuantityComp />
-                  </div>
+                  <div
+                    className={`col-span-2 flex w-full flex-col items-center gap-x-4 gap-y-3 lg:flex-row`}
+                  >
+                    <div className={`ml-2`}>
+                      <QuantityComp showText={false} />
+                    </div>
 
-                  <div className={``}>
-                    <PriceConvertor
-                      price={1000}
-                      percentage={discountPercent}
-                    ></PriceConvertor>
+                    <div className={`ml-auto w-fit justify-end`}>
+                      <PriceConvertor
+                        price={1000}
+                        percentage={discountPercent}
+                        md={`text-xl`}
+                        lg={`text-2xl`}
+                      ></PriceConvertor>
+                    </div>
                   </div>
                 </div>
 

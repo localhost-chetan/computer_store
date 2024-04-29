@@ -28,10 +28,14 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     } else {
       localStorage.setItem("products", JSON.stringify(cartProducts));
     }
-  }, [cartProducts]);
+  }, []);
+
+  const addToCart = (product: ProductDataType) => {
+    setCartProducts((prevCartProducts) => [...prevCartProducts, product]);
+  };
 
   return (
-    <CartContext.Provider value={{ cartProducts, setCartProducts }}>
+    <CartContext.Provider value={{ cartProducts, setCartProducts, addToCart }}>
       {children}
     </CartContext.Provider>
   );

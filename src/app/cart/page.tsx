@@ -13,12 +13,12 @@ const CartPage = () => {
     <Container>
       <Breadcrumb>Cart</Breadcrumb>
 
-      <section className={`flex flex-col gap-x-5 gap-y-5 border lg:flex-row`}>
-        <div className={`shrink-0 grow-[2] border`}>
+      <section className={`flex flex-col gap-x-5 gap-y-5 xl:flex-row`}>
+        <div className={``}>
           <CartContent />
         </div>
 
-        <div className={`grow-[1]`}>
+        <div className={`invisible`}>
           <h2 className={`text-2xl font-bold`}>Cart Tools</h2>
 
           <div className={`gap-x- 10 flex items-center justify-between`}>

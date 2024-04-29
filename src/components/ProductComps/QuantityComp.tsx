@@ -8,10 +8,12 @@ const QuantityComp = ({
   min = 1,
   max = 10,
   scale,
+  showText = true,
 }: {
   min?: number;
   max?: number;
   scale?: string;
+  showText?: boolean;
 }) => {
   const [counter, setCounter] = useState(1);
 
@@ -25,7 +27,9 @@ const QuantityComp = ({
 
   return (
     <div className={cn(`flex items-stretch gap-2 font-semibold ${scale}`)}>
-      <div className={`self-center `}>Qty:</div>
+      <div className={cn(`self-center ${showText ? "block" : "hidden"}`)}>
+        Qty:
+      </div>
 
       <div className={`flex overflow-hidden rounded-md`}>
         <div className={``}>
