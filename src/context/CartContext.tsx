@@ -28,7 +28,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     } else {
       localStorage.setItem("products", JSON.stringify(cartProducts));
     }
-  }, []);
+  }, [cartProducts]);
 
   return (
     <CartContext.Provider value={{ cartProducts, setCartProducts }}>

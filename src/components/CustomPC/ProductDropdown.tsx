@@ -51,7 +51,7 @@ const ProductDropdown = ({
     };
 
     fetchData();
-  }, []);
+  }, [productCategory]);
 
   return (
     <>

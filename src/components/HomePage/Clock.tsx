@@ -45,6 +45,7 @@ const Clock = () => {
     }
   }, [
     deadline,
+    remainingTime,
     // remainingTime.days,
     // remainingTime.hours,
     // remainingTime.minutes,

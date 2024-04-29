@@ -56,7 +56,7 @@ const AddToCart = memo(
         (product: ProductDataType) =>
           product.productId === productData?.productId,
       );
-    }, [cartProducts]);
+    }, [cartProducts, productData?.productId]);
 
     const handleClick = () => {
       console.log(
@@ -86,7 +86,7 @@ const AddToCart = memo(
         });
       }
       localStorage.setItem("products", JSON.stringify(cartProducts));
-    }, [cartProducts]);
+    }, [cartProducts, cartBtnState, isProductInCart]);
 
     return (
       <Button
