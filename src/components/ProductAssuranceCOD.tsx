@@ -9,11 +9,11 @@ const Wrapper = ({
 }) => {
   return (
     <div className={`space-y-3 text-pretty`}>
-      <h2 className={`font-bold text-xl flex gap-2 items-center`}>
+      <h2 className={`flex items-center gap-2 text-xl font-bold`}>
         <span>{icon}</span>
         <span>{heading}</span>
       </h2>
-      <p className={`opacity-85 text-sm max-w-[55ch]`}>{description}</p>
+      <p className={`max-w-[55ch] text-sm opacity-85`}>{description}</p>
     </div>
   );
 };
@@ -21,7 +21,7 @@ const Wrapper = ({
 const ProductAssuranceCOD = () => {
   return (
     <div
-      className={`bg-blue-100 dark:bg-gray-800 rounded-sm px-5 py-7 space-y-8`}
+      className={`space-y-8 rounded-sm bg-blue-100 px-5 py-7 dark:bg-gray-800`}
     >
       <Wrapper
         icon={`💥`}

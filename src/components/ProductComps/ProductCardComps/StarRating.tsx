@@ -27,9 +27,9 @@ const StarRating = ({
       (
         reviews?.reduce(
           (accumulator, currentValue) => accumulator + currentValue.rating,
-          0
+          0,
         ) / reviews?.length
-      ).toFixed(1)
+      ).toFixed(1),
     );
 
     const ratingStar = Array.from({ length: 5 }, (_, index) => {

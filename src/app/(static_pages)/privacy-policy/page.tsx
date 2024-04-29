@@ -15,9 +15,9 @@ const PrivaryPolicy = () => {
     <Container>
       <Breadcrumb>Privacy Policy</Breadcrumb>
 
-      <div className={`text-pretty max-w-[50ch] sm:max-w-[75ch]`}>
+      <div className={`max-w-[50ch] text-pretty sm:max-w-[75ch]`}>
         <h1
-          className={`text-pretty font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-5`}
+          className={`mb-5 text-pretty text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl`}
         >
           Privacy Policy
         </h1>
@@ -49,7 +49,7 @@ const PrivaryPolicy = () => {
           incorporated into and subject to the terms of the User Agreement.
         </Paragraph>
 
-        <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+        <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
           <li className={``}>
             At flashbyte.com, we are extremely proud of our commitment to
             protect your privacy. We value your trust in us. We will work hard
@@ -57,7 +57,7 @@ const PrivaryPolicy = () => {
             services and recommend us to friends and family. Please read the
             following policy to understand how your personal information will be
             treated as you make full use of our Site. We want you to :
-            <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+            <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
               <li className={``}>feel comfortable using our Site.</li>
               <li className={``}>feel secure submitting information to us.</li>
               <li className={``}>
@@ -112,7 +112,7 @@ const PrivaryPolicy = () => {
 
           <li>
             The type of information we will collect about you includes:
-            <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+            <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
               <li className={``}>Your Name</li>
               <li className={``}>Address</li>
               <li className={``}>Phone Number</li>

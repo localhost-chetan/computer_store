@@ -9,10 +9,9 @@ type PropTypes = {
 
 const ProductCategory = async ({ params }: PropTypes) => {
   console.log(params);
-
   const responseObj = await fetch(
-    `http://${process.env.BASE_URL}/api/products/${params.category}`,
-    { cache: `no-cache` }
+    `${process.env.BASE_URL}/api/products/${params.category}`,
+    { cache: `no-cache` },
   ); //returns a promise which resolves to a response object
   const data = await responseObj
     .json() // return a promise which resolves to parsed JSON data
@@ -20,11 +19,11 @@ const ProductCategory = async ({ params }: PropTypes) => {
 
   return (
     <>
-      <section className={`sm:px-[5vw] py-5 px-2 flex gap-2 mt-5 mb-10`}>
+      <section className={`mb-10 mt-5 flex gap-2 px-2 py-5 sm:px-[5vw]`}>
         <section className={`w-full`}>
-          <Breadcrumb>{data.at(0)?.category as string}</Breadcrumb>
+          <Breadcrumb>{data?.at(0)?.category as string}</Breadcrumb>
 
-          <section className={`flex flex-col gap-y-10 w-full`}>
+          <section className={`flex w-full flex-col gap-y-10`}>
             <h1 className={`text-2xl font-extrabold capitalize`}>
               {data.at(0)?.category} Page
             </h1>

@@ -1,7 +1,8 @@
+import { cn } from "@/lib/utils";
 import { Select, SelectItem } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
-export default function Category({ className }: { className: string }) {
+const Category = ({ className }: { className: string }) => {
   type CategoryType = {
     image?: string;
     category: string;
@@ -18,12 +19,20 @@ export default function Category({ className }: { className: string }) {
       href: `/products/processors`,
     },
     {
-      category: "RAM",
-      href: `/products/ram_modules`,
+      category: "Mouse",
+      href: `/products/mouses`,
     },
     {
       category: "Motherboards",
       href: `/products/motherboards`,
+    },
+    {
+      category: "Cabinets",
+      href: `/products/cabinets`,
+    },
+    {
+      category: "RAM",
+      href: `/products/ram_modules`,
     },
     {
       category: "Graphics Cards",
@@ -33,10 +42,7 @@ export default function Category({ className }: { className: string }) {
       category: "Monitors",
       href: `/products/monitors`,
     },
-    {
-      category: "Mouse",
-      href: `/products/mouses`,
-    },
+
     {
       category: "Keyboard",
       href: `/products/keyboards`,
@@ -49,10 +55,7 @@ export default function Category({ className }: { className: string }) {
       category: "Storage",
       href: `/products/storage_devices`,
     },
-    {
-      category: "Cabinets",
-      href: `/products/cabinets`,
-    },
+
     {
       category: "Case Fans",
       href: `/products/case_fans`,
@@ -67,7 +70,7 @@ export default function Category({ className }: { className: string }) {
     },
   ];
 
-  console.log(`Category`);
+  console.log(`Category component`);
 
   const router = useRouter();
 
@@ -77,7 +80,7 @@ export default function Category({ className }: { className: string }) {
       label={`All Categories`}
       aria-label={`Categories`}
       placeholder={`Choose category`}
-      className={`${className} select-none`}
+      className={cn(`${className} select-none`)}
       radius={`none`}
       size={`sm`}
     >
@@ -85,6 +88,7 @@ export default function Category({ className }: { className: string }) {
         return (
           <SelectItem
             key={category}
+            // textValue={category}
             value={category}
             onClick={() => router.push(href)}
           >
@@ -94,4 +98,6 @@ export default function Category({ className }: { className: string }) {
       }}
     </Select>
   );
-}
+};
+
+export default Category;

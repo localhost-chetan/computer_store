@@ -41,23 +41,23 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
       </Breadcrumb>
 
       <section
-        className={`flex flex-col sm:px-10 md:px-18 lg:flex-row gap-x-4 py-7 lg:px-5`}
+        className={`md:px-18 flex flex-col gap-x-4 py-7 sm:px-10 lg:flex-row lg:px-5`}
       >
         <ImageSlider productData={productData} />
 
         {/* Details */}
         <div
-          className={`w-full bg-slate-100 dark:bg-gray-900 px-4 py-8 lg:py-4 md:px-5 space-y-6 shadow-lg shadow-gray-200 dark:shadow-slate-800`}
+          className={`w-full space-y-6 bg-slate-100 px-4 py-8 shadow-lg shadow-gray-200 dark:bg-gray-900 dark:shadow-slate-800 md:px-5 lg:py-4`}
         >
           {/* Product Title */}
           <div className={`flex items-center justify-between gap-x-3`}>
             <h2
-              className={`font-extrabold text-lime-950 dark:text-lime-100 line-clamp-3 text-xl sm:text-[1.4rem] md:text-xxl lg:text-2xl tracking-wide text-pretty`}
+              className={`md:text-xxl line-clamp-3 text-pretty text-xl font-extrabold tracking-wide text-lime-950 dark:text-lime-100 sm:text-[1.4rem] lg:text-2xl`}
             >
               {productData.name}
             </h2>
 
-            <div className={`flex gap-x-2 items-center`}>
+            <div className={`flex items-center gap-x-2`}>
               <WishListIcon />
               <span className="sr-only">Add to Wishlist</span>
 
@@ -91,9 +91,10 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
             <PriceConvertor
               price={productData.price}
               percentage={productData?.discount?.percentage as number}
+              lg={`text-4xl`}
             ></PriceConvertor>
 
-            <p className={`text-slate-500 text-md line-through`}>
+            <p className={`text-md text-slate-500 line-through`}>
               {Math.floor(productData.price * 80).toLocaleString()}
             </p>
           </div>
@@ -101,7 +102,7 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
           {/* Description */}
           <span className="sr-only">{productData.name} description</span>
           <p
-            className={`text-sm md:text-base text-slate-800 dark:text-gray-200 text-pretty tracking-wide`}
+            className={`text-pretty text-sm tracking-wide text-slate-800 dark:text-gray-200 md:text-base`}
           >
             {productData.description}
           </p>
@@ -110,7 +111,7 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
 
           {/* Cart/Purchase buttons */}
           <div
-            className={`flex flex-row items-center justify-evenly gap-x-10 scale-95 sm:scale-100 md:justify-start md:gap-6 pt-4`}
+            className={`flex scale-95 flex-row items-center justify-evenly gap-x-10 pt-4 sm:scale-100 md:justify-start md:gap-6`}
           >
             <span className="sr-only">Add to cart button</span>
             <Tooltip
@@ -144,17 +145,17 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
 
           {/* Extra info */}
           <section
-            className={`border-solid border-2 dark:border-white border-gray-800 flex flex-col justify-start w-fit`}
+            className={`flex w-fit flex-col justify-start border-2 border-solid border-gray-800 dark:border-white`}
           >
-            <div className={`flex gap-4 items-center px-5 py-4`}>
+            <div className={`flex items-center gap-4 px-5 py-4`}>
               {/* icon */}
               <TbTruckDelivery size={30} />
               {/* text */}
-              <div className={`flex flex-col gap-y-1 line-clamp-2`}>
+              <div className={`line-clamp-2 flex flex-col gap-y-1`}>
                 <p className={`font-bold`}>Free Delivery</p>
                 <Link
                   href={`#`}
-                  className={`text-xs md:text-sm text-slate-600 dark:text-gray-400 underline underline-offset-2`}
+                  className={`text-xs text-slate-600 underline underline-offset-2 dark:text-gray-400 md:text-sm`}
                 >
                   Enter your postal code for Delivery Availability
                 </Link>
@@ -162,10 +163,10 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
             </div>
 
             <hr
-              className={`border-small border-solid dark:border-gray-700 border-slate-400`}
+              className={`border-small border-solid border-slate-400 dark:border-gray-700`}
             />
 
-            <div className={`flex gap-4 items-center px-5 py-4`}>
+            <div className={`flex items-center gap-4 px-5 py-4`}>
               {/* icon */}
               <RiLoopLeftLine size={30} />
 
@@ -173,7 +174,7 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
               <div>
                 <p className={`font-bold`}>Return Delivery</p>
                 <p
-                  className={`text-xs md:text-sm text-slate-600 dark:text-gray-400 underline underline-offset-2 flex gap-x-1 items-center`}
+                  className={`flex items-center gap-x-1 text-xs text-slate-600 underline underline-offset-2 dark:text-gray-400 md:text-sm`}
                 >
                   <span> Free 7 Days Delivery Returns</span>
                   <Link href={``}>
@@ -185,7 +186,7 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
           </section>
 
           <hr
-            className={`border-b-small border-solid dark:border-slate-500 border-gray-700`}
+            className={`border-b-small border-solid border-gray-700 dark:border-slate-500`}
           />
 
           {/*Tech Specifications*/}
@@ -408,6 +409,126 @@ const ProductDetails = ({ productData }: ProductDetailsPropType) => {
                     <td className={``}>
                       {productData?.heatSpreader && "True"}
                     </td>
+                  </tr>
+                )}
+              </tbody>
+            )}
+
+            {productData.category === "Cabinet" && (
+              <tbody>
+                {productData?.colour && (
+                  <tr className={`details`}>
+                    <td className={``}>Colour</td>
+                    <td className={``}>{productData?.colour}</td>
+                  </tr>
+                )}
+
+                {productData?.brand && (
+                  <tr className={`details`}>
+                    <td className={``}>Brand</td>
+                    <td className={``}>{productData?.brand}</td>
+                  </tr>
+                )}
+
+                {productData?.material && (
+                  <tr className={`details`}>
+                    <td className={``}>Material</td>
+                    <td className={``}>{productData?.material}</td>
+                  </tr>
+                )}
+
+                {productData?.dimensions && (
+                  <tr className={`details`}>
+                    <td className={``}>Dimensions</td>
+                    <td className={``}>{productData?.dimensions}</td>
+                  </tr>
+                )}
+
+                {productData?.weight && (
+                  <tr className={`details`}>
+                    <td className={``}>Weight</td>
+                    <td className={``}>{productData?.weight}</td>
+                  </tr>
+                )}
+              </tbody>
+            )}
+
+            {productData.category === "Case Fan" && (
+              <tbody>
+                {productData?.type && (
+                  <tr className={`details`}>
+                    <td className={``}>Type</td>
+                    <td className={``}>{productData?.type}</td>
+                  </tr>
+                )}
+
+                {productData?.brand && (
+                  <tr className={`details`}>
+                    <td className={``}>Brand</td>
+                    <td className={``}>{productData?.brand}</td>
+                  </tr>
+                )}
+
+                {productData?.fanSize && (
+                  <tr className={`details`}>
+                    <td className={``}>Fan Size</td>
+                    <td className={``}>{productData?.fanSize}</td>
+                  </tr>
+                )}
+
+                {productData?.bearingType && (
+                  <tr className={`details`}>
+                    <td className={``}>Bearing Type</td>
+                    <td className={``}>{productData?.bearingType}</td>
+                  </tr>
+                )}
+
+                {productData?.noiseLevel && (
+                  <tr className={`details`}>
+                    <td className={``}>Noise Level</td>
+                    <td className={``}>{productData?.noiseLevel}</td>
+                  </tr>
+                )}
+
+                {productData?.fanSpeed && (
+                  <tr className={`details`}>
+                    <td className={``}>Fan Speed</td>
+                    <td className={``}>{productData?.fanSpeed}</td>
+                  </tr>
+                )}
+
+                {productData?.airflow && (
+                  <tr className={`details`}>
+                    <td className={``}>Air Flow</td>
+                    <td className={``}>{productData?.airflow}</td>
+                  </tr>
+                )}
+
+                {productData?.powerConnector && (
+                  <tr className={`details`}>
+                    <td className={``}>Power Connector</td>
+                    <td className={``}>{productData?.powerConnector}</td>
+                  </tr>
+                )}
+
+                {productData?.dimensions && (
+                  <tr className={`details`}>
+                    <td className={``}>Dimensions</td>
+                    <td className={``}>{productData?.dimensions}</td>
+                  </tr>
+                )}
+
+                {productData?.compatibility && (
+                  <tr className={`details`}>
+                    <td className={``}>Compatibility</td>
+                    <td className={``}>{productData?.compatibility}</td>
+                  </tr>
+                )}
+
+                {productData?.warranty && (
+                  <tr className={`details`}>
+                    <td className={``}>Warranty</td>
+                    <td className={``}>{productData?.warranty}</td>
                   </tr>
                 )}
               </tbody>

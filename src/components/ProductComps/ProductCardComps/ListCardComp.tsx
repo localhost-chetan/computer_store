@@ -22,10 +22,10 @@ const ListCardComp = ({
   return (
     <div
       key={productId ?? index}
-      className={`w-full h-64 overflow-y-hidden shadow-lg shadow-slate-300 dark:shadow-slate-900 group/card cursor-pointer hover:scale-[1.01] ease-in-out duration-200 rounded-md dark:bg-gray-900 bg-slate-100 flex gap-2`}
+      className={`group/card flex h-64 w-full cursor-pointer gap-2 overflow-y-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.01] dark:bg-gray-900 dark:shadow-slate-900`}
     >
       {/* Image Section */}
-      <div className={`flex h-full relative`}>
+      <div className={`relative flex h-full`}>
         <Image
           style={{ height: "auto" }}
           src={imageURLs?.at(0)?.toString() as string}
@@ -33,11 +33,11 @@ const ListCardComp = ({
           height={300}
           alt={description}
           priority
-          className={`object-contain object-center bg-gradient-to-b from-slate-50 to-slate-300 select-none max-w-[20rem]`}
+          className={`max-w-[20rem] select-none bg-gradient-to-b from-slate-50 to-slate-300 object-contain object-center`}
         />
 
         <div
-          className={`absolute top-3 right-3 sm:invisible group-hover/card:visible`}
+          className={`absolute right-3 top-3 group-hover/card:visible sm:invisible`}
         >
           <WishListIcon />
         </div>
@@ -47,10 +47,10 @@ const ListCardComp = ({
       </div>
 
       {/* Details Section */}
-      <div className={`p-5 flex flex-col gap-y-2 relative`}>
+      <div className={`relative flex flex-col gap-y-2 p-5`}>
         <h1 className={`text-pretty text-xl font-extrabold `}>{productName}</h1>
         <h2
-          className={`text-sm dark:text-slate-400 text-slate-600 line-clamp-2 max-w-[60ch]`}
+          className={`line-clamp-2 max-w-[60ch] text-sm text-slate-600 dark:text-slate-400`}
           title={description}
         >
           {description}
@@ -63,13 +63,13 @@ const ListCardComp = ({
             percentage={discountPercent as number}
           />
 
-          <p className={`text-slate-500 text-sm line-through`}>
+          <p className={`text-sm text-slate-500 line-through`}>
             {Math.floor(price * 80).toLocaleString()}
           </p>
         </div>
 
         {/* Star Rating section */}
-        <h4 className={`text-md flex gap-1 items-center select-none mb-5`}>
+        <h4 className={`text-md mb-5 flex select-none items-center gap-1`}>
           <StarRating
             size={15}
             iconColor={`orange`}
@@ -81,15 +81,21 @@ const ListCardComp = ({
         {/* Add to cart */}
         <div className={`absolute bottom-5 flex items-center gap-4`}>
           <AddToCart
-            color={`primary`}
             variant={`shadow`}
             radius={`sm`}
-            showIcon={true}
+            productData={{
+              productId,
+              productName,
+              image: imageURLs.at(0)!,
+              price,
+              discountPercent,
+              description,
+            }}
           ></AddToCart>
 
           <Link
             href={`/products/${params}/${productId}`}
-            className={`select-none font-bold text-blue-600 dark:text-blue-100 hover:underline decoration-2 underline-offset-4`}
+            className={`select-none font-bold text-blue-600 decoration-2 underline-offset-4 hover:underline dark:text-blue-100`}
           >
             View Details
           </Link>

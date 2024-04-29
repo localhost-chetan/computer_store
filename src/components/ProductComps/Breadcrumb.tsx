@@ -8,10 +8,10 @@ type BreadcrumbProp = {
 
 const Breadcrumb = ({ children, productName }: BreadcrumbProp) => {
   return (
-    <div className={`text-sm text-gray-400 flex items-center mb-8 select-none`}>
+    <div className={`mb-8 flex select-none items-center text-sm text-gray-400`}>
       <Link
         href={`/`}
-        className={`text-gray-800 dark:text-slate-400 dark:hover:text-gray-200 hover:text-bold`}
+        className={`hover:text-bold text-gray-800 dark:text-slate-400 dark:hover:text-gray-200`}
       >
         Home
       </Link>
@@ -19,7 +19,7 @@ const Breadcrumb = ({ children, productName }: BreadcrumbProp) => {
       <IoIosArrowForward size={15} />
 
       <span
-        className={`cursor-pointer font-bold dark:font-medium text-gray-950 dark:text-white text-nowrap`}
+        className={`cursor-pointer text-nowrap font-bold text-gray-950 dark:font-medium dark:text-white`}
       >
         {children}
       </span>
@@ -29,7 +29,7 @@ const Breadcrumb = ({ children, productName }: BreadcrumbProp) => {
           <IoIosArrowForward size={15} />
 
           <span
-            className={`font-bold dark:font-medium text-gray-950 dark:text-white text-pretty`}
+            className={`text-pretty font-bold text-gray-950 dark:font-medium dark:text-white`}
           >
             {productName}
           </span>

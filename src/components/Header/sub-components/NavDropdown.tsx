@@ -74,8 +74,8 @@ const NavDropdown = () => {
             onClick={() =>
               signOut(() =>
                 router.push(
-                  `${process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL}`
-                )
+                  `${process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL}`,
+                ),
               )
             }
           >

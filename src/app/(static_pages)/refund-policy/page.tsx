@@ -14,16 +14,16 @@ const RefundPolicy = () => {
     <Container>
       <Breadcrumb>Refund Policy</Breadcrumb>
 
-      <div className={`flex gap-10 flex-col lg:flex-row pt-6 pb-16`}>
-        <div className={`w-full flex flex-col gap-y-10`}>
+      <div className={`flex flex-col gap-10 pb-16 pt-6 lg:flex-row`}>
+        <div className={`flex w-full flex-col gap-y-10`}>
           <h1
-            className={`font-extrabold text-pretty mb-2 text-2xl sm:text-3xl lg:text-4xl`}
+            className={`mb-2 text-pretty text-2xl font-extrabold sm:text-3xl lg:text-4xl`}
           >
             Refund, Return & Cancellation Policy
           </h1>
 
           <ul
-            className={`text-pretty max-w-[55ch] lg:max-w-[65ch] space-y-10 list-inside sm:list-outside list-disc`}
+            className={`max-w-[55ch] list-inside list-disc space-y-10 text-pretty sm:list-outside lg:max-w-[65ch]`}
           >
             <li className={``}>
               If the customer requests to cancel the order before we have
@@ -46,13 +46,13 @@ const RefundPolicy = () => {
 
           <div className={`mt-7`}>
             <h2
-              className={`font-extrabold text-pretty mb-5 text-2xl sm:text-3xl lg:text-4xl`}
+              className={`mb-5 text-pretty text-2xl font-extrabold sm:text-3xl lg:text-4xl`}
             >
               Refund Policy
             </h2>
 
             <ul
-              className={`text-pretty max-w-[55ch] lg:max-w-[65ch] space-y-4 list-disc list-inside sm:list-outside`}
+              className={`max-w-[55ch] list-inside list-disc space-y-4 text-pretty sm:list-outside lg:max-w-[65ch]`}
             >
               <li className={``}>
                 For refund you can{" "}
@@ -69,13 +69,13 @@ const RefundPolicy = () => {
           </div>
         </div>
 
-        <div className={`w-full overflow-hidden self-center`}>
+        <div className={`w-full self-center overflow-hidden`}>
           <Image
             src={RefundPolicyPic}
             alt={`REfund and Cancellation Policy`}
             priority
             width={500}
-            className={`rounded-lg select-none`}
+            className={`select-none rounded-lg`}
           ></Image>
         </div>
       </div>

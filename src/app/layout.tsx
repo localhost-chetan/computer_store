@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header/Header";
-// import Footer from "@/components/Footer/Footer";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
+import Footer from "@/components/Footer/Footer";
+import CartContextProvider from "@/context/CartContext";
+import FreeDeliveryContextProvider from "@/context/FreeDeliveryPrice";
+// const Footer = dynamic(() => import("@/components/Footer/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,9 +34,13 @@ export default function RootLayout({
 
         <body className={`${inter.className} m-0 min-h-screen`}>
           <Providers>
-            <Header />
-            <main className={``}>{children}</main>
-            <Footer />
+            <FreeDeliveryContextProvider>
+              <CartContextProvider>
+                <Header />
+                <main className={``}>{children}</main>
+                <Footer />
+              </CartContextProvider>
+            </FreeDeliveryContextProvider>
           </Providers>
         </body>
       </html>

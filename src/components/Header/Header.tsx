@@ -1,18 +1,18 @@
 import dynamic from "next/dynamic";
-import { Badge, Button, Spinner } from "@nextui-org/react";
+import { Button, Spinner } from "@nextui-org/react";
 import Link from "next/link";
 import ThemeSwitcher from "./sub-components/ThemeSwitcher";
 import NavDropdown from "./sub-components/NavDropdown";
 const SearchComponent = dynamic(
-  () => import("./sub-components/SearchComponent")
+  () => import("./sub-components/SearchComponent"),
 );
 const SearchIconModal = dynamic(
-  () => import("./sub-components/SearchIconModal")
+  () => import("./sub-components/SearchIconModal"),
 );
-import { FaShoppingCart } from "react-icons/fa";
 import { auth, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
-import MagicBorder from "../AceternityComps/MagicBorder";
 import Image from "next/image";
+import CartIconComp from "../cart/CartIcons";
+import Announcement from "./Announcement";
 
 const Header = () => {
   const { userId }: { userId: string | null } = auth();
@@ -22,30 +22,16 @@ const Header = () => {
 
   return (
     <header
-      className={`sm:pb-4 border-b-small border-b-slate-500 flex flex-col justify-between gap-2`}
+      className={`flex flex-col justify-between gap-2 border-b-small border-b-slate-500 sm:pb-4`}
     >
-      <div
-        className={`flex justify-center items-center gap-2 p-2 text-[.7rem] sm:text-[.9rem] text-white bg-gradient-to-r from-black to-blue-900`}
-      >
-        <p className={``}>
-          Free delivery for orders above{" "}
-          <span className={`text-green-400 font-bold`}>₹10,000</span>
-        </p>
-        <MagicBorder
-          href={`/products/headsets`}
-          size={`sm`}
-          className={`text-[.75rem]`}
-        >
-          Shop 🎁
-        </MagicBorder>
-      </div>
+      <Announcement />
 
       {/* Navbar */}
-      <nav className={`sm:px-[5vw] py-2 px-1 select-none`}>
-        <ul role="navigation" className={`flex justify-between items-center`}>
+      <nav className={`select-none px-1 py-2 sm:px-[5vw]`}>
+        <ul role="navigation" className={`flex items-center justify-between`}>
           {/* Branding */}
           <li key={`branding `}>
-            <Link href={`/`} className={`flex gap-1 items-center`}>
+            <Link href={`/`} className={`flex items-center gap-1`}>
               <Image
                 src={`/Brand_Logo/Brand_Logo.png`}
                 width={40}
@@ -53,13 +39,13 @@ const Header = () => {
                 alt={`Brand Logo`}
                 priority
               ></Image>
-              <h2 className={`text-xl font-bold hidden sm:block`}>FlashByte</h2>
+              <h2 className={`hidden text-xl font-bold sm:block`}>FlashByte</h2>
             </Link>
           </li>
 
           {/* Search Box */}
           <li
-            className={`hidden lg:block rounded-xl overflow-hidden focus-within:ring-4 focus-within:ring-offset-3  focus-within:ring-offset-white dark:focus-within:ring-offset-black focus-within:ring-blue-400 shadow-md shadow-blue-500/100 dark:shadow-blue-500/50`}
+            className={`focus-within:ring-offset-3 hidden overflow-hidden rounded-xl shadow-md shadow-blue-500/100  focus-within:ring-4 focus-within:ring-blue-400 focus-within:ring-offset-white dark:shadow-blue-500/50 dark:focus-within:ring-offset-black lg:block`}
             key={`search`}
           >
             {/* Search Component */}
@@ -73,7 +59,7 @@ const Header = () => {
           {/* Auth */}
           <li
             key={`authentication`}
-            className={`flex items-center flex-row-reverse gap-2`}
+            className={`flex flex-row-reverse items-center gap-2`}
           >
             {userId ? (
               <>
@@ -101,24 +87,7 @@ const Header = () => {
             <SearchIconModal />
 
             {/* Cart Icon */}
-            <Badge
-              content={0}
-              color={`danger`}
-              className={`mr-1 cursor-pointer`}
-              showOutline={false}
-              placement={`top-right`}
-            >
-              <Button
-                isIconOnly
-                as={Link}
-                href={`/cart`}
-                variant={`flat`}
-                color={`default`}
-                className={`mr-1`}
-              >
-                <FaShoppingCart className={`cursor-pointer text-xl`} />
-              </Button>
-            </Badge>
+            <CartIconComp />
           </li>
         </ul>
       </nav>

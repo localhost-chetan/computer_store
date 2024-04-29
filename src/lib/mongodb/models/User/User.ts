@@ -17,9 +17,9 @@ const userSchema = new Schema<UserType>(
     cancellations: { type: [cancellationSchema], default: [] }, // Array of cancellations (embedded documents)
     reviews: { type: [reviewSchema], default: [] }, // Array of reviews (embedded documents)
     password: { type: String, default: null }, // Hashed password for security
-    phoneNumber: { type: String, default: null },
+    phoneNumber: { type: String, default: null, required: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // Consider using mongoose.Schema.Types.ObjectId for order, product, cancellation, and review IDs

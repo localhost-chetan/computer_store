@@ -21,7 +21,7 @@ const OurStore = ({
     <div className={`flex items-center gap-x-4`}>
       <span className={``}>{icon}</span>
       <div
-        className={`text-pretty text-sm md:text-base flex flex-col space-y-2 max-w-[40ch]`}
+        className={`flex max-w-[40ch] flex-col space-y-2 text-pretty text-sm md:text-base`}
       >
         {description}
       </div>
@@ -30,7 +30,7 @@ const OurStore = ({
 };
 
 const Hours = ({ row }: { row: React.ReactNode }) => {
-  return <div className={`flex justify-between items-center`}>{row}</div>;
+  return <div className={`flex items-center justify-between`}>{row}</div>;
 };
 
 const ContactUs = () => {
@@ -78,12 +78,12 @@ const ContactUs = () => {
         </div> */}
 
         <section
-          className={`flex flex-col gap-x-4 gap-y-6 md:flex-row justify-center sm:justify-around items-center md:items-start p-0 md:py-5`}
+          className={`flex flex-col items-center justify-center gap-x-4 gap-y-6 p-0 sm:justify-around md:flex-row md:items-start md:py-5`}
         >
           <div
-            className={`shadow-2xl rounded-md dark:shadow-gray-900 px-4 py-10 md:px-5 md:py-10 border-small dark:border-gray-700 space-y-4 w-full md:grow`}
+            className={`w-full space-y-4 rounded-md border-small px-4 py-10 shadow-2xl dark:border-gray-700 dark:shadow-gray-900 md:grow md:px-5 md:py-10`}
           >
-            <h1 className={`font-extrabold text-2xl sm:text-3xl`}>
+            <h1 className={`text-2xl font-extrabold sm:text-3xl`}>
               Leave Us A Message
             </h1>
 
@@ -95,7 +95,7 @@ const ContactUs = () => {
               <form
                 action={``}
                 method={`POST`}
-                className={`grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-6 mt-10`}
+                className={`mt-10 grid grid-cols-1 gap-x-7 gap-y-6 sm:grid-cols-2`}
               >
                 {/* First Name */}
                 <Input
@@ -172,7 +172,7 @@ const ContactUs = () => {
                   variant={`shadow`}
                   radius={`sm`}
                   size={`md`}
-                  className={`col-span-2 sm:w-fit px-5`}
+                  className={`col-span-2 px-5 sm:w-fit`}
                 >
                   Send Message
                 </Button>
@@ -181,10 +181,10 @@ const ContactUs = () => {
           </div>
 
           <div
-            className={`w-full md:max-w-[60ch] md:grow px-4 py-10 md:px-6 space-y-5 shadow-2xl rounded-md dark:shadow-gray-900 border-1.5 dark:border-gray-700 divide-y-1 divide-solid divide-gray-700 dark:divide-slate-500`}
+            className={`w-full space-y-5 divide-y-1 divide-solid divide-gray-700 rounded-md border-1.5 px-4 py-10 shadow-2xl dark:divide-slate-500 dark:border-gray-700 dark:shadow-gray-900 md:max-w-[60ch] md:grow md:px-6`}
           >
             <div className={`space-y-3`}>
-              <h3 className={`font-bold text-xl md:text-2xl`}>Our Store</h3>
+              <h3 className={`text-xl font-bold md:text-2xl`}>Our Store</h3>
               <OurStore
                 icon={<FaLocationDot size={20} />}
                 description={
@@ -211,8 +211,8 @@ const ContactUs = () => {
               />
             </div>
 
-            <div className={`pt-5 space-y-3`}>
-              <h3 className={`font-bold text-xl md:text-2xl`}>Hours</h3>
+            <div className={`space-y-3 pt-5`}>
+              <h3 className={`text-xl font-bold md:text-2xl`}>Hours</h3>
 
               <div className={`space-y-2`}>
                 <Hours
@@ -278,15 +278,15 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className={`pt-5 space-y-3`}>
-              <h3 className={`font-bold text-xl md:text-2xl`}>Careers</h3>
+            <div className={`space-y-3 pt-5`}>
+              <h3 className={`text-xl font-bold md:text-2xl`}>Careers</h3>
 
               <p className={``}>
                 If you are interesting in emplyment opportunities at FlashByte.
                 Please email us :
                 <Link
                   href={`mailto:flashbyte99@gmail.com`}
-                  className={`text-rose-400 font-semibold`}
+                  className={`font-semibold text-rose-400`}
                 >
                   {` flashbyte99@gmail.com`}
                 </Link>
@@ -305,7 +305,7 @@ const ContactUs = () => {
         allowFullScreen={true}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className={`w-full mb-16`}
+        className={`mb-16 w-full`}
       ></iframe>
     </>
   );

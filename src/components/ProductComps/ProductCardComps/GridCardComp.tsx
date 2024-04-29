@@ -26,11 +26,11 @@ const GridCardComp = ({
   return (
     <div
       key={productId ?? index}
-      className={`grid grid-rows-2 gap-y-3 overflow-hidden shadow-lg shadow-slate-300 dark:shadow-slate-900 max-w-[25rem] sm:min-w-[15rem] md:max-w-[24rem] lg:max-w-[22rem] xl:max-w-[25rem] content-between dark:bg-gray-900 bg-slate-100 group/card cursor-pointer hover:scale-[1.03] ease-in-out duration-200 rounded-md h-[500px] mx-auto`}
+      className={`group/card mx-auto grid h-[500px] max-w-[25rem] cursor-pointer grid-rows-2 content-between gap-y-3 overflow-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.03] dark:bg-gray-900 dark:shadow-slate-900 sm:min-w-[15rem] md:max-w-[24rem] lg:max-w-[22rem] xl:max-w-[25rem]`}
     >
       {/* Image section */}
       <div
-        className={`w-full select-none relative bg-gradient-to-b from-slate-100 to-slate-300 border-b-gray-50 border-gray-600 self-stretch`}
+        className={`relative w-full select-none self-stretch border-gray-600 border-b-gray-50 bg-gradient-to-b from-slate-100 to-slate-300`}
       >
         <Image
           style={{ width: "auto" }}
@@ -40,11 +40,11 @@ const GridCardComp = ({
           height={300}
           // placeholder={`blur`}
           priority
-          className={`object-scale-down object-center w-full h-full aspect-video`}
+          className={`aspect-video h-full w-full object-scale-down object-center`}
         />
 
         <div
-          className={`absolute top-3 right-3 sm:invisible group-hover/card:visible`}
+          className={`absolute right-3 top-3 group-hover/card:visible sm:invisible`}
         >
           <WishListIcon />
         </div>
@@ -55,16 +55,16 @@ const GridCardComp = ({
 
       {/* Details Section */}
       <div
-        className={`p-3 pt-2 pb-4 flex flex-col gap-y-4 self-stretch justify-between`}
+        className={`flex flex-col justify-between gap-y-4 self-stretch p-3 pb-4 pt-2`}
       >
         <h1
-          className={`text-xl font-extrabold text-pretty line-clamp-2`}
+          className={`line-clamp-2 text-pretty text-xl font-extrabold`}
           title={productName}
         >
           {productName}
         </h1>
         <h2
-          className={`text-sm text-ellipsis dark:text-slate-400 text-slate-600 line-clamp-2`}
+          className={`line-clamp-2 text-ellipsis text-sm text-slate-600 dark:text-slate-400`}
           title={description}
         >
           {description}
@@ -76,15 +76,16 @@ const GridCardComp = ({
             <PriceConvertor
               price={price}
               percentage={discountPercent as number}
+              md={`text-2xl`}
             />
 
-            <p className={`text-slate-500 text-sm line-through`}>
+            <p className={`text-sm text-slate-500 line-through`}>
               {Math.floor(price * 80).toLocaleString()}
             </p>
           </div>
 
           {/* Rating */}
-          <h4 className={`text-md flex gap-1 items-center select-none`}>
+          <h4 className={`text-md flex select-none items-center gap-1`}>
             <StarRating
               size={15}
               iconColor={`orange`}
@@ -94,16 +95,20 @@ const GridCardComp = ({
           </h4>
         </div>
 
-        <div className="flex gap-2 items-center justify-around mt-2">
+        <div className="mt-2 flex items-center justify-around gap-2">
           <AddToCart
-            color={`primary`}
             variant={`shadow`}
             key={index}
             radius={`sm`}
-            showIcon={true}
-          >
-            Add to Cart
-          </AddToCart>
+            productData={{
+              productId,
+              productName,
+              image: imageURLs.at(0)!,
+              price,
+              discountPercent,
+              description,
+            }}
+          />
 
           <Link
             href={{
@@ -113,7 +118,7 @@ const GridCardComp = ({
               }/${productId}`,
             }}
             scroll={true}
-            className={`select-none font-bold text-blue-600 dark:text-blue-100 hover:underline decoration-2 underline-offset-4`}
+            className={`select-none font-bold text-blue-600 decoration-2 underline-offset-4 hover:underline dark:text-blue-100`}
           >
             View Details
           </Link>

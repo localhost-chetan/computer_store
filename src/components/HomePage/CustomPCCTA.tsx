@@ -32,10 +32,10 @@ const CustomPCCTA = () => {
   return (
     <Container>
       <div
-        className={`bg-gray-900 text-white p-10 rounded-sm flex flex-col md:flex-row gap-10 justify-around`}
+        className={`flex flex-col justify-around gap-10 rounded-sm bg-gray-900 p-10 text-white md:flex-row`}
       >
         {/* Details */}
-        <div className={`flex flex-col gap-y-8 w-full`}>
+        <div className={`flex w-full flex-col gap-y-8`}>
           <Chip
             color={`danger`}
             variant={`shadow`}
@@ -46,7 +46,7 @@ const CustomPCCTA = () => {
           </Chip>
 
           <h4
-            className={`font-bold text-2xl sm:text-4xl tracking-wider line-clamp-2 leading-7 text-balance`}
+            className={`line-clamp-2 text-balance text-2xl font-bold leading-7 tracking-wider sm:text-4xl`}
           >
             Get Ready to Build Your Dream PC 😎
           </h4>
@@ -70,7 +70,7 @@ const CustomPCCTA = () => {
           style={{
             backgroundImage,
           }}
-          className={`w-full mx-auto flex justify-center`}
+          className={`mx-auto flex w-full justify-center`}
         >
           <Image
             src={RGBCAbinet}

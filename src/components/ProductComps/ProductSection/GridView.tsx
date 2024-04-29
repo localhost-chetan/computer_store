@@ -10,7 +10,7 @@ type GridViewProp = {
 const GridView = ({ data, params }: GridViewProp) => {
   return (
     <section
-      className={`grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-x-10 lg:gap-x-[3vw] gap-x-10 gap-y-12 px-[2vw] sm:px-0 justify-items-center justify-center`}
+      className={`grid grid-cols-1 justify-center justify-items-center gap-x-10 gap-y-12 px-[2vw] sm:grid-cols-2 sm:px-0 md:gap-x-10 lg:grid-cols-3 lg:gap-x-[3vw] xl:grid-cols-3`}
     >
       {data.map((product: CommonFields, index: number) => {
         return (

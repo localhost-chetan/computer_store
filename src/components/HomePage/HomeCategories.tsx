@@ -146,7 +146,7 @@ const HomeCategories = () => {
   return (
     <Container>
       <div className="space-y-5 overflow-hidden">
-        <div className={`flex items-end justify-between mb-10`}>
+        <div className={`mb-10 flex items-end justify-between`}>
           <SectionHeading subHeading={`Categories`}>
             Browse By Category
           </SectionHeading>
@@ -174,7 +174,7 @@ const HomeCategories = () => {
               return (
                 <div
                   key={id}
-                  className={`w-72 sm:w-64 lg:w-56 grow shrink-0 overflow-hidden bg-gradient-br from-slate-100 to-slate-400 shadow-lg rounded-lg shadow-slate-300 dark:shadow-slate-800 border-small mx-auto`}
+                  className={`bg-gradient-br mx-auto w-72 shrink-0 grow overflow-hidden rounded-lg border-small from-slate-100 to-slate-400 shadow-lg shadow-slate-300 dark:shadow-slate-800 sm:w-64 lg:w-56`}
                 >
                   <Tooltip
                     content={product}
@@ -186,7 +186,7 @@ const HomeCategories = () => {
                       <Image
                         src={imageURL}
                         alt={`Product Category`}
-                        className={`hover:scale-110 transition-transform aspect-square object-cover min-w-28 select-none`}
+                        className={`aspect-square min-w-28 select-none object-cover transition-transform hover:scale-110`}
                         priority
                         quality={100}
                       ></Image>
@@ -194,7 +194,7 @@ const HomeCategories = () => {
                   </Tooltip>
                 </div>
               );
-            }
+            },
           )}
         </Carousel>
       </div>

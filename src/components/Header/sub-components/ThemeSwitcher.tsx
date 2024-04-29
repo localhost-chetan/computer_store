@@ -24,7 +24,7 @@ export default function ThemeSwitcher() {
     return (
       <IoMdSunny
         onClick={() => setTheme("light")}
-        className={`hover:cursor-pointer text-2xl sm:text-[1.7rem] ml-auto`}
+        className={`ml-auto text-2xl hover:cursor-pointer sm:text-[1.7rem]`}
       />
     );
   }
@@ -33,7 +33,7 @@ export default function ThemeSwitcher() {
     return (
       <IoMdMoon
         onClick={() => setTheme("dark")}
-        className={`hover:cursor-pointer text-2xl sm:text-[1.7rem] ml-auto`}
+        className={`ml-auto text-2xl hover:cursor-pointer sm:text-[1.7rem]`}
       />
     );
   }

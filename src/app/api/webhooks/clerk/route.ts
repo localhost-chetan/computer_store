@@ -12,7 +12,7 @@ const POST = async (request: NextRequest) => {
 
   if (!WEBHOOK_SIGNING_SECRET) {
     throw new Error(
-      "Please add WEBHOOK_SIGNING_SECRET from Clerk Dashboard to .env or .env.local"
+      "Please add WEBHOOK_SIGNING_SECRET from Clerk Dashboard to .env or .env.local",
     );
   }
 
@@ -65,6 +65,7 @@ const POST = async (request: NextRequest) => {
       first_name,
       last_name,
       image_url,
+      phone_numbers,
     } = evt.data;
 
     const user: UserType = {
@@ -72,7 +73,7 @@ const POST = async (request: NextRequest) => {
       email: email_addresses[0]?.email_address,
       userName: username as string,
       fullName: `${first_name} ${last_name}`,
-      // phoneNumber: phone_numbers[0]?.phone_number || null,
+      phoneNumber: phone_numbers[0]?.phone_number || null,
       avatar: image_url,
     };
 

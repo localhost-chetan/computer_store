@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import {
   Button,
   Modal,
@@ -9,11 +9,13 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@nextui-org/react";
-const SearchComponent = dynamic(() => import("./SearchComponent"));
+// const SearchComponent = dynamic(() => import("./SearchComponent"));
 import { IoIosSearch } from "react-icons/io";
+import SearchComponent from "./SearchComponent";
 
 const SearchIconModal = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   console.log(`search icon comp`);
 
   return (
@@ -25,19 +27,19 @@ const SearchIconModal = () => {
         radius={`full`}
         className={`lg:hidden`}
       >
-        <IoIosSearch className={`font-bold text-xl`} />
+        <IoIosSearch className={`text-xl font-bold`} />
       </Button>
 
       <Modal
         placement={`center`}
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        className={`p-4`}
+        className={`relative z-50 p-4`}
       >
         <ModalContent>
           {(_onClose) => (
             <>
-              <ModalHeader className={`text-center p-2`}>
+              <ModalHeader className={`p-2 text-center`}>
                 What are you looking for?
               </ModalHeader>
               <ModalBody>
@@ -58,39 +60,3 @@ const SearchIconModal = () => {
 };
 
 export default SearchIconModal;
-
-//  <Button
-//               isIconOnly
-//               onClick={onOpen}
-//               size={`sm`}
-//               radius={`full`}
-//               className={`md:hidden`}
-//             >
-//               <IoIosSearch className={`font-bold text-xl`} />
-//             </Button>
-
-//            <Modal
-//               placement={`center`}
-//               isOpen={isOpen}
-//               onOpenChange={onOpenChange}
-//               className={`p-4`}
-//             >
-//               <ModalContent>
-//                 {(onClose) => (
-//                   <>
-//                     <ModalHeader className={`text-center p-2`}>
-//                       What are you looking for?
-//                     </ModalHeader>
-//                     <ModalBody>
-//                       {/* Search Component */}
-//                       <SearchComponent
-//                         divClasses={`flex flex-col items-stretch overflow-hidden `}
-//                         categoryClasses={`w-vw border`}
-//                         searchBtnClasses={`w-full`}
-//                         inputAutofucs={false}
-//                       />
-//                     </ModalBody>
-//                   </>
-//                 )}
-//               </ModalContent>
-//             </Modal>

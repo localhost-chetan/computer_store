@@ -16,8 +16,8 @@ const SignOut = () => {
       onClick={() =>
         signOut(() =>
           router.push(
-            process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL as string
-          )
+            process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL as string,
+          ),
         )
       }
     >

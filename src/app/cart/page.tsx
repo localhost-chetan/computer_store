@@ -1,4 +1,7 @@
+import CartContent from "@/components/cart/CartContent";
+import Container from "@/components/Container";
 import Breadcrumb from "@/components/ProductComps/Breadcrumb";
+import PriceConvertor from "@/components/ProductComps/ProductCardComps/PriceConvertor";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,13 +10,31 @@ export const metadata: Metadata = {
 
 const CartPage = () => {
   return (
-    <section className={`sm:px-[5vw] py-5 px-2`}>
+    <Container>
       <Breadcrumb>Cart</Breadcrumb>
 
-      <section className={`h-[75vh] flex justify-center items-center`}>
-        <h2 className={`font-bold text-4xl`}>Your cart is empty. 😎</h2>
+      <section className={`flex flex-col gap-x-5 gap-y-5 border lg:flex-row`}>
+        <div className={`shrink-0 grow-[2] border`}>
+          <CartContent />
+        </div>
+
+        <div className={`grow-[1]`}>
+          <h2 className={`text-2xl font-bold`}>Cart Tools</h2>
+
+          <div className={`gap-x- 10 flex items-center justify-between`}>
+            <h4>Subtotal</h4>
+            <PriceConvertor price={1000} percentage={0}></PriceConvertor>
+          </div>
+          <div className={`flex items-center justify-between`}>
+            <h4>Shipping</h4>
+          </div>
+          <div className={`flex items-center justify-between`}>
+            <h4>Total</h4>
+            <PriceConvertor price={1000} percentage={0}></PriceConvertor>
+          </div>
+        </div>
       </section>
-    </section>
+    </Container>
   );
 };
 

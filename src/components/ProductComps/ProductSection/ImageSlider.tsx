@@ -33,7 +33,7 @@ const ImageSlider = ({ productData }: ImageSliderProp) => {
 
   return (
     <div
-      className={`w-full lg:w-[50%] border-b-small border-gray-500 lg:border-none relative`}
+      className={`relative w-full border-b-small border-gray-500 lg:w-[50%] lg:border-none`}
     >
       <Carousel
         responsive={responsive}
@@ -52,7 +52,7 @@ const ImageSlider = ({ productData }: ImageSliderProp) => {
             height={500}
             priority
             quality={100}
-            className={`w-full shrink-0 grow-0 object-scale-down h-64 md:h-80 lg:h-[30rem] transition-transform ease-in-out duration-500 hover:scale-110 cursor-pointer`}
+            className={`h-64 w-full shrink-0 grow-0 cursor-pointer object-scale-down transition-transform duration-500 ease-in-out hover:scale-110 md:h-80 lg:h-[30rem]`}
           ></Image>
         ))}
       </Carousel>

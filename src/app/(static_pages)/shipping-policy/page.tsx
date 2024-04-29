@@ -13,15 +13,15 @@ const ShippingPolicy = () => {
     <Container>
       <Breadcrumb>Shipping Policy</Breadcrumb>
 
-      <div className={`flex gap-10 flex-col lg:flex-row pt-6 pb-16`}>
-        <div className={`w-full flex flex-col gap-y-10`}>
+      <div className={`flex flex-col gap-10 pb-16 pt-6 lg:flex-row`}>
+        <div className={`flex w-full flex-col gap-y-10`}>
           <h1
-            className={`font-extrabold text-pretty mb-2 text-2xl sm:text-3xl lg:text-4xl`}
+            className={`mb-2 text-pretty text-2xl font-extrabold sm:text-3xl lg:text-4xl`}
           >
             Shipping Policy
           </h1>
           <ul
-            className={`max-w-[55ch] lg:max-w-[65ch] space-y-10 list-inside sm:list-outside list-disc`}
+            className={`max-w-[55ch] list-inside list-disc space-y-10 sm:list-outside lg:max-w-[65ch]`}
           >
             <li className={`text-pretty`}>
               Once a customer places an order the FlashByte team ships the
@@ -45,13 +45,13 @@ const ShippingPolicy = () => {
           </ul>
         </div>
 
-        <div className={`w-full overflow-hidden self-center`}>
+        <div className={`w-full self-center overflow-hidden`}>
           <Image
             src={ShippingPolicyPic}
             alt={"Shipping Policy"}
             priority
             width={500}
-            className={`rounded-lg select-none`}
+            className={`select-none rounded-lg`}
           ></Image>
         </div>
       </div>

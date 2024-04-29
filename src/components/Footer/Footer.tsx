@@ -5,7 +5,7 @@ import { BsTwitterX } from "react-icons/bs"; //image import (automatic width/hei
 
 const Footer = () => {
   return (
-    <footer className={`lg:grid lg:grid-cols-5 bg-gray-900 select-none`}>
+    <footer className={`select-none bg-gray-900 lg:grid lg:grid-cols-5`}>
       <div className="relative block h-40 lg:col-span-2 lg:h-full">
         <Image
           src={FooterImage}
@@ -27,7 +27,7 @@ const Footer = () => {
 
               <Link
                 href="tel:917728022160"
-                className="block text-2xl font-medium hover:text-yellow-400  sm:text-3xl text-white"
+                className="block text-2xl font-medium text-white  hover:text-yellow-400 sm:text-3xl"
               >
                 +91 9509129835
               </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:text-yellow-400  text-gray-200"
+                  className="text-gray-200 transition  hover:text-yellow-400"
                 >
                   <span className="sr-only">Facebook</span>
 
@@ -70,7 +70,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:text-yellow-400  text-gray-200"
+                  className="text-gray-200 transition  hover:text-yellow-400"
                 >
                   <span className="sr-only">Instagram</span>
 
@@ -95,7 +95,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:text-yellow-400  text-gray-200"
+                  className="text-gray-200 transition  hover:text-yellow-400"
                 >
                   <span className="sr-only">Twitter</span>
 
@@ -109,7 +109,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition hover:text-yellow-400  text-gray-200"
+                  className="text-gray-200 transition  hover:text-yellow-400"
                 >
                   <span className="sr-only">GitHub</span>
 
@@ -138,7 +138,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/custom-pc`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Custom PC
                   </Link>
@@ -146,8 +146,8 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href={`/products`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    href={`/products/motherboards`}
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     All Products
                   </Link>
@@ -155,10 +155,19 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href={`/preBuilt-pc`}
-                    className="transition hover:text-yellow-400  :text-gray-200"
+                    href={`/sign-in`}
+                    className=":text-gray-200 transition  hover:text-yellow-400"
                   >
-                    Pre-built PCs
+                    Sign In
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href={`/sign-up`}
+                    className=":text-gray-200 transition  hover:text-yellow-400"
+                  >
+                    Sign Up
                   </Link>
                 </li>
               </ul>
@@ -171,7 +180,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/about-us`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     About Us
                   </Link>
@@ -180,7 +189,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/contact-us`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Contact Us
                   </Link>
@@ -189,7 +198,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/shipping-policy`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Shipping Policy
                   </Link>
@@ -198,7 +207,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/refund-policy`}
-                    className="transition hover:text-yellow-400  text-gray-200"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Refund & Cancellation Policy
                   </Link>
@@ -208,13 +217,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 border-t pt-9 border-gray-800">
+        <div className="mt-10 border-t border-gray-800 pt-9">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
                   href={`/terms-conditions`}
-                  className="transition hover:text-yellow-400  text-gray-400"
+                  className="text-gray-400 transition  hover:text-yellow-400"
                 >
                   Terms & Conditions
                 </Link>
@@ -223,7 +232,7 @@ const Footer = () => {
               <li>
                 <Link
                   href={`/privacy-policy`}
-                  className="transition hover:text-yellow-400  text-gray-400"
+                  className="text-gray-400 transition  hover:text-yellow-400"
                 >
                   Privacy Policy
                 </Link>
@@ -232,14 +241,14 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="transition hover:text-yellow-400  text-gray-400 hidden"
+                  className="hidden text-gray-400  transition hover:text-yellow-400"
                 >
                   Cookies
                 </Link>
               </li>
             </ul>
 
-            <p className="mt-10 text-xs sm:mt-0 text-gray-400">
+            <p className="mt-10 text-xs text-gray-400 sm:mt-0">
               &copy; {new Date().getFullYear()}. FlashByte. All rights reserved.
             </p>
           </div>

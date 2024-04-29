@@ -7,20 +7,22 @@ import Container from "@/components/Container";
 
 const FlashSales = async () => {
   const response = await fetch(
-    `http://${process.env.BASE_URL}/api/products/all_products`,
-    { cache: "force-cache" }
+    `${process.env.BASE_URL}/api/products/all_products`,
+    { cache: "force-cache" },
   );
+
+  console.log(process.env.BASE_URL);
 
   const products = await response.json().then((data: any) => data);
 
-  const filteredData = products.filter((document: CommonFields) => {
+  const filteredData = products?.filter((document: CommonFields) => {
     return document.discount?.percentage! >= 75;
   });
 
   return (
     <Container>
       <div className={`flex items-end gap-x-10 py-10`}>
-        <SectionHeading subHeading={`Today's`}>Flash Sales</SectionHeading>
+        <SectionHeading subHeading={`Today's`}>{`Flash Sales`}</SectionHeading>
 
         <Clock />
       </div>

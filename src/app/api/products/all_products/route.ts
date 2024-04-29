@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const GET = async (_request: Request) => {
   try {
     const responseHeadsets = await fetch(
-      `http://${process.env.BASE_URL}/api/products/headsets`
+      `${process.env.BASE_URL}/api/products/headsets`,
     );
 
     const headsets = await responseHeadsets.json();
@@ -11,7 +11,7 @@ const GET = async (_request: Request) => {
     // **************************************************************************
 
     const responseKeyboards = await fetch(
-      `http://${process.env.BASE_URL}/api/products/keyboards`
+      `${process.env.BASE_URL}/api/products/keyboards`,
     );
 
     const keyboards = await responseKeyboards.json();
@@ -19,7 +19,7 @@ const GET = async (_request: Request) => {
     // ******************************************************************
 
     const responseAIOLiquidCoolers = await fetch(
-      `http://${process.env.BASE_URL}/api/products/aio_liquid_coolers`
+      `${process.env.BASE_URL}/api/products/aio_liquid_coolers`,
     );
 
     const aioLiquidCoolers = await responseAIOLiquidCoolers.json();
@@ -27,7 +27,7 @@ const GET = async (_request: Request) => {
     // ****************************************************************
 
     const responseAirCoolers = await fetch(
-      `http://${process.env.BASE_URL}/api/products/air_coolers`
+      `${process.env.BASE_URL}/api/products/air_coolers`,
     );
 
     const airCoolers = await responseAirCoolers.json();
@@ -35,7 +35,7 @@ const GET = async (_request: Request) => {
     // **********************************************************************
 
     const responseCabinets = await fetch(
-      `http://${process.env.BASE_URL}/api/products/cabinets`
+      `${process.env.BASE_URL}/api/products/cabinets`,
     );
 
     const cabinets = await responseCabinets.json();
@@ -43,7 +43,7 @@ const GET = async (_request: Request) => {
     // ***********************************************************************
 
     const responseCaseFans = await fetch(
-      `http://${process.env.BASE_URL}/api/products/case_fans`
+      `${process.env.BASE_URL}/api/products/case_fans`,
     );
 
     const caseFans = await responseCaseFans.json();
@@ -51,7 +51,7 @@ const GET = async (_request: Request) => {
     // *******************************************************************************
 
     const responseGraphicsCards = await fetch(
-      `http://${process.env.BASE_URL}/api/products/graphics_cards`
+      `${process.env.BASE_URL}/api/products/graphics_cards`,
     );
 
     const graphicsCards = await responseGraphicsCards.json();
@@ -59,7 +59,7 @@ const GET = async (_request: Request) => {
     // ******************************************************************************
 
     const responseMonitors = await fetch(
-      `http://${process.env.BASE_URL}/api/products/monitors`
+      `${process.env.BASE_URL}/api/products/monitors`,
     );
 
     const monitors = await responseMonitors.json();
@@ -67,7 +67,7 @@ const GET = async (_request: Request) => {
     // *********************************************************************************
 
     const responseMotherboards = await fetch(
-      `http://${process.env.BASE_URL}/api/products/motherboards`
+      `${process.env.BASE_URL}/api/products/motherboards`,
     );
 
     const motherboards = await responseMotherboards.json();
@@ -75,7 +75,7 @@ const GET = async (_request: Request) => {
     // ***********************************************************************8
 
     const responseMouses = await fetch(
-      `http://${process.env.BASE_URL}/api/products/mouses`
+      `${process.env.BASE_URL}/api/products/mouses`,
     );
 
     const mouses = await responseMouses.json();
@@ -83,7 +83,7 @@ const GET = async (_request: Request) => {
     // ******************************************************************************
 
     const responsePowerSupplies = await fetch(
-      `http://${process.env.BASE_URL}/api/products/power_supplies`
+      `${process.env.BASE_URL}/api/products/power_supplies`,
     );
 
     const powerSupplies = await responsePowerSupplies.json();
@@ -91,7 +91,7 @@ const GET = async (_request: Request) => {
     // *************************************************************************
 
     const responseProcessors = await fetch(
-      `http://${process.env.BASE_URL}/api/products/processors`
+      `${process.env.BASE_URL}/api/products/processors`,
     );
 
     const processors = await responseProcessors.json();
@@ -99,7 +99,7 @@ const GET = async (_request: Request) => {
     // *****************************************************************************
 
     const responseRAMModules = await fetch(
-      `http://${process.env.BASE_URL}/api/products/ram_modules`
+      `${process.env.BASE_URL}/api/products/ram_modules`,
     );
 
     const RAMModules = await responseRAMModules.json();
@@ -107,7 +107,7 @@ const GET = async (_request: Request) => {
     // *************************************************************************************
 
     const responseStorageDevices = await fetch(
-      `http://${process.env.BASE_URL}/api/products/storage_devices`
+      `${process.env.BASE_URL}/api/products/storage_devices`,
     );
 
     const storageDevices = await responseStorageDevices.json();
@@ -134,8 +134,8 @@ const GET = async (_request: Request) => {
     return NextResponse.json(allProducts, { status: 200 });
   } catch (error) {
     return NextResponse.json(
-      { error: `Failed to fetch data` },
-      { status: 500 }
+      { error: `Failed to fetch data ${error}` },
+      { status: 500 },
     );
   }
 };

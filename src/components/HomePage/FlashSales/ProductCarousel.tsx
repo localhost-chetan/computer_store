@@ -31,7 +31,7 @@ const ProductCarousel = ({ filteredData }: [CommonFields] | any) => {
     <Carousel
       responsive={responsive}
       ssr={true}
-      className={`mx-auto py-10 mb-16`}
+      className={`mx-auto mb-16 py-10`}
       autoPlay={true}
     >
       {filteredData?.map((product: CommonFields) => {

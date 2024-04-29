@@ -11,7 +11,7 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Heading2 = ({ children }: { children: React.ReactNode }) => {
-  return <h2 className="font-bold text-lg md:text-2xl mt-5">{children}</h2>;
+  return <h2 className="mt-5 text-lg font-bold md:text-2xl">{children}</h2>;
 };
 
 const TermsConditions = () => {
@@ -19,14 +19,14 @@ const TermsConditions = () => {
     <Container>
       <Breadcrumb>Terms & Conditions</Breadcrumb>
 
-      <div className={`text-pretty max-w-[50ch] sm:max-w-[75ch] mb-14`}>
+      <div className={`mb-14 max-w-[50ch] text-pretty sm:max-w-[75ch]`}>
         <h1
-          className={`text-pretty font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-5`}
+          className={`mb-5 text-pretty text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl`}
         >
           Terms & Conditions
         </h1>
 
-        <div className={`text-red-500 dark:text-red-400 font-semibold mb-10`}>
+        <div className={`mb-10 font-semibold text-red-500 dark:text-red-400`}>
           PLEASE READ THIS DOCUMENT CAREFULLY. IT CONTAINS VERY IMPORTANT
           INFORMATION ABOUT THE TERMS AND CONDITIONS GOVERNING YOUR USE OF THE
           SITE. PLEASE DO NOT USE THE SITE OR TRANSACT ON THE SITE IF YOU DO NOT
@@ -217,7 +217,7 @@ const TermsConditions = () => {
         <div>
           <Heading2>Cancellations by the customer</Heading2>
 
-          <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+          <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
             <li className={``}>
               If the customer requests to cancel the order before we have
               started to process the order (Usually within 24 Hours) then 10% of
@@ -261,7 +261,7 @@ const TermsConditions = () => {
         <div>
           <Heading2>Cancel/Return Policy:</Heading2>
 
-          <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+          <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
             <li className={``}>
               flashbyte.com Return Policy is implied only where the product have
               defect or damage. We do not accept returns in case of wrong
@@ -326,7 +326,7 @@ const TermsConditions = () => {
           <Heading2>Third Party Products</Heading2>
 
           <Paragraph>
-            <span className={`text-red-500 dark:text-red-400 font-semibold`}>
+            <span className={`font-semibold text-red-500 dark:text-red-400`}>
               {" "}
               PLEASE NOTE:{" "}
             </span>
@@ -384,7 +384,7 @@ const TermsConditions = () => {
         <div>
           <Heading2>Shipping:</Heading2>
 
-          <ul className={`list-inside list-disc text-pretty py-3 space-y-3`}>
+          <ul className={`list-inside list-disc space-y-3 text-pretty py-3`}>
             <li className={``}>
               Once a customer places an order the flashbyte team ships the
               products within 3-7 days. It depends on the order, the PC Builds

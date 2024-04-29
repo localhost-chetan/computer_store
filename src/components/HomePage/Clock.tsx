@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const Clock = () => {
   const [remainingTime, setRemainingTime] = useState({
@@ -12,7 +12,7 @@ const Clock = () => {
 
   const deadline = new Date(`May 25, 2024`); // Replace with your target date
 
-  const getTime = () => {
+  const getTime = useCallback(() => {
     const differenceInMilliseconds = deadline.getTime() - Date.now();
 
     // Ensure positive remaining time (avoid negative display)
@@ -22,11 +22,11 @@ const Clock = () => {
     const days = Math.floor(adjustedDifference / (1000 * 60 * 60 * 24));
 
     const hours = Math.floor(
-      (adjustedDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      (adjustedDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
 
     const minutes = Math.floor(
-      (adjustedDifference % (1000 * 60 * 60)) / (1000 * 60)
+      (adjustedDifference % (1000 * 60 * 60)) / (1000 * 60),
     );
 
     const seconds = Math.floor((adjustedDifference % (1000 * 60)) / 1000);
@@ -41,16 +41,22 @@ const Clock = () => {
       seconds !== remainingTime.seconds;
 
     if (hasChanged) {
-      setRemainingTime({ days, hours, minutes, seconds });
+      setRemainingTime({ ...remainingTime, days, hours, minutes, seconds });
     }
-  };
+  }, [
+    deadline,
+    // remainingTime.days,
+    // remainingTime.hours,
+    // remainingTime.minutes,
+    // remainingTime.seconds,
+  ]);
 
   useEffect(() => {
     const intervalId = setInterval(getTime, 1000); // Update every second
 
     // Cleanup function to clear the interval on unmount
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array to run the effect only once
+  }, [getTime]); // Empty dependency array to run the effect only once
 
   const hasRemainingTime =
     remainingTime.days > 0 ||
@@ -60,24 +66,24 @@ const Clock = () => {
 
   return (
     <div
-      className={` font-extrabold text-xl md:text-2xl items-center gap-x-3 tabular-nums ${
+      className={` items-center gap-x-3 text-xl font-extrabold tabular-nums md:text-2xl ${
         hasRemainingTime ? `flex` : `hidden`
       } justify-start text-nowrap`}
     >
       <h3 className={``}>
-        <div className={`text-xs lg:text-sm font-normal`}>Days</div>
+        <div className={`text-xs font-normal lg:text-sm`}>Days</div>
         <div>{remainingTime.days.toString().padStart(2, `0`)} :</div>
       </h3>
       <h3 className={``}>
-        <div className={`text-xs lg:text-sm font-normal`}>Hours</div>
+        <div className={`text-xs font-normal lg:text-sm`}>Hours</div>
         <div> {remainingTime.hours.toString().padStart(2, "0")} :</div>
       </h3>
       <h3 className={``}>
-        <div className={`text-xs lg:text-sm font-normal`}>Minutes</div>
+        <div className={`text-xs font-normal lg:text-sm`}>Minutes</div>
         <div> {remainingTime.minutes.toString().padStart(2, "0")} :</div>
       </h3>
       <h3 className={``}>
-        <div className={`text-xs lg:text-sm font-normal`}>Seconds</div>
+        <div className={`text-xs font-normal lg:text-sm`}>Seconds</div>
         <div> {remainingTime.seconds.toString().padStart(2, "0")}</div>
       </h3>
     </div>

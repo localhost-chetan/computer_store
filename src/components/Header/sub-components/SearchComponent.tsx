@@ -1,11 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { Button, Input, Kbd } from "@nextui-org/react";
 import { useRef, useEffect } from "react";
 import { IoIosSearch } from "react-icons/io";
-// import Category from "./Category";
-const Category = dynamic(() => import("./Category"));
+import Category from "./Category";
+// const Category = dynamic(() => import("./Category"));
 
 type PropTypes = {
   divClasses: string;
@@ -63,12 +63,12 @@ const SearchComponent = ({
           placeholder={`Search`}
           inputMode={`search`}
           startContent={
-            <IoIosSearch className={`text-lg pointer-events-none`} />
+            <IoIosSearch className={`pointer-events-none text-lg`} />
           }
           endContent={
             <Kbd
               keys={["command"]}
-              className={`hidden md:block pointer-events-none text-lg`}
+              className={`pointer-events-none hidden text-lg md:block`}
             >
               k
             </Kbd>
