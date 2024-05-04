@@ -22,7 +22,7 @@ const ListCardComp = ({
   return (
     <div
       key={productId ?? index}
-      className={`group/card flex h-64 w-full cursor-pointer gap-2 overflow-y-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.01] dark:bg-gray-900 dark:shadow-slate-900`}
+      className={`group/card flex h-72 w-full cursor-pointer gap-2 overflow-y-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.01] dark:bg-gray-900 dark:shadow-slate-900`}
     >
       {/* Image Section */}
       <div className={`relative flex h-full`}>

@@ -15,6 +15,8 @@ import {
 } from "@/components/ProductComps/ProductCardComps/ProductButtons";
 import { Divider } from "@nextui-org/react";
 import QuantityComp from "@/components/ProductComps/QuantityComp";
+import SocialShare from "@/components/SocialShare";
+import WishListIcon from "@/components/ProductComps/ProductCardComps/WishListIcon";
 
 export const metadata: Metadata = {
   title: "Custom PC",
@@ -28,6 +30,7 @@ const CustomPC = () => {
       label: "Processor",
       quantity: false,
       max: 1,
+      isRequired: true,
     },
     {
       id: 2,
@@ -35,6 +38,7 @@ const CustomPC = () => {
       label: "Motherboard",
       quantity: false,
       max: 1,
+      isRequired: true,
     },
     {
       id: 8,
@@ -42,6 +46,7 @@ const CustomPC = () => {
       label: "RAM",
       quantity: true,
       max: 4,
+      isRequired: true,
     },
     {
       id: 3,
@@ -49,6 +54,7 @@ const CustomPC = () => {
       label: "Mouse",
       quantity: false,
       max: 4,
+      isRequired: false,
     },
     {
       id: 4,
@@ -56,6 +62,7 @@ const CustomPC = () => {
       label: "Headset",
       quantity: true,
       max: 10,
+      isRequired: false,
     },
     {
       id: 5,
@@ -63,6 +70,7 @@ const CustomPC = () => {
       label: "Cabinet",
       quantity: false,
       max: 1,
+      isRequired: true,
     },
     {
       id: 6,
@@ -70,6 +78,7 @@ const CustomPC = () => {
       label: "Monitor",
       quantity: false,
       max: 10,
+      isRequired: false,
     },
     {
       id: 7,
@@ -77,6 +86,7 @@ const CustomPC = () => {
       label: "Keyboard",
       quantity: true,
       max: 2,
+      isRequired: false,
     },
 
     {
@@ -85,6 +95,7 @@ const CustomPC = () => {
       label: "Storage",
       quantity: true,
       max: 4,
+      isRequired: true,
     },
     {
       id: 10,
@@ -92,6 +103,7 @@ const CustomPC = () => {
       label: "Case Fan",
       quantity: true,
       max: 10,
+      isRequired: true,
     },
   ];
 
@@ -173,12 +185,14 @@ const CustomPC = () => {
                 label,
                 quantity,
                 max,
+                isRequired,
               }: {
                 id: number;
                 productCategory: string;
                 label: string;
                 quantity: boolean;
                 max: number;
+                isRequired: boolean;
               }) => (
                 <>
                   <ProductDropdown
@@ -187,6 +201,7 @@ const CustomPC = () => {
                     label={label}
                     quantity={quantity}
                     max={max}
+                    isRequired={isRequired}
                   />
 
                   <Divider orientation={`horizontal`} />
@@ -209,10 +224,18 @@ const CustomPC = () => {
             }
           </div>
 
+          {/* Share */}
+          <span className={`sr-only`}>Social Media Sharing</span>
+          <div className={`flex justify-between`}>
+            <WishListIcon />
+
+            <SocialShare />
+          </div>
+
           <div
             className={`flex flex-col gap-x-5 gap-y-2 sm:flex-row sm:items-center`}
           >
-            <QuantityComp scale={`scale-85 sm:scale-100`} />
+            <QuantityComp scale={`scale-75 sm:scale-85`} />
             <div className={`flex gap-x-5`}>
               <AddToCart />
               <BuyNow color={`danger`} />

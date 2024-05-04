@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { FaCartPlus, FaCheck } from "react-icons/fa6";
+import { toast } from "sonner";
 
 type ProductDataType = {
   productId: string;
@@ -71,7 +72,7 @@ const AddToCart = ({
         ...prevCartProducts,
         productData,
       ]);
-
+      toast.success(`${productData?.productName} added to cart`);
       // console.log(`CartProducts inside handleClick ${cartProducts}`);
     }
   };
@@ -104,6 +105,7 @@ const AddToCart = ({
       radius={radius}
       className={`font-semibold`}
       onClick={handleClick}
+      size={`md`}
     >
       {cartBtnState.cartBtnIcon}
       {cartBtnState.cartBtnText}

@@ -9,7 +9,7 @@ type ListViewType = {
 
 const ListView = ({ data, params }: ListViewType) => {
   return (
-    <section className={`hidden gap-y-7 px-2 lg:grid`}>
+    <section className={`hidden gap-y-7 px-2 md:grid`}>
       {data.map((product: CommonFields, index: number) => {
         return (
           <ListCardComp

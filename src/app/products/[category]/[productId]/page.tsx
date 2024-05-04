@@ -343,7 +343,7 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
                 )}
 
                 {productData?.coureCount && (
-                  <tr className={`details`}>
+                  <tr className={`details`}>  
                     <td className={``}>Core Count</td>
                     <td className={``}>{productData?.coureCount}</td>
                   </tr>
@@ -450,6 +450,13 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
 
             {productData.category === "Motherboard" && (
               <tbody>
+                {productData?.manufacturer && (
+                  <tr className={`details`}>
+                    <td className={``}>Manufacturer</td>
+                    <td className={``}>{productData?.manufacturer}</td>
+                  </tr>
+                )}
+
                 {productData?.socketType && (
                   <tr className={`details`}>
                     <td className={``}>Socket Type</td>
@@ -471,10 +478,10 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
                   </tr>
                 )}
 
-                {productData?.itemWeightKg && (
+                {productData?.itemWeight && (
                   <tr className={`details`}>
                     <td className={``}>Weight</td>
-                    <td className={``}>{productData?.itemWeightKg}</td>
+                    <td className={``}>{productData?.itemWeight}</td>
                   </tr>
                 )}
 

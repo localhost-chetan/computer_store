@@ -8,6 +8,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import CartContextProvider from "@/context/CartContext";
 import FreeDeliveryContextProvider from "@/context/FreeDeliveryPrice";
+import { Toaster } from "sonner";
 // const Footer = dynamic(() => import("@/components/Footer/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,6 +37,13 @@ export default function RootLayout({
           <Providers>
             <FreeDeliveryContextProvider>
               <CartContextProvider>
+                <Toaster
+                  closeButton
+                  duration={3000}
+                  richColors
+                  theme={`system`}
+                  position={`top-right`}
+                />
                 <Header />
                 <main className={``}>{children}</main>
                 <Footer />

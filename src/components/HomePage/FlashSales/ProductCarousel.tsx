@@ -18,11 +18,11 @@ const ProductCarousel = ({ filteredData }: [CommonFields] | any) => {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1370, min: 900 },
+      breakpoint: { max: 1370, min: 768 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 900, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       items: 1,
     },
   };
@@ -46,6 +46,7 @@ const ProductCarousel = ({ filteredData }: [CommonFields] | any) => {
             productReviews={product?.reviews as Review[]}
             productCategory={product?.category}
             discountPercent={product?.discount?.percentage!}
+            classNames={`max-w-[400px] md:w-[325px] lg:w-[700px]`}
           />
         );
       })}

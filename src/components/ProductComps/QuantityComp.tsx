@@ -36,7 +36,7 @@ const QuantityComp = ({
           <Button
             isIconOnly
             radius={`none`}
-            className={`text-2xl font-medium`}
+            className={`text-xl font-medium`}
             onClick={handleDecrement}
           >
             -
@@ -51,7 +51,7 @@ const QuantityComp = ({
           <Button
             isIconOnly
             radius={`none`}
-            className={`text-2xl font-medium`}
+            className={`text-xl font-medium`}
             onClick={handleIncrement}
           >
             +

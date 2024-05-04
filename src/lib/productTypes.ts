@@ -11,4 +11,5 @@ export type CardCompType = {
   productCategory?: string;
   price: number;
   productReviews: Review[];
+  classNames?: string;
 };

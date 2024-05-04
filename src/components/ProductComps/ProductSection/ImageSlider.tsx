@@ -37,7 +37,7 @@ const ImageSlider = ({ productData }: ImageSliderProp) => {
     >
       <Carousel
         responsive={responsive}
-        className={`bg-[#e1e0e0] sm:h-[400px] lg:h-[450px]`}
+        className={`select-none bg-[#e1e0e0] sm:h-[400px] lg:h-[450px]`}
         ssr={true}
         showDots={true}
         infinite={true}

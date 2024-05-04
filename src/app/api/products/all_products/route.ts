@@ -1,3 +1,4 @@
+import { CommonFields } from "@/lib/mongodb/models/products/commonTypes";
 import { NextResponse } from "next/server";
 
 const GET = async (_request: Request) => {
@@ -114,7 +115,7 @@ const GET = async (_request: Request) => {
 
     // *******************************************************************************
 
-    const allProducts = [
+    const allProducts: CommonFields[] = [
       ...headsets,
       ...storageDevices,
       ...processors,

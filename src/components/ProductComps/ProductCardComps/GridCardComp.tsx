@@ -6,8 +6,11 @@ import StarRating from "./StarRating";
 import Link from "next/link";
 import { CardCompType } from "@/lib/productTypes";
 import { AddToCart } from "./ProductButtons";
+import { cn } from "@/lib/utils";
 
 const GridCardComp = ({
+  classNames,
+
   params,
   productId,
   productName,
@@ -26,7 +29,10 @@ const GridCardComp = ({
   return (
     <div
       key={productId ?? index}
-      className={`group/card mx-auto grid h-[500px] max-w-[25rem] cursor-pointer grid-rows-2 content-between gap-y-3 overflow-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.03] dark:bg-gray-900 dark:shadow-slate-900 sm:min-w-[15rem] md:max-w-[24rem] lg:max-w-[22rem] xl:max-w-[25rem]`}
+      className={cn(
+        `group/card mx-auto grid h-[500px] max-w-[25rem] cursor-pointer grid-rows-2 content-between gap-y-3 overflow-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.03] dark:bg-gray-900 dark:shadow-slate-900 sm:min-w-[15rem] md:max-w-[25rem] lg:max-w-[22rem] xl:min-w-[18rem] xl:max-w-[25rem]`,
+        classNames,
+      )}
     >
       {/* Image section */}
       <div
@@ -118,7 +124,7 @@ const GridCardComp = ({
               }/${productId}`,
             }}
             scroll={true}
-            className={`select-none font-bold text-blue-600 decoration-2 underline-offset-4 hover:underline dark:text-blue-100`}
+            className={`select-none text-sm font-bold text-blue-600 decoration-2 underline-offset-4 hover:underline dark:text-blue-100`}
           >
             View Details
           </Link>

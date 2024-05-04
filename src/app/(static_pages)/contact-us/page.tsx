@@ -2,9 +2,9 @@ import Container from "@/components/Container";
 import Breadcrumb from "@/components/ProductComps/Breadcrumb";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Button, Input, Textarea } from "@nextui-org/react";
 import { IoCall, IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
+import ContactForm from "@/components/Form/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -39,44 +39,6 @@ const ContactUs = () => {
       <Container>
         <Breadcrumb>Contact Us</Breadcrumb>
 
-        {/* <section className={`flex gap-4 md:px-10 mt-10 border`}> */}
-        {/* <div
-          className={`flex flex-col gap-5 space-y-5 divide-y-1 divide-gray-700 dark:divide-slate-200 max-w-[30ch] border`}
-        >
-          <OurStore
-            icon={<IoCall size={18} color={`white`} />}
-            heading={`Call To Us`}
-            description={
-              <>
-                <span>We are available 24/7, 7 days a week.</span>
-                <span className={`flex items-center gap-2`}>
-                  Phone:
-                  <Link
-                    href={`tel:919509129835`}
-                    className={`text-lg font-bold text-orange-500 hover:text-orange-400 dark:text-orange-400 dark:hover:text-orange-500 `}
-                  >
-                    +91 9509129835
-                  </Link>
-                </span>
-              </>
-            }
-          ></OurStore>
-
-          <OurStore
-            icon={<IoMail size={18} color={`white`} />}
-            heading={`Write To Us`}
-            description={
-              <>
-                <span>
-                  Fill out our form and we will contact you within 24 hours.
-                </span>
-                <span>Emails: flashbyte99@gmail.com</span>
-                <span>Emails: chetanseervi513@gmail.com</span>
-              </>
-            }
-          ></OurStore>
-        </div> */}
-
         <section
           className={`flex flex-col items-center justify-center gap-x-4 gap-y-6 p-0 sm:justify-around md:flex-row md:items-start md:py-5`}
         >
@@ -92,91 +54,7 @@ const ContactUs = () => {
             </p>
 
             <div className={``}>
-              <form
-                action={``}
-                method={`POST`}
-                className={`mt-10 grid grid-cols-1 gap-x-7 gap-y-6 sm:grid-cols-2`}
-              >
-                {/* First Name */}
-                <Input
-                  placeholder={` `}
-                  isClearable
-                  isRequired
-                  inputMode={`text`}
-                  type={`text`}
-                  label={`First Name`}
-                  labelPlacement={`outside`}
-                  radius={`sm`}
-                  variant={`bordered`}
-                  className={`col-span-2 lg:col-span-1`}
-                />
-
-                {/* Last Name */}
-                <Input
-                  placeholder={` `}
-                  isClearable
-                  isRequired
-                  type={`text`}
-                  label={`Last Name`}
-                  labelPlacement={`outside`}
-                  radius={`sm`}
-                  variant={`bordered`}
-                  inputMode={`text`}
-                  className={`col-span-2 lg:col-span-1`}
-                />
-
-                {/* Email */}
-                <Input
-                  placeholder={` `}
-                  isClearable
-                  isRequired
-                  type={`email`}
-                  inputMode={`email`}
-                  label={`Email`}
-                  labelPlacement={`outside`}
-                  radius={`sm`}
-                  variant={`bordered`}
-                  className={`col-span-2`}
-                />
-
-                {/* Subject */}
-                <Input
-                  placeholder={` `}
-                  isClearable
-                  isRequired
-                  type={`text`}
-                  label={`Subject`}
-                  inputMode={`text`}
-                  labelPlacement={`outside`}
-                  radius={`sm`}
-                  variant={`bordered`}
-                  className={`col-span-2`}
-                />
-
-                <Textarea
-                  minRows={4}
-                  maxRows={6}
-                  isRequired
-                  placeholder={` `}
-                  label={`Your Message`}
-                  type={`text`}
-                  inputMode={`text`}
-                  radius={`sm`}
-                  variant={`bordered`}
-                  labelPlacement={`outside`}
-                  className={`col-span-2`}
-                />
-
-                <Button
-                  color={`primary`}
-                  variant={`shadow`}
-                  radius={`sm`}
-                  size={`md`}
-                  className={`col-span-2 px-5 sm:w-fit`}
-                >
-                  Send Message
-                </Button>
-              </form>
+              <ContactForm />
             </div>
           </div>
 

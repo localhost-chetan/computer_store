@@ -23,7 +23,13 @@ const CartPage = () => {
 
           <div className={`gap-x- 10 flex items-center justify-between`}>
             <h4>Subtotal</h4>
-            <PriceConvertor price={1000} percentage={0}></PriceConvertor>
+            <PriceConvertor
+              price={1000}
+              percentage={0}
+              sm={`text-base`}
+              md={`text-base`}
+              lg={`text-base`}
+            ></PriceConvertor>
           </div>
           <div className={`flex items-center justify-between`}>
             <h4>Shipping</h4>
