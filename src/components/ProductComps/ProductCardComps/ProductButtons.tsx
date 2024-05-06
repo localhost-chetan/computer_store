@@ -44,7 +44,7 @@ const AddToCart = ({
 }: ProductBtnType) => {
   const router = useRouter();
 
-  const { cartProducts, setCartProducts } = useContext(CartContext);
+  const { cartProducts, addToCart } = useContext(CartContext);
 
   const [cartBtnState, setCartBtnState] = useState({
     cartBtnText: "Add to Cart",
@@ -68,10 +68,12 @@ const AddToCart = ({
     if (isProductInCart) {
       router.push(`/cart`);
     } else {
-      setCartProducts((prevCartProducts: ProductDataType[]) => [
-        ...prevCartProducts,
-        productData,
-      ]);
+      // setCartProducts((prevCartProducts: ProductDataType[]) => [
+      //   ...prevCartProducts,
+      //   productData,
+      // ]);
+
+      addToCart(productData);
       toast.success(`${productData?.productName} added to cart`);
       // console.log(`CartProducts inside handleClick ${cartProducts}`);
     }

@@ -156,7 +156,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/sign-in`}
-                    className=":text-gray-200 transition  hover:text-yellow-400"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Sign In
                   </Link>
@@ -165,7 +165,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href={`/sign-up`}
-                    className=":text-gray-200 transition  hover:text-yellow-400"
+                    className="text-gray-200 transition  hover:text-yellow-400"
                   >
                     Sign Up
                   </Link>

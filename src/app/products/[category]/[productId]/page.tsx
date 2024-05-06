@@ -140,6 +140,7 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
             <Tooltip
               content={`Click here to add product to the cart`}
               color={`primary`}
+              placement={`top`}
             >
               <AddToCart
                 variant={`shadow`}
@@ -343,7 +344,7 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
                 )}
 
                 {productData?.coureCount && (
-                  <tr className={`details`}>  
+                  <tr className={`details`}>
                     <td className={``}>Core Count</td>
                     <td className={``}>{productData?.coureCount}</td>
                   </tr>

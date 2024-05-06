@@ -13,15 +13,20 @@ const CartPage = () => {
     <Container>
       <Breadcrumb>Cart</Breadcrumb>
 
-      <section className={`flex flex-col gap-x-5 gap-y-5 xl:flex-row`}>
-        <div className={``}>
+      {/* <section className={`flex flex-col gap-x-5 gap-y-5 border xl:flex-row`}> */}
+      <section className={`grid grid-cols-1 gap-x-7 gap-y-5 lg:grid-cols-3`}>
+        <div className={`col-span-2`}>
           <CartContent />
         </div>
 
-        <div className={`invisible`}>
-          <h2 className={`text-2xl font-bold`}>Cart Tools</h2>
+        <div
+          className={`border-small border-slate-500 bg-slate-100 p-4 dark:bg-gray-900`}
+        >
+          <h2 className={`mb-5 text-2xl font-bold`}>Order Summary</h2>
 
-          <div className={`gap-x- 10 flex items-center justify-between`}>
+          <div
+            className={`flex items-center justify-between gap-x-10 space-y-3`}
+          >
             <h4>Subtotal</h4>
             <PriceConvertor
               price={1000}
@@ -31,6 +36,7 @@ const CartPage = () => {
               lg={`text-base`}
             ></PriceConvertor>
           </div>
+
           <div className={`flex items-center justify-between`}>
             <h4>Shipping</h4>
           </div>

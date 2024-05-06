@@ -13,6 +13,29 @@ const WishListIcon = () => {
         color={`danger`}
         shadow={`lg`}
         showArrow
+        size={`sm`}
+        placement={`top`}
+        offset={1}
+        delay={0}
+        closeDelay={0}
+        motionProps={{
+          variants: {
+            exit: {
+              opacity: 0,
+              transition: {
+                duration: 0.1,
+                ease: "easeIn",
+              },
+            },
+            enter: {
+              opacity: 1,
+              transition: {
+                duration: 0.15,
+                ease: "easeOut",
+              },
+            },
+          },
+        }}
       >
         <motion.button
           initial={{ scale: 0.9 }}

@@ -3,7 +3,7 @@
 import { handleSubmit } from "@/app/actions/handleSubmit";
 import { Input, Textarea } from "@nextui-org/react";
 import { SubmitButton } from "./SubmitBtn";
-import { createRef, useRef } from "react";
+import { useRef } from "react";
 import { toast } from "sonner";
 
 const ContactForm = () => {

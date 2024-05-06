@@ -1,34 +1,61 @@
-import { FaSquareXTwitter, FaFacebook } from "react-icons/fa6";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaPinterest } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import Link from "next/link";
+"use client";
+
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "next-share";
 
 const SocialShare = () => {
-  const size = 25;
+  const size = 30;
+
   return (
-    <div className={`flex gap-x-2`}>
+    <div className={`flex items-center gap-x-2`}>
       <p>Share: </p>
+
       <span className={`flex gap-x-2`}>
-        <Link href={``}>
-          <FaSquareXTwitter size={size} />
-        </Link>
+        <FacebookShareButton
+          url={process.env.BASE_URL!}
+          quote={
+            "next-share is a social share buttons for your next React apps."
+          }
+          hashtag={"#nextshare"}
+        >
+          <FacebookIcon size={size} round />
+        </FacebookShareButton>
 
-        <Link href={``}>
-          <FaFacebook size={size} />
-        </Link>
+        <PinterestShareButton
+          url={process.env.BASE_URL!}
+          media={
+            "next-share is a social share buttons for your next React apps."
+          }
+        >
+          <PinterestIcon size={size} round />
+        </PinterestShareButton>
 
-        <Link href={``}>
-          <RiInstagramFill size={size} />
-        </Link>
+        <TwitterShareButton
+          url={process.env.BASE_URL!}
+          title={
+            "next-share is a social share buttons for your next React apps."
+          }
+        >
+          <TwitterIcon size={size} round />
+        </TwitterShareButton>
 
-        <Link href={``}>
-          <FaPinterest size={size} />
-        </Link>
-
-        <Link href={``}>
-          <IoLogoWhatsapp size={size} />
-        </Link>
+        <WhatsappShareButton
+          url={process.env.BASE_URL!}
+          title={
+            "next-share is a social share buttons for your next React apps."
+          }
+          separator=":: "
+        >
+          <WhatsappIcon size={size} round />
+        </WhatsappShareButton>
       </span>
     </div>
   );

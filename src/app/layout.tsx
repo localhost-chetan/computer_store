@@ -38,11 +38,11 @@ export default function RootLayout({
             <FreeDeliveryContextProvider>
               <CartContextProvider>
                 <Toaster
-                  closeButton
-                  duration={3000}
+                  duration={2500}
                   richColors
                   theme={`system`}
                   position={`top-right`}
+                  className={`text-balance`}
                 />
                 <Header />
                 <main className={``}>{children}</main>
