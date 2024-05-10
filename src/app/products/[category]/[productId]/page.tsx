@@ -1,6 +1,6 @@
 import { CommonFields } from "@/lib/mongodb/models/products/commonTypes";
 import { FaShareAlt } from "react-icons/fa";
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Review } from "@/lib/mongodb/models/User/type/userTypes";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RiLoopLeftLine } from "react-icons/ri";
@@ -81,7 +81,10 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
             </h2>
 
             <div className={`flex items-center gap-x-2`}>
-              <WishListIcon />
+              <WishListIcon
+                productId={[productData?._id.toString()!]}
+                productName={productData?.name!}
+              />
               <span className="sr-only">Add to Wishlist</span>
 
               <Button
@@ -112,12 +115,12 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
           <span className="sr-only">Product Pricing</span>
           <div className={`flex items-center gap-x-2`}>
             <PriceConvertor
-              price={productData.price}
-              percentage={productData?.discount?.percentage as number}
+              price={productData?.price}
+              percentage={productData?.discount?.percentage as number || 10}
               lg={`text-4xl`}
             ></PriceConvertor>
 
-            <p className={`text-md text-slate-500 line-through`}>
+            <p className={`text-md text-rose-500 line-through`}>
               {Math.floor(productData?.price * 80).toLocaleString()}
             </p>
           </div>
@@ -137,37 +140,25 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
             className={`flex scale-95 flex-row items-center justify-evenly gap-x-10 pt-4 sm:scale-100 md:justify-start md:gap-6`}
           >
             <span className="sr-only">Add to cart button</span>
-            <Tooltip
-              content={`Click here to add product to the cart`}
-              color={`primary`}
-              placement={`top`}
-            >
-              <AddToCart
-                variant={`shadow`}
-                radius={`sm`}
-                productData={{
-                  productId: productData.productId,
-                  description: productData.description,
-                  price: productData.price,
-                  image: productData.imageURLs?.at(0),
-                  productName: productData.name,
-                  discountPercent: productData.discount?.percentage,
-                }}
-              />
-            </Tooltip>
 
-            <span className="sr-only">Buy Now button</span>
-            <Tooltip
-              content={`Click here to purchase this product`}
-              color={`success`}
-              placement={`right`}
-            >
-              <BuyNow
-                color={`success`}
-                variant={`shadow`}
-                radius={`sm`}
-              ></BuyNow>
-            </Tooltip>
+            <AddToCart
+              variant={`shadow`}
+              radius={`sm`}
+              productData={[
+                {
+                  productId: productData?._id.toString()!,
+                  productName: productData?.name,
+                  image: productData.imageURLs?.at(0)!,
+                  price: productData?.price,
+                  discountPercent: productData?.discount?.percentage!,
+                  description: productData?.description!,
+                  quantity: 1,
+                },
+              ]}
+            />
+
+            {/* <span className="sr-only">Buy Now button</span> */}
+            {/* <BuyNow color={`success`} variant={`shadow`} radius={`sm`}></BuyNow> */}
           </div>
 
           {/* Extra info */}

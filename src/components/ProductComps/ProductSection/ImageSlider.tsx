@@ -56,7 +56,9 @@ const ImageSlider = ({ productData }: ImageSliderProp) => {
           ></Image>
         ))}
       </Carousel>
-      <Discount percentage={productData?.discount?.percentage as number} />
+      <Discount
+        percentage={(productData?.discount?.percentage as number) || 10}
+      />
     </div>
   );
 };

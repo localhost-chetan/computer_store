@@ -14,6 +14,7 @@ type ProductDataType = {
   image: string;
   price: number;
   discountPercent: number;
+  quantity?: number;
 };
 
 type ProductBtnType = {
@@ -34,7 +35,7 @@ type ProductBtnType = {
     | "flat"
     | "ghost"
     | "shadow";
-  productData?: ProductDataType;
+  productData?: ProductDataType[];
 };
 
 const AddToCart = ({
@@ -53,29 +54,19 @@ const AddToCart = ({
     color: `primary`,
   });
 
-  console.log(cartProducts);
-
   const isProductInCart = useMemo((): boolean => {
     return cartProducts?.some(
       (product: ProductDataType) =>
-        product.productId === productData?.productId,
+        product.productId === productData?.at(0)?.productId,
     );
-  }, [cartProducts, productData?.productId]);
+  }, [cartProducts, productData?.at(0)?.productId]);
 
   const handleClick = () => {
-    console.log(`Add to Cart handleClick() invoked ${productData?.productId}`);
-
     if (isProductInCart) {
       router.push(`/cart`);
     } else {
-      // setCartProducts((prevCartProducts: ProductDataType[]) => [
-      //   ...prevCartProducts,
-      //   productData,
-      // ]);
-
       addToCart(productData);
-      toast.success(`${productData?.productName} added to cart`);
-      // console.log(`CartProducts inside handleClick ${cartProducts}`);
+      toast.success(`${productData?.at(0)?.productName} added to cart`);
     }
   };
 

@@ -6,9 +6,10 @@ import { Button, Tooltip } from "@nextui-org/react";
 import ListView from "./ProductSection/ListView";
 import GridView from "./ProductSection/GridView";
 import { useState } from "react";
+import { CommonFields } from "@/lib/mongodb/models/products/commonTypes";
 
 type ViewModeTogglePropTypes = {
-  data: any;
+  data: CommonFields[];
   params: string;
 };
 
@@ -24,7 +25,7 @@ const ViewModeToggle = ({ data, params }: ViewModeTogglePropTypes) => {
     <>
       <div className={`flex items-center justify-between gap-x-2`}>
         <h1 className={`text-2xl font-extrabold capitalize`}>
-          {data?.at(0)?.category} Page
+          {data?.at(0)?.category} Products
         </h1>
 
         <div className={`space-x-2 md:scale-85 lg:scale-100`}>
@@ -52,9 +53,13 @@ const ViewModeToggle = ({ data, params }: ViewModeTogglePropTypes) => {
         </div>
       </div>
 
-      {viewMode === "grid" && <GridView data={data} params={params} />}
+      {viewMode === "grid" && (
+        <GridView data={data as CommonFields[]} params={params} />
+      )}
 
-      {viewMode === "list" && <ListView data={data} params={params} />}
+      {viewMode === "list" && (
+        <ListView data={data as CommonFields[]} params={params} />
+      )}
     </>
   );
 };

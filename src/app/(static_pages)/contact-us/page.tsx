@@ -160,7 +160,7 @@ const ContactUs = () => {
               <h3 className={`text-xl font-bold md:text-2xl`}>Careers</h3>
 
               <p className={``}>
-                If you are interesting in emplyment opportunities at FlashByte.
+                If you are interested in employment opportunities at FlashByte.
                 Please email us :
                 <Link
                   href={`mailto:flashbyte99@gmail.com`}

@@ -1,10 +1,11 @@
 import { Schema } from "mongoose";
-import type {
-  Product,
-  Address,
-  Order,
-  Cancellation,
-  Review,
+import {
+  type Product,
+  type Address,
+  type Order,
+  type Cancellation,
+  type Review,
+  WishList,
 } from "../type/userTypes";
 
 // Define Product schema
@@ -54,10 +55,15 @@ const reviewSchema = new Schema<Review>({
   reviewDate: { type: Date, required: true },
 });
 
+const wishlistSchema = new Schema<WishList>({
+  productId: { type: Schema.Types.ObjectId, required: true },
+});
+
 export {
   productSchema,
   addressSchema,
   orderSchema,
   cancellationSchema,
   reviewSchema,
+  wishlistSchema,
 };

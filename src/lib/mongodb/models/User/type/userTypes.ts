@@ -42,6 +42,11 @@ type Review = {
   comment: string;
   reviewDate: Date;
 };
+
+type WishList = {
+  productId: Types.ObjectId;
+};
+
 type UserType = {
   clerkId: string;
   userName: string;
@@ -51,8 +56,17 @@ type UserType = {
   orders?: Order[]; //Option orders array
   cancellations?: Cancellation[]; //Optional cancellations array
   reviews?: Review[]; //Optional reviews array
+  wishlist?: WishList[];
   password?: string; // Hashed password (security best practice)
   phoneNumber: string | null; // Optional phone number
 };
 
-export type { Product, Address, Order, Cancellation, Review, UserType };
+export type {
+  Product,
+  Address,
+  Order,
+  Cancellation,
+  Review,
+  UserType,
+  WishList,
+};

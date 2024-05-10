@@ -3,10 +3,37 @@
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Tooltip } from "@nextui-org/react";
+import { cn } from "@/lib/utils";
+import { useClerk } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
-const WishListIcon = () => {
+const WishListIcon = ({
+  className,
+  productId,
+  productName,
+}: {
+  className?: string;
+  productId: string[];
+  productName?: string;
+}) => {
+  const { user } = useClerk();
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (!user) {
+      router.push(`/sign-in`);
+    } else {
+      try {
+        toast.success(`${productName} successfully added to your wishlist`);
+      } catch (error: any) {
+        toast.error(`Something went wrong!`);
+      }
+    }
+  };
+
   return (
-    <>
+    <div className={cn(``, className)}>
       <span className={`sr-only`}>Add to Wishlist</span>
       <Tooltip
         content={"Add to Wishlist"}
@@ -41,14 +68,12 @@ const WishListIcon = () => {
           initial={{ scale: 0.9 }}
           whileHover={{ scale: 1 }}
           className={`scale-0 cursor-pointer rounded-full bg-rose-500 p-2 shadow-lg shadow-slate-300 ease-in-out group-hover/card:scale-100 motion-safe:transition-transform dark:shadow-gray-800`}
-          onClick={() => {
-            console.log(`Deadpool`);
-          }}
+          onClick={handleClick}
         >
           <FaRegHeart className={`text-white`} size={18} />
         </motion.button>
       </Tooltip>
-    </>
+    </div>
   );
 };
 

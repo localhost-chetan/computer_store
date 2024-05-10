@@ -10,6 +10,8 @@ type GridViewProp = {
 };
 
 const GridView = ({ data, params, className }: GridViewProp) => {
+  console.log(data?.at(0)?.discount?.percentage);
+
   return (
     <section
       className={cn(
@@ -20,6 +22,7 @@ const GridView = ({ data, params, className }: GridViewProp) => {
       {data.map((product: CommonFields, index: number) => {
         return (
           <GridCardComp
+            key={product._id?.toString()!}
             params={params as string}
             productId={product._id?.toString() as string}
             productName={product.name}
@@ -28,9 +31,8 @@ const GridView = ({ data, params, className }: GridViewProp) => {
             index={index}
             price={product.price}
             productReviews={product.reviews as Review[]}
-            discountPercent={product.discount?.percentage as number}
+            discountPercent={product?.discount?.percentage as number}
             productCategory={product.category}
-            key={product._id?.toString()}
           />
         );
       })}

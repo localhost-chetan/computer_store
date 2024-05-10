@@ -25,7 +25,7 @@ const NavDropdown = () => {
         icon: React.ComponentType<any>;
       }[]
     | any = [
-    { label: "Manage Account", href: "/dashboard/user", icon: FaUser },
+    { label: "Manage Account", href: "/dashboard/user/account", icon: FaUser },
     {
       label: "My Orders",
       href: "/dashboard/user/orders",

@@ -13,7 +13,7 @@ const ListCardComp = ({
   productName,
   price,
   description,
-  discountPercent,
+  discountPercent = 10,
   imageURLs,
   index,
   // productCategory,
@@ -39,7 +39,7 @@ const ListCardComp = ({
         <div
           className={`absolute right-3 top-3 group-hover/card:visible sm:invisible`}
         >
-          <WishListIcon />
+          <WishListIcon productId={[productId]} productName={productName} />
         </div>
 
         {/* Disocunt Badge */}
@@ -83,14 +83,17 @@ const ListCardComp = ({
           <AddToCart
             variant={`shadow`}
             radius={`sm`}
-            productData={{
-              productId,
-              productName,
-              image: imageURLs.at(0)!,
-              price,
-              discountPercent,
-              description,
-            }}
+            productData={[
+              {
+                productId,
+                productName,
+                image: imageURLs.at(0)!,
+                price,
+                discountPercent,
+                description,
+                quantity: 1,
+              },
+            ]}
           ></AddToCart>
 
           <Link

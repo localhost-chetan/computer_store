@@ -12,7 +12,7 @@ const GET = async () => {
   } catch (error) {
     return NextResponse.json(
       { error: `Error fetching data ${error}` },
-      { status: 500 }
+      { status: 500 },
     );
   }
 };

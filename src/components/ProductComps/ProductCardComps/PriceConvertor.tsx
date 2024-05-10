@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { memo, useEffect, useState } from "react";
 
 type PriceConvertorPropType = {
   price: number;
@@ -8,9 +11,12 @@ type PriceConvertorPropType = {
   lg?: string;
   fontWeight?: string;
   className?: string;
+  quantity?: number;
+  children?: React.ReactNode;
 };
 
 const PriceConvertor = ({
+  quantity = 1,
   price,
   percentage,
   sm = "text-xl",
@@ -18,6 +24,7 @@ const PriceConvertor = ({
   lg = "text-2xl",
   fontWeight = "font-extrabold",
   className,
+  children,
 }: PriceConvertorPropType) => {
   return (
     <h3
@@ -27,12 +34,12 @@ const PriceConvertor = ({
         className,
       )}
     >
-      &#8377;
+      {children}&#8377;
       {Math.floor(
-        price * 80 - (percentage / 100) * (price * 80),
+        (price * 80 - (percentage / 100) * (price * 80)) * quantity!,
       ).toLocaleString()}
     </h3>
   );
 };
 
-export default PriceConvertor;
+export default memo(PriceConvertor);

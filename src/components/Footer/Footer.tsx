@@ -155,6 +155,15 @@ const Footer = () => {
 
                 <li>
                   <Link
+                    href={`/checkout`}
+                    className="text-gray-200 transition  hover:text-yellow-400"
+                  >
+                    Checkout
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
                     href={`/sign-in`}
                     className="text-gray-200 transition  hover:text-yellow-400"
                   >

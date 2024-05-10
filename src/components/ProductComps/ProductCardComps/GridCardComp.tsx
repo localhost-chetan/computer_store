@@ -16,16 +16,12 @@ const GridCardComp = ({
   productName,
   imageURLs,
   index,
-  discountPercent,
+  discountPercent = 10,
   description,
   price,
   productReviews,
   productCategory,
 }: CardCompType) => {
-  console.log(params);
-
-  console.log(productCategory?.replace(` `, `_`).toLowerCase().concat(`s`));
-
   return (
     <div
       key={productId ?? index}
@@ -52,7 +48,7 @@ const GridCardComp = ({
         <div
           className={`absolute right-3 top-3 group-hover/card:visible sm:invisible`}
         >
-          <WishListIcon />
+          <WishListIcon productId={[productId]} productName={productName} />
         </div>
 
         {/* Discount badge */}
@@ -106,14 +102,17 @@ const GridCardComp = ({
             variant={`shadow`}
             key={index}
             radius={`sm`}
-            productData={{
-              productId,
-              productName,
-              image: imageURLs.at(0)!,
-              price,
-              discountPercent,
-              description,
-            }}
+            productData={[
+              {
+                productId,
+                productName,
+                image: imageURLs.at(0)!,
+                price,
+                discountPercent,
+                description,
+                quantity: 1,
+              },
+            ]}
           />
 
           <Link

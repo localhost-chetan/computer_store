@@ -4,9 +4,13 @@ import { createContext } from "react";
 
 export const FreeDeliveryContext = createContext(10000);
 
-const FreeDeliveryContextProvider = ({ children }: { children: React.ReactNode }) => {
+const FreeDeliveryContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
-    <FreeDeliveryContext.Provider value={10000}>
+    <FreeDeliveryContext.Provider value={50000}>
       {children}
     </FreeDeliveryContext.Provider>
   );

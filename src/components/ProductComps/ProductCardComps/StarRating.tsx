@@ -36,7 +36,7 @@ const StarRating = ({
       let number = index + 0.5;
 
       return (
-        <span key={index} className={``}>
+        <div className={``} key={index}>
           {avgRating >= index + 1 ? (
             <FaStar size={size} color={iconColor} />
           ) : avgRating >= number ? (
@@ -44,7 +44,7 @@ const StarRating = ({
           ) : (
             <FaRegStar size={size} color={iconColor} />
           )}
-        </span>
+        </div>
       );
     });
 

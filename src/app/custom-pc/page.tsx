@@ -1,22 +1,11 @@
 import Container from "@/components/Container";
-import ProductDropdown from "@/components/CustomPC/ProductDropdown";
 import ProductAssuranceCOD from "@/components/ProductAssuranceCOD";
 import Breadcrumb from "@/components/ProductComps/Breadcrumb";
-import PriceConvertor from "@/components/ProductComps/ProductCardComps/PriceConvertor";
 // import CustomerCarousel from "@/components/ProductComps/CustomerCarousel";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-
 import IntelCabinet from "@/../public/Cabinets/Intel Gaming PC Cabinet.png";
-import {
-  AddToCart,
-  BuyNow,
-} from "@/components/ProductComps/ProductCardComps/ProductButtons";
-import { Divider } from "@nextui-org/react";
-import QuantityComp from "@/components/ProductComps/QuantityComp";
-import SocialShare from "@/components/SocialShare";
-import WishListIcon from "@/components/ProductComps/ProductCardComps/WishListIcon";
+import CustomPCBuilderComp from "@/components/CustomPC/CustomPCBuilderComp";
 
 export const metadata: Metadata = {
   title: "Custom PC",
@@ -31,6 +20,7 @@ const CustomPC = () => {
       quantity: false,
       max: 1,
       isRequired: true,
+      defaultSelectedId: "65e82ee1b707a389eb78d197",
     },
     {
       id: 2,
@@ -39,6 +29,9 @@ const CustomPC = () => {
       quantity: false,
       max: 1,
       isRequired: true,
+      description:
+        "Kindly choose your motherboard according to your CPU socket support.",
+      defaultSelectedId: "65e84c5faae050bcfe22630e",
     },
     {
       id: 8,
@@ -47,6 +40,16 @@ const CustomPC = () => {
       quantity: true,
       max: 4,
       isRequired: true,
+      defaultSelectedId: "65e835e0b707a389eb78d1c5",
+    },
+    {
+      id: 11,
+      productCategory: "graphics_cards",
+      label: "Graphics Card",
+      quantity: true,
+      max: 2,
+      isRequired: false,
+      defaultSelectedId: "65e85674aae050bcfe226351",
     },
     {
       id: 3,
@@ -55,6 +58,7 @@ const CustomPC = () => {
       quantity: false,
       max: 4,
       isRequired: false,
+      defaultSelectedId: "65e874deaae050bcfe2263fd",
     },
     {
       id: 4,
@@ -63,6 +67,7 @@ const CustomPC = () => {
       quantity: true,
       max: 10,
       isRequired: false,
+      defaultSelectedId: "65e8a981aae050bcfe226466",
     },
     {
       id: 5,
@@ -71,14 +76,16 @@ const CustomPC = () => {
       quantity: false,
       max: 1,
       isRequired: true,
+      defaultSelectedId: "65e86506aae050bcfe2263a4",
     },
     {
       id: 6,
       productCategory: "monitors",
       label: "Monitor",
-      quantity: false,
-      max: 10,
+      quantity: true,
+      max: 3,
       isRequired: false,
+      defaultSelectedId: "65e86c82aae050bcfe2263be",
     },
     {
       id: 7,
@@ -87,6 +94,7 @@ const CustomPC = () => {
       quantity: true,
       max: 2,
       isRequired: false,
+      defaultSelectedId: "65e87258aae050bcfe2263e3",
     },
 
     {
@@ -96,6 +104,7 @@ const CustomPC = () => {
       quantity: true,
       max: 4,
       isRequired: true,
+      defaultSelectedId: "65e87893aae050bcfe226419",
     },
     {
       id: 10,
@@ -104,6 +113,7 @@ const CustomPC = () => {
       quantity: true,
       max: 10,
       isRequired: true,
+      defaultSelectedId: "65e882cdaae050bcfe226433",
     },
   ];
 
@@ -149,98 +159,7 @@ const CustomPC = () => {
 
           <ProductAssuranceCOD />
 
-          {/* Price */}
-          <PriceConvertor price={1000} percentage={0} lg={`text-4xl`} />
-
-          <div className={`space-y-2 text-pretty`}>
-            <p className={`font-bold`}>
-              Get Rs 500/- instant cashback. Follow these 4 steps to claim-
-            </p>
-            <ul className={`max-w-[70ch] list-inside list-decimal space-y-1`}>
-              <li>Purchase a Custom PC from FlashByte.</li>
-              <li>
-                Make a 5-10 min review video (You can show unboxing or do a
-                review of your PC).
-              </li>
-              <li>
-                Upload it on YouTube and also tag FlashByte Channel in title.
-              </li>
-              <li>
-                Share the video link to us on whatsapp
-                <Link
-                  href={`tel:919509129835`}
-                  className={`font-semibold text-orange-400`}
-                >
-                  +91 9509129835
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className={`space-y-8 py-5`}>
-            {categories.map(
-              ({
-                id,
-                productCategory,
-                label,
-                quantity,
-                max,
-                isRequired,
-              }: {
-                id: number;
-                productCategory: string;
-                label: string;
-                quantity: boolean;
-                max: number;
-                isRequired: boolean;
-              }) => (
-                <>
-                  <ProductDropdown
-                    key={id}
-                    productCategory={productCategory}
-                    label={label}
-                    quantity={quantity}
-                    max={max}
-                    isRequired={isRequired}
-                  />
-
-                  <Divider orientation={`horizontal`} />
-                </>
-              ),
-            )}
-          </div>
-
-          {/* Pricing */}
-          <div className={`flex items-center gap-x-1`}>
-            <p className={`font-semibold`}>{`Total Price : `}</p>
-            {
-              <PriceConvertor
-                price={1000}
-                percentage={0}
-                sm={`text-2xl`}
-                md={`text-3xl`}
-                lg={`text-4xl`}
-              />
-            }
-          </div>
-
-          {/* Share */}
-          <span className={`sr-only`}>Social Media Sharing</span>
-          <div className={`flex justify-between`}>
-            <WishListIcon />
-
-            <SocialShare />
-          </div>
-
-          <div
-            className={`flex flex-col gap-x-5 gap-y-2 sm:flex-row sm:items-center`}
-          >
-            <QuantityComp scale={`scale-75 sm:scale-85`} />
-            <div className={`flex gap-x-5`}>
-              <AddToCart />
-              <BuyNow color={`danger`} />
-            </div>
-          </div>
+          <CustomPCBuilderComp categories={categories}></CustomPCBuilderComp>
         </div>
       </section>
     </Container>

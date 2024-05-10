@@ -19,6 +19,7 @@ export default authMiddleware({
     "/refund-policy",
     "/terms-conditions",
     "/privacy-policy",
+    "/checkout",
   ],
   // Prevent the specified routes from accessing
   // authentication information:

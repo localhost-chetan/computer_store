@@ -38,7 +38,7 @@ export default function RootLayout({
             <FreeDeliveryContextProvider>
               <CartContextProvider>
                 <Toaster
-                  duration={2500}
+                  duration={3000}
                   richColors
                   theme={`system`}
                   position={`top-right`}
