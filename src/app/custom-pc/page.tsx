@@ -34,7 +34,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e84c5faae050bcfe22630e",
     },
     {
-      id: 8,
+      id: 3,
       productCategory: "ram_modules",
       label: "RAM",
       quantity: true,
@@ -43,7 +43,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e835e0b707a389eb78d1c5",
     },
     {
-      id: 11,
+      id: 4,
       productCategory: "graphics_cards",
       label: "Graphics Card",
       quantity: true,
@@ -52,7 +52,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e85674aae050bcfe226351",
     },
     {
-      id: 3,
+      id: 5,
       productCategory: "mouses",
       label: "Mouse",
       quantity: false,
@@ -61,7 +61,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e874deaae050bcfe2263fd",
     },
     {
-      id: 4,
+      id: 5,
       productCategory: "headsets",
       label: "Headset",
       quantity: true,
@@ -70,7 +70,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e8a981aae050bcfe226466",
     },
     {
-      id: 5,
+      id: 6,
       productCategory: "cabinets",
       label: "Cabinet",
       quantity: false,
@@ -79,7 +79,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e86506aae050bcfe2263a4",
     },
     {
-      id: 6,
+      id: 7,
       productCategory: "monitors",
       label: "Monitor",
       quantity: true,
@@ -88,7 +88,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e86c82aae050bcfe2263be",
     },
     {
-      id: 7,
+      id: 8,
       productCategory: "keyboards",
       label: "Keyboard",
       quantity: true,
@@ -112,8 +112,18 @@ const CustomPC = () => {
       label: "Case Fan",
       quantity: true,
       max: 10,
-      isRequired: true,
+      isRequired: false,
       defaultSelectedId: "65e882cdaae050bcfe226433",
+    },
+
+    {
+      id: 11,
+      productCategory: "aio_liquid_coolers",
+      label: "AIO Liquid Cooler",
+      quantity: true,
+      max: 10,
+      isRequired: false,
+      defaultSelectedId: "65e85c1caae050bcfe226379",
     },
   ];
 

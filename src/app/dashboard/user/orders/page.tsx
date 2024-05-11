@@ -1,5 +1,11 @@
+import Empty from "@/components/Empty";
+
 const OrdersPage = () => {
-  return <h2 className={`text-xl font-bold`}>OrdersPage</h2>;
+  return (
+    <>
+      <Empty>Your Orders</Empty>
+    </>
+  );
 };
 
 export default OrdersPage;

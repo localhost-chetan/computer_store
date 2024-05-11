@@ -26,7 +26,7 @@ const GridCardComp = ({
     <div
       key={productId ?? index}
       className={cn(
-        `group/card mx-auto grid h-[500px] max-w-[25rem] cursor-pointer grid-rows-2 content-between gap-y-3 overflow-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.03] dark:bg-gray-900 dark:shadow-slate-900 sm:min-w-[15rem] md:max-w-[25rem] lg:max-w-[22rem] xl:min-w-[18rem] xl:max-w-[25rem]`,
+        `group/card mx-auto grid h-[500px] max-w-[25rem] cursor-pointer grid-rows-2 content-between gap-y-3 overflow-hidden rounded-md bg-slate-100 shadow-lg shadow-slate-300 duration-200 ease-in-out hover:scale-[1.03] dark:bg-gray-900 dark:shadow-slate-900 sm:min-w-[15rem] md:max-w-[25rem] lg:max-w-[27rem] xl:min-w-[18rem] xl:max-w-[25rem]`,
         classNames,
       )}
     >

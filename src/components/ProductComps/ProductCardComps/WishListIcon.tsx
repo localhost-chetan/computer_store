@@ -1,12 +1,13 @@
 "use client";
 
-import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Tooltip } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { addToWishList } from "@/lib/actions/wishlist";
 
 const WishListIcon = ({
   className,
@@ -20,14 +21,21 @@ const WishListIcon = ({
   const { user } = useClerk();
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!user) {
       router.push(`/sign-in`);
+      return;
     } else {
+      const response = await addToWishList(
+        productId?.at(0)?.toString()!,
+        user?.id.toString()!,
+        productName!,
+      );
+
       try {
-        toast.success(`${productName} successfully added to your wishlist`);
+        toast.success(response.message);
       } catch (error: any) {
-        toast.error(`Something went wrong!`);
+        toast.error(response.message);
       }
     }
   };

@@ -21,14 +21,4 @@ const createUser = async (user: UserType) => {
   }
 };
 
-const addToWishList = async (productId: string[]) => {
-  try {
-    await dbConnect();
-  } catch (error) {
-    if (error instanceof Error) {
-      console.log(`Unable to save product to your wishlist`);
-    }
-  }
-};
-
 export { createUser };

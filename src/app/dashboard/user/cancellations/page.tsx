@@ -1,5 +1,11 @@
+import Empty from "@/components/Empty";
+
 const CancellationsPage = () => {
-  return <h2 className={`text-xl font-bold`}>CancellationsPage</h2>;
+  return (
+    <>
+      <Empty>Your Cancellations</Empty>
+    </>
+  );
 };
 
 export default CancellationsPage;

@@ -12,8 +12,6 @@ const CartIconComp = () => {
   const { cartProducts } = useContext(CartContext);
   // const ref = useRef();
 
-  console.log(cartProducts);
-
   return (
     <Badge
       content={cartProducts?.length}

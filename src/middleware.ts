@@ -9,6 +9,7 @@ export default authMiddleware({
     "/sign-up",
     "/api/webhooks(.*)",
     "/api/send",
+    // "/api/checkout",
     "/products(.*)",
     "/api/products/(.*)",
     "/cart",

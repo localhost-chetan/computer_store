@@ -1,5 +1,11 @@
+import Empty from "@/components/Empty";
+
 const ReviewsPage = () => {
-  return <h2 className={`text-xl font-bold`}>ReviewsPage</h2>;
+  return (
+    <>
+      <Empty>Your Product Reviews</Empty>
+    </>
+  );
 };
 
 export default ReviewsPage;

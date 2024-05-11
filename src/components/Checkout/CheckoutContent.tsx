@@ -17,6 +17,7 @@ import {
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { FreeDeliveryContext } from "@/context/FreeDeliveryPrice";
+import Link from "next/link";
 
 const CheckoutContent = ({ className }: { className?: string }) => {
   const { cartProducts, handleRemove, calculateSubTotal } =
@@ -58,8 +59,16 @@ const CheckoutContent = ({ className }: { className?: string }) => {
 
   const [selectedCheckbox, setSelectedCheckbox] = useState<null | string>(null);
 
+  const [total, setTotal] = useState(subTotal);
+
   const handleCheckboxChange = (id: string) => {
     setSelectedCheckbox(id === selectedCheckbox ? null : id);
+  };
+
+  const calculateTotal = () => {
+    cartProducts.reduce((accumulator: number, product: ProductDataType) => {
+      product?.price + accumulator;
+    });
   };
 
   return (
@@ -296,6 +305,26 @@ const CheckoutContent = ({ className }: { className?: string }) => {
             10% Booking deposit and remaining cash on delivery
           </p>
         </Checkbox>
+      </div>
+
+      <div className={`mt-10 space-y-6`}>
+        <p className={`text-sm`}>
+          Your personal data will be used to process your order, support your
+          experience throughout this website, and for other purposes. Also you
+          agree with our website Terms & Conditions.
+        </p>
+
+        <Button
+          as={Link}
+          href={``}
+          size={`lg`}
+          variant={`shadow`}
+          radius={`sm`}
+          color={`primary`}
+          className={`w-full`}
+        >
+          Pay Now
+        </Button>
       </div>
     </div>
   );

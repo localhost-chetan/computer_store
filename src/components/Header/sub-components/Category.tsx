@@ -15,16 +15,20 @@ const Category = ({ className }: { className: string }) => {
       href: `/products/headsets`,
     },
     {
-      category: "Processors",
-      href: `/products/processors`,
-    },
-    {
       category: "Mouse",
       href: `/products/mouses`,
     },
     {
+      category: "Graphics Cards",
+      href: `/products/graphics_cards`,
+    },
+    {
       category: "Motherboards",
       href: `/products/motherboards`,
+    },
+    {
+      category: "AIO Liquid Coolers",
+      href: `/products/aio_liquid_coolers`,
     },
     {
       category: "Cabinets",
@@ -35,8 +39,8 @@ const Category = ({ className }: { className: string }) => {
       href: `/products/ram_modules`,
     },
     {
-      category: "Graphics Cards",
-      href: `/products/graphics_cards`,
+      category: "Processors",
+      href: `/products/processors`,
     },
     {
       category: "Monitors",
@@ -64,13 +68,7 @@ const Category = ({ className }: { className: string }) => {
       category: "Air Coolers",
       href: `/products/air_coolers`,
     },
-    {
-      category: "AIO Liquid Coolers",
-      href: `/products/aio_liquid_coolers`,
-    },
   ];
-
-  console.log(`Category component`);
 
   const router = useRouter();
 

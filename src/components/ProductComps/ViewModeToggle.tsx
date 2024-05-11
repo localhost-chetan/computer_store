@@ -15,7 +15,7 @@ type ViewModeTogglePropTypes = {
 
 const ViewModeToggle = ({ data, params }: ViewModeTogglePropTypes) => {
   const buttonProps = {
-    size: 25,
+    size: 20,
     radius: "sm",
   } as const;
 
@@ -33,6 +33,7 @@ const ViewModeToggle = ({ data, params }: ViewModeTogglePropTypes) => {
             <Button
               isIconOnly
               radius={buttonProps.radius!}
+              size={`sm`}
               //   isDisabled={viewMode === "grid" && true}
               onClick={() => setViewMode("grid")}
             >
@@ -42,6 +43,7 @@ const ViewModeToggle = ({ data, params }: ViewModeTogglePropTypes) => {
 
           <Tooltip content="List View">
             <Button
+              size={`sm`}
               isIconOnly
               radius={buttonProps.radius!}
               //   isDisabled={viewMode === "list" && true}

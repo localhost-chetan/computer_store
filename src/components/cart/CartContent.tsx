@@ -21,6 +21,7 @@ import { FreeDeliveryContext } from "@/context/FreeDeliveryPrice";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import WishListIcon from "../ProductComps/ProductCardComps/WishListIcon";
+import { useUser } from "@clerk/nextjs";
 
 const CartContent = () => {
   const { cartProducts, setCartProducts, handleRemove, calculateSubTotal } =
@@ -29,6 +30,7 @@ const CartContent = () => {
   const freeDeliveryThreshold = useContext(FreeDeliveryContext);
 
   const router = useRouter();
+  const { user } = useUser();
 
   useEffect(() => {
     console.log(`useEffect hook in CartContent`);
@@ -66,9 +68,33 @@ const CartContent = () => {
     setSubTotal(calculateSubTotalMemoized);
   }, [calculateSubTotalMemoized]);
 
-  console.log(subTotal);
-
   const [deliveryCharge, setDeliveryCharge] = useState(`270`);
+
+  const customer = {
+    clerkId: user?.id,
+    email: user?.emailAddresses?.at(0)?.emailAddress,
+  };
+
+  const handleCheckout = async () => {
+    try {
+      if (!user) {
+        router.push(`/sign-in`);
+        toast.error(`Your're not logged in ❌`);
+      }
+
+      const response = await fetch(`/api/checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cartItems: cartProducts, customer }),
+        mode: "no-cors",
+      });
+
+      const data = await response.json();
+      window.location.href = data.url;
+    } catch (error) {
+      console.log(`[checkout_POST],${error}`);
+    }
+  };
 
   if (cartProducts?.length > 0) {
     return (
@@ -310,13 +336,15 @@ const CartContent = () => {
           </div>
 
           <Button
-            as={Link}
-            href={`/checkout`}
             variant={`shadow`}
             radius={`sm`}
             color={`primary`}
             size={`lg`}
             className={`w-full md:w-fit xl:w-full`}
+            as={Link}
+            href={`/checkout`}
+
+            // onClick={() => handleCheckout()}
           >
             Proceed to Checkout
           </Button>
