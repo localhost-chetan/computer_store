@@ -125,6 +125,16 @@ const CustomPC = () => {
       isRequired: false,
       defaultSelectedId: "65e85c1caae050bcfe226379",
     },
+
+    {
+      id: 12,
+      productCategory: "power_supplies",
+      label: "Power Supply (SMPS)",
+      quantity: true,
+      max: 10,
+      isRequired: true,
+      defaultSelectedId: "65e860e9aae050bcfe226390",
+    },
   ];
 
   return (
