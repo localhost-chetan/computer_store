@@ -14,6 +14,8 @@ const addToWishList = async (
     // Find the user by ID
     const user = await User.findOne({ clerkId: userId });
 
+    console.log(user.wishlist);
+
     if (!user) {
       throw new Error("User not found");
     }
@@ -22,9 +24,7 @@ const addToWishList = async (
     const wishlist = user.wishlist || [];
 
     // Check if product already exists in wishlist (optional)
-    const alreadyInWishlist = wishlist.find(
-      (item: any) => item._id.toString() === productId,
-    );
+    const alreadyInWishlist = wishlist.find((item: any) => item === productId);
 
     if (alreadyInWishlist) {
       return { message: "Product already in wishlist" }; // Optional: handle duplicate addition
@@ -47,12 +47,11 @@ const addToWishList = async (
 
 const getWishlist = async (userId: string) => {
   try {
+    await dbConnect();
     // Find the user by ID
     const user = await User.findOne({ clerkId: userId });
 
-    if (!user) {
-      throw new Error("User not found");
-    }
+    console.log(user.wishlist);
 
     // Get the existing wishlist (or initialize empty array)
     const wishlist = user.wishlist || [];

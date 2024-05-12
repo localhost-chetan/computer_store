@@ -13,7 +13,11 @@ const ProfileInfo = () => {
 
   const handlePencilClick = () => {
     setIsDisabled(!isDisabled);
-    toast(`Now you can edit your profile information`);
+    if (isDisabled) {
+      toast(`Now you can edit your profile information`);
+    } else {
+      toast.success(`You've successfully updated your profile information.`);
+    }
   };
 
   return (

@@ -19,7 +19,7 @@ const GridView = ({ data, params, className }: GridViewProp) => {
         className,
       )}
     >
-      {data.map((product: CommonFields, index: number) => {
+      {data?.map((product: CommonFields, index: number) => {
         return (
           <GridCardComp
             key={product._id?.toString()!}

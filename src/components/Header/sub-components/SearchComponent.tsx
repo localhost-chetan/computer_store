@@ -2,9 +2,10 @@
 
 // import dynamic from "next/dynamic";
 import { Button, Input, Kbd } from "@nextui-org/react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import Category from "./Category";
+import { useRouter } from "next/navigation";
 // const Category = dynamic(() => import("./Category"));
 
 type PropTypes = {
@@ -23,6 +24,9 @@ const SearchComponent = ({
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   console.log(`Search comp`);
+
+  const [query, setQuery] = useState(``);
+  const router = useRouter();
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (
@@ -52,6 +56,8 @@ const SearchComponent = ({
     >
       <div className={divClasses}>
         <Input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           defaultValue={``}
           name={`product`}
           size={`lg`}
@@ -80,12 +86,14 @@ const SearchComponent = ({
         </div>
 
         <Button
+          isDisabled={query === ``}
           type={`submit`}
           color={`primary`}
           variant={`solid`}
           radius={`none`}
           size={`lg`}
           className={searchBtnClasses}
+          onClick={() => router.push(`/search_results/${query}`)}
         >
           Search
         </Button>

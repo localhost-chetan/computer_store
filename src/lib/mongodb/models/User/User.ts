@@ -17,7 +17,7 @@ const userSchema = new Schema<UserType>(
     orders: { type: [orderSchema], default: [] }, // Array of orders (embedded documents)
     cancellations: { type: [cancellationSchema], default: [] }, // Array of cancellations (embedded documents)
     reviews: { type: [reviewSchema], default: [] }, // Array of reviews (embedded documents)
-    wishlist: { type: [wishlistSchema], default: [] },
+    wishlist: { type: [String], default: [] },
     password: { type: String, default: null }, // Hashed password for security
     phoneNumber: { type: String, default: null, required: true },
   },

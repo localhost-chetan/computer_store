@@ -5,6 +5,7 @@ export default authMiddleware({
   // publicRoutes: ['/anyone-can-visit-this-route'],
   publicRoutes: [
     "/",
+    "search_results/(.*)",
     "/sign-in",
     "/sign-up",
     "/api/webhooks(.*)",
@@ -13,6 +14,7 @@ export default authMiddleware({
     "/products(.*)",
     "/api/products/(.*)",
     "/cart",
+    "/api/search/(.*)",
     "/custom-pc",
     "/about-us",
     "/contact-us",

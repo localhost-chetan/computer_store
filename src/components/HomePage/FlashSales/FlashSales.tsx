@@ -16,7 +16,7 @@ const FlashSales = async () => {
   const products = await response.json().then((data: any) => data);
 
   const filteredData = products?.filter((document: CommonFields) => {
-    return document.discount?.percentage! >= 75;
+    return document.discount?.percentage! >= 50;
   });
 
   return (

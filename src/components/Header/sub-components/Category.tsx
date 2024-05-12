@@ -64,10 +64,10 @@ const Category = ({ className }: { className: string }) => {
       category: "Case Fans",
       href: `/products/case_fans`,
     },
-    {
-      category: "Air Coolers",
-      href: `/products/air_coolers`,
-    },
+    // {
+    //   category: "Air Coolers",
+    //   href: `/products/air_coolers`,
+    // },
   ];
 
   const router = useRouter();

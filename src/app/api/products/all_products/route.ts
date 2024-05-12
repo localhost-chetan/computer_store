@@ -27,14 +27,6 @@ const GET = async (_request: Request) => {
 
     // ****************************************************************
 
-    const responseAirCoolers = await fetch(
-      `${process.env.BASE_URL}/api/products/air_coolers`,
-    );
-
-    const airCoolers = await responseAirCoolers.json();
-
-    // **********************************************************************
-
     const responseCabinets = await fetch(
       `${process.env.BASE_URL}/api/products/cabinets`,
     );
@@ -124,7 +116,6 @@ const GET = async (_request: Request) => {
       ...keyboards,
       ...mouses,
       ...aioLiquidCoolers,
-      ...airCoolers,
       ...cabinets,
       ...motherboards,
       ...caseFans,

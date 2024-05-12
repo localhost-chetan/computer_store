@@ -1,5 +1,6 @@
 "use client";
 
+import { Tooltip } from "@nextui-org/react";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -19,6 +20,7 @@ const SocialShare = () => {
       <p>Share: </p>
 
       <span className={`flex gap-x-2`}>
+        <span className={`sr-only`}>Facebokk Share</span>
         <FacebookShareButton
           url={process.env.BASE_URL!}
           quote={
@@ -29,6 +31,7 @@ const SocialShare = () => {
           <FacebookIcon size={size} round />
         </FacebookShareButton>
 
+        <span className={`sr-only`}>Pinterest Share</span>
         <PinterestShareButton
           url={process.env.BASE_URL!}
           media={
@@ -38,6 +41,7 @@ const SocialShare = () => {
           <PinterestIcon size={size} round />
         </PinterestShareButton>
 
+        <span className={`sr-only`}>X(Twitter) Share</span>
         <TwitterShareButton
           url={process.env.BASE_URL!}
           title={
@@ -47,6 +51,7 @@ const SocialShare = () => {
           <TwitterIcon size={size} round />
         </TwitterShareButton>
 
+        <span className={`sr-only`}>Whatsapp Share</span>
         <WhatsappShareButton
           url={process.env.BASE_URL!}
           title={

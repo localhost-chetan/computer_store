@@ -61,7 +61,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e874deaae050bcfe2263fd",
     },
     {
-      id: 5,
+      id: 6,
       productCategory: "headsets",
       label: "Headset",
       quantity: true,
@@ -70,7 +70,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e8a981aae050bcfe226466",
     },
     {
-      id: 6,
+      id: 7,
       productCategory: "cabinets",
       label: "Cabinet",
       quantity: false,
@@ -79,7 +79,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e86506aae050bcfe2263a4",
     },
     {
-      id: 7,
+      id: 8,
       productCategory: "monitors",
       label: "Monitor",
       quantity: true,
@@ -88,7 +88,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e86c82aae050bcfe2263be",
     },
     {
-      id: 8,
+      id: 9,
       productCategory: "keyboards",
       label: "Keyboard",
       quantity: true,
@@ -98,7 +98,7 @@ const CustomPC = () => {
     },
 
     {
-      id: 9,
+      id: 10,
       productCategory: "storage_devices",
       label: "Storage",
       quantity: true,
@@ -107,7 +107,7 @@ const CustomPC = () => {
       defaultSelectedId: "65e87893aae050bcfe226419",
     },
     {
-      id: 10,
+      id: 11,
       productCategory: "case_fans",
       label: "Case Fan",
       quantity: true,
@@ -117,7 +117,7 @@ const CustomPC = () => {
     },
 
     {
-      id: 11,
+      id: 12,
       productCategory: "aio_liquid_coolers",
       label: "AIO Liquid Cooler",
       quantity: true,
@@ -127,13 +127,13 @@ const CustomPC = () => {
     },
 
     {
-      id: 12,
+      id: 13,
       productCategory: "power_supplies",
       label: "Power Supply (SMPS)",
-      quantity: true,
+      quantity: false,
       max: 10,
       isRequired: true,
-      defaultSelectedId: "65e860e9aae050bcfe226390",
+      defaultSelectedId: "65e8610baae050bcfe226393",
     },
   ];
 

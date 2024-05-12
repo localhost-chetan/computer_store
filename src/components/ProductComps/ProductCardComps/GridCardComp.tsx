@@ -48,7 +48,10 @@ const GridCardComp = ({
         <div
           className={`absolute right-3 top-3 group-hover/card:visible sm:invisible`}
         >
-          <WishListIcon productId={[productId]} productName={productName} />
+          <WishListIcon
+            productId={[productId.toString()!]}
+            productName={productName}
+          />
         </div>
 
         {/* Discount badge */}
