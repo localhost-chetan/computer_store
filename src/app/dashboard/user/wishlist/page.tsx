@@ -57,11 +57,15 @@ const WishlistPage = () => {
         <div className={`space-y-5`}>
           <h2 className={`text-2xl font-bold`}>Your Wishlist</h2>
 
-          <div className={`border`}>
+          <div className={`space-y-4`}>
             {wishlist.map((productId: string) => {
               return (
                 <>
-                  <div className={`space-y-3`}>{productId}</div>
+                  <div
+                    className={`h-36 space-y-3 rounded-sm p-5 text-3xl font-extrabold`}
+                  >
+                    {productId}
+                  </div>
                   <Divider></Divider>
                 </>
               );

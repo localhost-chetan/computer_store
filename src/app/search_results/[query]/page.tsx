@@ -16,7 +16,8 @@ const SearchResultsPage = async ({ params }: { params: { query: string } }) => {
         <h1 className={`mb-10 text-lg font-semibold`}>
           {`Search results for `}
           <span className={`font-extrabold text-green-700 dark:text-green-500`}>
-            "{decodeURIComponent(params.query)}" ({searchedProducts?.length})
+            {`"${decodeURIComponent(params.query)}"`} (
+            {searchedProducts?.length})
           </span>
         </h1>
         {searchedProducts === null ||
