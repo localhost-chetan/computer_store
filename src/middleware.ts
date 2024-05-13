@@ -23,6 +23,8 @@ export default authMiddleware({
     "/terms-conditions",
     "/privacy-policy",
     "/checkout",
+    "search/(.*)",
+    "api/search/(.*)",
   ],
   // Prevent the specified routes from accessing
   // authentication information:
