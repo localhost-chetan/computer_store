@@ -59,7 +59,7 @@ const AddToCart = ({
       (product: ProductDataType) =>
         product.productId === productData?.at(0)?.productId,
     );
-  }, [cartProducts, productData?.at(0)?.productId]);
+  }, [cartProducts,productData?.productId, productData?.at(0)?.productId]);
 
   const handleClick = () => {
     if (isProductInCart) {
@@ -81,7 +81,7 @@ const AddToCart = ({
       });
     }
     localStorage.setItem("products", JSON.stringify(cartProducts));
-  }, [isProductInCart]);
+  }, [isProductInCart,cartBtnState]);
 
   return (
     <Button
