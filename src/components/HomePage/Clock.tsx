@@ -10,7 +10,7 @@ const Clock = () => {
     seconds: 59, // Start at 59 seconds
   });
 
-  const deadline = new Date(`May 25, 2024`); // Replace with your target date
+  const deadline = new Date(`May 25, 2025`); // Replace with your target date
 
   const getTime = useCallback(() => {
     const differenceInMilliseconds = deadline.getTime() - Date.now();

@@ -42,7 +42,7 @@ const Footer = () => {
               {/* Facebook */}
               <li>
                 <Link
-                  href="#"
+                  href="https://x.com/localhostChetan"
                   rel="noreferrer"
                   target="_blank"
                   className="text-gray-200 transition  hover:text-yellow-400"
@@ -92,7 +92,7 @@ const Footer = () => {
               {/* Twitter */}
               <li>
                 <Link
-                  href="#"
+                  href="https://x.com/localhostChetan"
                   rel="noreferrer"
                   target="_blank"
                   className="text-gray-200 transition  hover:text-yellow-400"
@@ -106,7 +106,7 @@ const Footer = () => {
               {/* Github */}
               <li>
                 <Link
-                  href="#"
+                  href="https://github.com/localhost-chetan"
                   rel="noreferrer"
                   target="_blank"
                   className="text-gray-200 transition  hover:text-yellow-400"

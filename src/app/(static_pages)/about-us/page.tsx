@@ -83,18 +83,27 @@ const TeamMemberIMGWrapper = ({
           height={400}
           loading={`lazy`}
           className={`h-full select-none object-cover object-top transition-all group-hover:grayscale`}
-        ></Image>
+        />
 
         <div
           className={`absolute bottom-0 flex w-full justify-center gap-5 bg-gradient-to-b from-slate-400 to-slate-50 py-3 backdrop-blur-md backdrop-saturate-50 transition-opacity duration-300 *:cursor-pointer group-hover:opacity-100 md:opacity-0`}
         >
-          <Link href={``} className={`transition-transform hover:scale-[1.15]`}>
+          <Link
+            href={`/`}
+            className={`transition-transform hover:scale-[1.15]`}
+          >
             <FaFacebookSquare size={size} color={`hsl(221, 44%, 41%)`} />
           </Link>
-          <Link href={``} className={`transition-transform hover:scale-[1.15]`}>
+          <Link
+            href={`/`}
+            className={`transition-transform hover:scale-[1.15]`}
+          >
             <FaSquareXTwitter size={size} color={`black`} />
           </Link>
-          <Link href={``} className={`transition-transform hover:scale-[1.15]`}>
+          <Link
+            href={`/`}
+            className={`transition-transform hover:scale-[1.15]`}
+          >
             <RiInstagramFill size={size} color={`hsl(332, 65%, 53%)`} />
           </Link>
         </div>
