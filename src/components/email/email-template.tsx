@@ -11,7 +11,6 @@ const EmailTemplate = ({ firstName, message }: EmailTemplateProps) => {
       <h1 className={`text-2xl font-bold`}>Hello {firstName}</h1>
 
       <p className={``}>{message}</p>
-      <p className={``}>Message sent successfully!</p>
     </div>
   );
 };

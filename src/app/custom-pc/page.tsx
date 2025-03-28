@@ -148,16 +148,15 @@ const CustomPC = () => {
         <div
           className={`top-0 w-full grow-0 select-none p-2 md:scale-95 lg:sticky lg:h-screen lg:scale-100`}
         >
-          <div className={`flex h-full items-center p-2`}>
+          <div className={` flex h-full items-center p-2`}>
             <Image
-              // src={`/Cabinet/Intel Gaming PC Cabinet.png`}
               src={IntelCabinet}
               alt={`Intel Gaming PC Cabinet`}
-              priority
-              quality={10}
-              blurDataURL=""
+              quality={7}
+              placeholder={`blur`}
+              loading={`lazy`}
               className={``}
-            ></Image>
+            />
           </div>
         </div>
 

@@ -14,7 +14,7 @@ const addToWishList = async (
     // Find the user by ID
     const user = await User.findOne({ clerkId: userId });
 
-    console.log(user.wishlist);
+    console.log("🚀 ~ user:", user);
 
     if (!user) {
       throw new Error("User not found");
@@ -27,7 +27,8 @@ const addToWishList = async (
     const alreadyInWishlist = wishlist.find((item: any) => item === productId);
 
     if (alreadyInWishlist) {
-      return { message: "Product already in wishlist" }; // Optional: handle duplicate addition
+      // return { message: "Product already in wishlist" }; // Optional: handle duplicate addition
+      throw new Error(`Product already in wishlist`)
     }
 
     // Update wishlist by adding the product ID
@@ -40,8 +41,10 @@ const addToWishList = async (
   } catch (error) {
     if (error instanceof Error) {
       console.error("Error adding product to wishlist:", error.message);
+      throw new Error(error.message)
     }
-    return { message: "Unable to save product to wishlist" }; // Error message
+    // return { message: "Unable to save product to wishlist" }; // Error message
+    throw new Error(`Unable to save product to wishlist`)
   }
 };
 
@@ -61,7 +64,8 @@ const getWishlist = async (userId: string) => {
     if (error instanceof Error) {
       console.error("Something went wrong!", error.message);
     }
-    return { message: "Unable to get your wishlist" };
+    // return { message: "Unable to get your wishlist" };
+    throw new Error(`Unable to get your wishlist`)
   }
 };
 

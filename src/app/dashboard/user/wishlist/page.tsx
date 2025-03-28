@@ -66,7 +66,7 @@ const WishlistPage = () => {
                   >
                     {productId}
                   </div>
-                  <Divider></Divider>
+                  <Divider />
                 </>
               );
             })}

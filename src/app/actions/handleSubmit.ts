@@ -10,7 +10,7 @@ export const handleSubmit = async (formData: FormData) => {
   try {
     const data = await resend.emails.send({
       // from: "Acme <onboarding@resend.dev>",
-      from: `Acme <onboarding@resend.dev>`,
+      from: `${process.env.NEXT_PUBLIC_APP_NAME} <onboarding@resend.dev>`,
       to: [formData.get("email") as string],
       subject: formData.get("subject") as string,
       react: EmailTemplate({

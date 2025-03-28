@@ -3,6 +3,48 @@ import Link from "next/link";
 import FooterImage from "/public/Footer/Gaming PC Setup.jpg";
 import { BsTwitterX } from "react-icons/bs"; //image import (automatic width/height detection by nextjs)
 
+const pageLinksOne = [
+  {
+    href: `/custom-pc`,
+    label: `Custom PC`,
+  },
+  {
+    href: `/products/motherboards`,
+    label: `All Products`,
+  },
+  {
+    href: `/sign-in`,
+    label: `Sign In`,
+  },
+  {
+    href: `/sign-up`,
+    label: `Sign-up`,
+  },
+  {
+    href: `/custom-pc`,
+    label: `Custom PC`,
+  },
+];
+
+const pageLinksTwo = [
+  {
+    href: `/about-us`,
+    label: `About Us`,
+  },
+  {
+    href: `/contact-us`,
+    label: `Contact Us`,
+  },
+  {
+    href: `/shipping-policy`,
+    label: `Shipping Policy`,
+  },
+  {
+    href: `/refund-policy`,
+    label: `Refund Policy`,
+  },
+];
+
 const Footer = () => {
   return (
     <footer className={`select-none bg-gray-900 lg:grid lg:grid-cols-5`}>
@@ -135,50 +177,16 @@ const Footer = () => {
               <p className="font-medium text-white">Shop Categories</p>
 
               <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link
-                    href={`/custom-pc`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Custom PC
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/products/motherboards`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    All Products
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/checkout`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Checkout
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/sign-in`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Sign In
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/sign-up`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Sign Up
-                  </Link>
-                </li>
+                {pageLinksOne.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`text-gray-200 transition  hover:text-yellow-400`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -186,49 +194,24 @@ const Footer = () => {
               <p className="font-medium text-white">Information</p>
 
               <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link
-                    href={`/about-us`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    About Us
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/contact-us`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/shipping-policy`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Shipping Policy
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href={`/refund-policy`}
-                    className="text-gray-200 transition  hover:text-yellow-400"
-                  >
-                    Refund & Cancellation Policy
-                  </Link>
-                </li>
+                {pageLinksTwo.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`text-gray-200 transition  hover:text-yellow-400`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-800 pt-9">
+        <div className="mt-10 space-y-5 border-t border-gray-800 py-9">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <ul className="flex flex-wrap gap-4 text-xs">
+            <ul className="flex justify-center gap-4 text-xs ">
               <li>
                 <Link
                   href={`/terms-conditions`}
@@ -246,21 +229,18 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
-
-              <li>
-                <Link
-                  href="#"
-                  className="hidden text-gray-400  transition hover:text-yellow-400"
-                >
-                  Cookies
-                </Link>
-              </li>
             </ul>
 
-            <p className="mt-10 text-xs text-gray-400 sm:mt-0">
+            <p className="mt-10 text-center text-xs text-gray-400 sm:mt-0">
               &copy; {new Date().getFullYear()}. FlashByte. All rights reserved.
             </p>
           </div>
+
+          <p
+            className={`border-t border-gray-800 pt-7 text-center text-sm text-gray-300`}
+          >
+            Made with 🧡 by <strong>Chetan Seervi</strong>
+          </p>
         </div>
       </div>
     </footer>

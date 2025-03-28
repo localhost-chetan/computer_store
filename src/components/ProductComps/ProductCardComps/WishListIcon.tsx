@@ -26,16 +26,20 @@ const WishListIcon = ({
       router.push(`/sign-in`);
       return;
     } else {
-      const response = await addToWishList(
-        productId?.at(0)?.toString()!,
-        user?.id.toString()!,
-        productName!,
-      );
-
       try {
+        const response = await addToWishList(
+          productId?.at(0)?.toString()!,
+          user?.id.toString()!,
+          productName!,
+        );
+
         toast.success(response.message);
-      } catch (error: any) {
-        toast.error(response.message);
+      } catch (error) {
+        if (error instanceof Error) {
+          toast.error(error.message);
+        } else {
+          toast.error(`Something went wrong!`);
+        }
       }
     }
   };
