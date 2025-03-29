@@ -1,6 +1,4 @@
 import { CommonFields } from "@/lib/mongodb/models/products/commonTypes";
-import { FaShareAlt } from "react-icons/fa";
-import { Button } from "@nextui-org/react";
 import { Review } from "@/lib/mongodb/models/User/type/userTypes";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RiLoopLeftLine } from "react-icons/ri";
@@ -13,14 +11,12 @@ import ImageSlider from "@/components/ProductComps/ProductSection/ImageSlider";
 import WishListIcon from "@/components/ProductComps/ProductCardComps/WishListIcon";
 import StarRating from "@/components/ProductComps/ProductCardComps/StarRating";
 import PriceConvertor from "@/components/ProductComps/ProductCardComps/PriceConvertor";
-import {
-  AddToCart,
-  BuyNow,
-} from "@/components/ProductComps/ProductCardComps/ProductButtons";
+import { AddToCart } from "@/components/ProductComps/ProductCardComps/ProductButtons";
 import { Metadata } from "next";
+import ShareBtn from "@/components/ProductComps/ShareBtn";
 
 type ProductDetailsPropType = {
-  params: { category: string; productId: string };
+  params: Promise<{ category: string; productId: string }>;
 };
 
 const getData = async ({
@@ -43,7 +39,8 @@ const getData = async ({
 export const generateMetadata = async ({
   params,
 }: ProductDetailsPropType): Promise<Metadata> => {
-  const productData = await getData(params);
+  const parameters = await params;
+  const productData = await getData(parameters);
 
   return {
     title: {
@@ -55,7 +52,8 @@ export const generateMetadata = async ({
 };
 
 const ProductDetails = async ({ params }: ProductDetailsPropType) => {
-  const productData = await getData(params);
+  const parameters = await params;
+  const productData = await getData(parameters);
 
   return (
     <Container>
@@ -87,14 +85,7 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
               />
               <span className="sr-only">Add to Wishlist</span>
 
-              <Button
-                radius={`full`}
-                size={`sm`}
-                isIconOnly
-                title={`Share this Product on Social Media`}
-              >
-                <FaShareAlt size={18} />
-              </Button>
+              <ShareBtn />
 
               <span className="sr-only">
                 Share this Product on Social Media
@@ -116,7 +107,7 @@ const ProductDetails = async ({ params }: ProductDetailsPropType) => {
           <div className={`flex items-center gap-x-2`}>
             <PriceConvertor
               price={productData?.price}
-              percentage={productData?.discount?.percentage as number || 10}
+              percentage={(productData?.discount?.percentage as number) || 10}
               lg={`text-4xl`}
             ></PriceConvertor>
 

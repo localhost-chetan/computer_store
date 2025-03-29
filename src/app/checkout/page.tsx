@@ -1,7 +1,10 @@
+"use client";
+
+import CheckBox from "@/components/Checkout/CheckBox";
 import CheckoutContent from "@/components/Checkout/CheckoutContent";
 import Container from "@/components/Container";
 import Breadcrumb from "@/components/ProductComps/Breadcrumb";
-import { Checkbox, Input } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 
 const Checkout = () => {
   return (
@@ -32,7 +35,7 @@ const Checkout = () => {
               autoFocus
               size={`lg`}
               className={`ring-black focus-within:ring-2`}
-            ></Input>
+            />
 
             <Input
               key={`company name`}
@@ -44,7 +47,7 @@ const Checkout = () => {
               placeholder={` `}
               size={`lg`}
               className={`ring-black focus-within:ring-2`}
-            ></Input>
+            />
 
             <Input
               key={`street address`}
@@ -57,7 +60,7 @@ const Checkout = () => {
               placeholder={` `}
               size={`lg`}
               className={`ring-black focus-within:ring-2`}
-            ></Input>
+            />
 
             <Input
               key={`Apartment`}
@@ -69,7 +72,7 @@ const Checkout = () => {
               placeholder={` `}
               size={`lg`}
               className={`ring-black focus-within:ring-2`}
-            ></Input>
+            />
 
             <Input
               key={`Town`}
@@ -82,7 +85,7 @@ const Checkout = () => {
               placeholder={` `}
               size={`lg`}
               className={`ring-black focus-within:ring-2`}
-            ></Input>
+            />
 
             <Input
               key={`phone_number`}
@@ -111,9 +114,7 @@ const Checkout = () => {
                 className={`ring-black focus-within:ring-2`}
               ></Input>
 
-              <Checkbox defaultSelected>
-                Save this information for faster check-out next time.
-              </Checkbox>
+              <CheckBox />
             </div>
           </form>
         </div>

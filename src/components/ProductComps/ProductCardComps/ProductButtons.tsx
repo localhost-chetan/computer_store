@@ -54,15 +54,15 @@ const AddToCart = ({
     color: `primary`,
   });
 
-  const isProductInCart = useMemo((): boolean => {
+  const isProductInCart = (): boolean => {
     return cartProducts?.some(
       (product: ProductDataType) =>
         product.productId === productData?.at(0)?.productId,
     );
-  }, [cartProducts, productData?.at(0)?.productId]);
+  };
 
   const handleClick = () => {
-    if (isProductInCart) {
+    if (isProductInCart()) {
       router.push(`/cart`);
     } else {
       addToCart(productData);
@@ -71,17 +71,17 @@ const AddToCart = ({
   };
 
   useEffect(() => {
-    if (isProductInCart) {
+    if (isProductInCart()) {
       setCartBtnState({
         ...cartBtnState,
         cartBtnText: "View in Cart",
         cartBtnIcon: <FaCheck size={20} />,
         isRoutable: true,
-        color: isProductInCart ? `default` : `primary`,
+        color: isProductInCart() ? `default` : `primary`,
       });
     }
     localStorage.setItem("products", JSON.stringify(cartProducts));
-  }, [isProductInCart,cartBtnState]);
+  }, [cartProducts]);
 
   return (
     <Button

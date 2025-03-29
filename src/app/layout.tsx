@@ -15,8 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "FlashByte - The Perfect Computer Store",
     template: "FlashByte - %s",
+    default: "FlashByte - The Perfect Computer Store",
   },
   description:
     "FlashByte is a company that builds gaming and productivity PCs. We have a great deal of experience in building computers, and we also work with our customers to ensure that they get the best possible PC for their needs.",

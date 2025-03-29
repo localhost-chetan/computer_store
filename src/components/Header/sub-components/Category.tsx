@@ -76,7 +76,7 @@ const Category = ({ className }: { className: string }) => {
     <Select
       items={categories}
       label={`All Categories`}
-      aria-label={`Categories`}
+      // aria-label={`Categories`}
       placeholder={`Choose category`}
       className={cn(`${className} select-none`)}
       radius={`none`}
@@ -86,7 +86,7 @@ const Category = ({ className }: { className: string }) => {
         return (
           <SelectItem
             key={category}
-            // textValue={category}
+            textValue={category}
             value={category}
             onClick={() => router.push(href)}
           >

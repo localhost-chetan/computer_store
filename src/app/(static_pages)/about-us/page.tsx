@@ -180,21 +180,6 @@ const AboutUs = () => {
               </p>
             </Description>
 
-            {/* <div className={`flex gap-x-16 text-center`}>
-              <div className={`flex flex-col gap-y-2`}>
-                <div className={``}></div>
-                <div className={``}></div>
-              </div>
-              <div className={``}>
-                <div className={``}></div>
-                <div className={``}></div>
-              </div>
-              <div className={``}>
-                <div className={``}></div>
-                <div className={``}></div>
-              </div>
-            </div> */}
-
             <Stats
               first={
                 <>

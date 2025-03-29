@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Button, Spinner } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import Link from "next/link";
 import ThemeSwitcher from "./sub-components/ThemeSwitcher";
 import NavDropdown from "./sub-components/NavDropdown";
@@ -13,6 +13,7 @@ import { auth, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 import Image from "next/image";
 import CartIconComp from "../cart/CartIcons";
 import Announcement from "./Announcement";
+import SignInBtn from "./sub-components/SignInBtn";
 
 const Header = () => {
   const { userId }: { userId: string | null } = auth();
@@ -38,7 +39,7 @@ const Header = () => {
                 height={40}
                 alt={`Brand Logo`}
                 priority
-              ></Image>
+              />
               <h2 className={`hidden text-xl font-bold sm:block`}>FlashByte</h2>
             </Link>
           </li>
@@ -72,14 +73,7 @@ const Header = () => {
                 </ClerkLoaded>
               </>
             ) : (
-              <Button
-                color={`primary`}
-                variant={`shadow`}
-                as={Link}
-                href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}
-              >
-                Sign In
-              </Button>
+              <SignInBtn />
             )}
 
             <ThemeSwitcher />

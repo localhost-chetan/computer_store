@@ -4,7 +4,6 @@ import { IoMdSunny, IoMdMoon } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Spinner } from "@nextui-org/react";
-import { motion } from "framer-motion";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);

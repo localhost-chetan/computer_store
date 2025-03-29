@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeading from "./SectionHeading";
-import Processor from "@/../public/Home Page/Category Section/Processor.avif";
+import Processor from "@/../public/Home Page/Category Section/Processor.webp";
 import AIOLiquidCooler from "@/../public/Home Page/Category Section/AIO Liquid Cooler.webp";
 import AirCooler from "@/../public/Home Page/Category Section/Air Cooler.webp";
 import Cabinet from "@/../public/Home Page/Category Section/Cabinet.jpg";

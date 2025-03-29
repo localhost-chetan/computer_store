@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import FooterImage from "/public/Footer/Gaming PC Setup.jpg";
+import FooterImage from "../../../public/Footer/Gaming PC Setup.jpg";
+// import FooterImage from "/Footer/Gaming PC Setup.jpg";
 import { BsTwitterX } from "react-icons/bs"; //image import (automatic width/height detection by nextjs)
 
 const pageLinksOne = [
@@ -19,10 +20,6 @@ const pageLinksOne = [
   {
     href: `/sign-up`,
     label: `Sign-up`,
-  },
-  {
-    href: `/custom-pc`,
-    label: `Custom PC`,
   },
 ];
 

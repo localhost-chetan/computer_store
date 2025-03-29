@@ -1,17 +1,17 @@
 "use client";
 
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import { Button, Input, Kbd } from "@nextui-org/react";
 import { useRef, useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
-import Category from "./Category";
+// import Category from "./Category";
 import { useRouter } from "next/navigation";
-// const Category = dynamic(() => import("./Category"));
+const Category = dynamic(() => import("./Category"));
 
 type PropTypes = {
   divClasses: string;
   searchBtnClasses?: string;
-  categoryClasses: string;
+  categoryClasses?: string;
   inputAutofucs: boolean;
 };
 
@@ -81,9 +81,7 @@ const SearchComponent = ({
           } // Remove pointer-events-none
         />
 
-        <div>
-          <Category className={categoryClasses} />
-        </div>
+        <Category className={categoryClasses ?? ``} />
 
         <Button
           isDisabled={query === ``}

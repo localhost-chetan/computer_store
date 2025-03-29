@@ -4,13 +4,14 @@ import ViewModeToggle from "@/components/ProductComps/ViewModeToggle";
 import Container from "@/components/Container";
 
 type PropTypes = {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 };
 
 const ProductCategory = async ({ params }: PropTypes) => {
+  const { category } = await params;
   console.log(params);
   const responseObj = await fetch(
-    `${process.env.BASE_URL}/api/products/${params.category}`,
+    `${process.env.BASE_URL}/api/products/${category}`,
     { cache: `no-cache` },
   ); //returns a promise which resolves to a response object
   const data = await responseObj
@@ -24,10 +25,7 @@ const ProductCategory = async ({ params }: PropTypes) => {
       <Breadcrumb>{data?.at(0)?.category as string}</Breadcrumb>
 
       <section className={`mb-10 flex w-full flex-col gap-y-10`}>
-        <ViewModeToggle
-          data={data as CommonFields[]}
-          params={params.category}
-        />
+        <ViewModeToggle data={data as CommonFields[]} params={category} />
       </section>
     </Container>
   );

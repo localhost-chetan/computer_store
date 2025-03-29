@@ -4,13 +4,15 @@ import { NextResponse } from "next/server";
 
 const GET = async (
   _request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) => {
   try {
     await dbConnect();
     console.log("Successfully connected to MongoDB"); // For debugging
 
-    const productDetails = await Processor.findById(params.id);
+    const { id } = await params;
+
+    const productDetails = await Processor.findById(id);
 
     if (!productDetails) {
       // Handle case where product with ID not found

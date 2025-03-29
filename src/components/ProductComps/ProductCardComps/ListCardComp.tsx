@@ -5,7 +5,7 @@ import Discount from "./Discount";
 import PriceConvertor from "./PriceConvertor";
 import StarRating from "./StarRating";
 import Link from "next/link";
-import { AddToCart, BuyNow } from "./ProductButtons";
+import { AddToCart } from "./ProductButtons";
 
 const ListCardComp = ({
   params,

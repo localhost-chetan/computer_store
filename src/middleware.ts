@@ -8,7 +8,7 @@ export default authMiddleware({
     "search_results/(.*)",
     "/sign-in",
     "/sign-up",
-    "/api/webhooks(.*)",
+    // "/api/webhooks(.*)",
     "/api/send",
     // "/api/checkout",
     "/products(.*)",

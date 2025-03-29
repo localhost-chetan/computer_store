@@ -133,15 +133,15 @@ const CartContent = () => {
                   >
                     {/* Image */}
                     <div
-                      className={`relative w-full select-none overflow-hidden md:h-full md:w-60`}
+                      className={`relative w-full select-none overflow-hidden object-cover md:h-full md:w-60`}
                     >
                       <Image
                         src={product?.image}
                         alt={product?.description}
                         width={150}
                         height={200}
-                        className={`h-52 w-full bg-slate-200 md:h-full md:object-contain`}
-                      ></Image>
+                        className={`h-52 w-full bg-slate-200 p-3 md:h-full md:object-cover`}
+                      />
 
                       <Discount
                         percentage={product?.discountPercent}
