@@ -17,12 +17,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 const GET = async (
   _request: NextRequest,
-  { params }: { params: { query: string } },
+  { params }: { params: Promise<{ query: string }> },
 ) => {
   try {
     await dbConnect();
 
-    const searchTerms = params.query.toLowerCase().split(/\s+/); // Split into words
+    const { query } = await params
+    const searchTerms = query.toLowerCase().split(/\s+/); // Split into words
 
     const searchOptions = {
       $or: searchTerms.map((term) => ({
